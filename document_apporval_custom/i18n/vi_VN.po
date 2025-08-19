@@ -1,0 +1,253 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* document_apporval_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-18 08:44+0000\n"
+"PO-Revision-Date: 2025-08-18 08:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: document_apporval_custom
+#: model_terms:ir.ui.view,arch_db:document_apporval_custom.document_approval_inherit_form_views
+msgid "Approval Information"
+msgstr "Thông tin phê duyệt"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__attachment_ids
+msgid "Attachment"
+msgstr "Tài liệu đính kèm"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields.selection,name:document_apporval_custom.selection__document_approval__payment_method__bank_transfer
+msgid "Bank Transfer"
+msgstr "Chuyển khoản"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields.selection,name:document_apporval_custom.selection__document_approval__payment_method__cash
+msgid "Cash"
+msgstr "Tiền mặt"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields.selection,name:document_apporval_custom.selection__document_approval__request_type__cash_request
+msgid "Cast Advance Request"
+msgstr "Đề nghị tạm ứng"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,help:document_apporval_custom.field_document_approval__company_id
+msgid "Company of the record."
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__currency_id
+msgid "Currency"
+msgstr "Tiền tệ"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__department_id
+msgid "Department"
+msgstr "Phòng ban"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__description
+#: model_terms:ir.ui.view,arch_db:document_apporval_custom.document_approval_inherit_form_views
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: document_apporval_custom
+#: model_terms:ir.ui.view,arch_db:document_apporval_custom.document_approval_inherit_form_views
+msgid "Detail"
+msgstr "Chi tiết"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__document_approval_id
+msgid "Document Approval"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model,name:document_apporval_custom.model_document_approval_line
+msgid "Document Approval Line"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model,name:document_apporval_custom.model_document_approval
+msgid "Document Approvals"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__document_approval_ids
+msgid "Document Approvals Line"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__due_date
+msgid "Due Date"
+msgstr "Thời hạn"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__expense_date
+msgid "Expense Date"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__expense_description
+msgid "Expense Description"
+msgstr "Nội dung"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__id
+msgid "ID"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__job_id
+msgid "Job Title"
+msgstr "Chức vụ"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model_terms:ir.ui.view,arch_db:document_apporval_custom.document_approval_inherit_form_views
+msgid "NAME"
+msgstr "MỚI"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__note
+msgid "Note"
+msgstr "Ghi chú"
+
+#. module: document_apporval_custom
+#: model_terms:ir.ui.view,arch_db:document_apporval_custom.document_approval_inherit_form_views
+msgid "Number"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__payment_method
+msgid "Payment Method"
+msgstr "Hình thức thanh toán"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields.selection,name:document_apporval_custom.selection__document_approval__request_type__payment_request
+msgid "Payment Request"
+msgstr "Đề nghị thanh toán"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__price_unit
+msgid "Price Unit"
+msgstr "Đơn giá"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields.selection,name:document_apporval_custom.selection__document_approval__request_type__purchase_request
+msgid "Purchase Request"
+msgstr "Yêu cầu Mua hàng"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__quantity
+msgid "Quantity"
+msgstr "Số lượng"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__recipient
+msgid "Recipient"
+msgstr "Người nhận"
+
+#. module: document_apporval_custom
+#: model_terms:ir.ui.view,arch_db:document_apporval_custom.document_approval_inherit_form_views
+msgid "Recipient Information"
+msgstr "Thông tin người nhận"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__request_code
+msgid "Request Code"
+msgstr "Mã đề nghị"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__request_date
+msgid "Request Date"
+msgstr "Ngày đề nghị"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__request_employee_id
+msgid "Request Employee"
+msgstr "Người đề nghị"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__request_name
+msgid "Request Name"
+msgstr "Tên đề nghị"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__request_type
+#: model:ir.model.fields,help:document_apporval_custom.field_document_approval__request_type
+msgid "Request Type."
+msgstr "Loại đề nghị"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__sequence
+msgid "Sequence"
+msgstr "STT"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__tax_code
+msgid "Tax Code"
+msgstr "Mã số thuế"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__amount
+msgid "Total Amount (VNĐ)"
+msgstr "Thành tiền"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__uom_id
+msgid "Uom"
+msgstr "Đơn vị tính"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,help:document_apporval_custom.field_document_approval__description
+msgid "Used to add description about the document approval"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__voucher_code
+msgid "Voucher Code"
+msgstr ""
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__voucher_name
+msgid "Voucher Name"
+msgstr ""

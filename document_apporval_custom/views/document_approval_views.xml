@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="document_approval_inherit_form_views" model="ir.ui.view">
+            <field name="name">document.approval.inherit</field>
+            <field name="model">document.approval</field>
+            <field name="inherit_id" ref="document_approval.document_approval_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet" position="replace">
+                    <sheet>
+                        <div>
+                            <h3 class="text-center">NAME</h3>
+                            <h3 class="text-center">
+                                <field name="name" readonly="1" required="1"
+                                       style="margin-right: 35%%; margin-left: 35%%; max-width: 30%%; font-style: italic;"
+                                       placeholder="Number"/>
+                            </h3>
+                        </div>
+                        <group string="Approval Information">
+                            <group>
+                                <field name="request_type" required="1"/>
+                                <field name="request_code" required="1"/>
+                                <field name="request_name" required="1"/>
+                                <field name="request_employee_id" required="1"
+                                       options='{"no_open": True, "no_create": True, "no_edit": True}'/>
+                            </group>
+                            <group>
+                                <field name="request_date"/>
+                                <field name="due_date"/>
+                                <field name="job_id"/>
+                                <field name="department_id" required="1"
+                                       options='{"no_open": True, "no_create": True, "no_edit": True}'/>
+                            </group>
+                        </group>
+                        <group string="Recipient Information">
+                            <group>
+                                <field name="recipient"/>
+                            </group>
+                            <group>
+                                <field name="tax_code"/>
+                            </group>
+                        </group>
+                        <group string="Description">
+                            <field name="description" required="1"/>
+                        </group>
+                        <group>
+                            <notebook>
+                                <page string="Detail">
+                                    <field name="document_approval_ids" readonly="state not in ['draft']">
+                                        <list editable="bottom">
+                                            <field name="sequence"/>
+                                            <field name="voucher_code"/>
+                                            <field name="voucher_name"/>
+                                            <field name="expense_description"/>
+                                            <field name="quantity"/>
+                                            <field name="uom_id"/>
+                                            <field name="price_unit"/>
+                                            <field name="amount"/>
+                                            <field name="attachment_ids"/>
+                                            <field name="note"/>
+                                        </list>
+                                    </field>
+                                </page>
+                            </notebook>
+                        </group>
+                        <group>
+                            <group name="visibility" string="Visibility">
+                                <field name="company_id" readonly="state != 'draft'"/>
+                                <field name="visibility"/>
+                            </group>
+                            <group name="approval" string="Approval">
+                                <field name="team_id" readonly="state == 'approved'"/>
+                                <field name="team_lead_id"/>
+                                <field name="method" readonly="state != 'draft'"/>
+                                <field name="step_count"/>
+                                <field name="show_approve" invisible="1"/>
+                                <field name="approver_ids" widget="many2many_tags"
+                                       invisible="1"/>
+                                <field name="approval_ids" widget="many2many_tags"
+                                       invisible="1"/>
+                            </group>
+                        </group>
+                        <group name="approvers" string="Approvers">
+                            <field name="step_ids"
+                                   nolabel="1" colspan="2">
+                                <list editable="bottom">
+                                    <field name="steps"/>
+                                    <field name="approver_id"/>
+                                    <field name="role"/>
+                                    <field name="state" optional="hide"/>
+                                    <field name="current_state"
+                                           decoration-success="current_state == 'approved'"
+                                           decoration-primary="current_state  == 'pending'"
+                                           decoration-warning="current_state  == 'upcoming'"
+                                           decoration-danger="current_state  == 'rejected'"
+                                           column_invisible="parent.state == 'draft'"/>
+                                    <field name="note"/>
+                                </list>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="approve_initiator_id"/>
+                        </group>
+                    </sheet>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
