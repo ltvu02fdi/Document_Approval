@@ -209,7 +209,7 @@ msgstr "Người đề nghị"
 #. module: document_apporval_custom
 #: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__request_name
 msgid "Request Name"
-msgstr "Tên đề nghị"
+msgstr "Tên"
 
 #. module: document_apporval_custom
 #: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__request_type
@@ -245,9 +245,3984 @@ msgstr ""
 #. module: document_apporval_custom
 #: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__voucher_code
 msgid "Voucher Code"
-msgstr ""
+msgstr "Mã chứng từ"
 
 #. module: document_apporval_custom
-#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__voucher_name
-msgid "Voucher Name"
-msgstr ""
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__type_voucher
+msgid "Type voucher"
+msgstr "Loại chứng từ"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_needaction
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__message_needaction
+msgid "Action Needed"
+msgstr "Cần hành động"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__is_active
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__is_active
+msgid "Active"
+msgstr "Kích hoạt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_ids
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__activity_ids
+msgid "Activities"
+msgstr "Hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_exception_decoration
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Trang trí ngoại lệ hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_state
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__activity_state
+msgid "Activity State"
+msgstr "Trạng thái hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_type_icon
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Biểu tượng loại hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approve__description
+msgid "Add note which is the reason for the approval"
+msgstr "Thêm ghi chú lý do phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__visibility__all_user
+msgid "All Users"
+msgstr "Tất cả người dùng"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_file__approval_id
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Approval"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_step__current_state
+msgid "Approval State"
+msgstr "Trạng thái phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__approval_ids
+msgid "Approval Step"
+msgstr "Bước phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_ids
+msgid "Approval Step of the document"
+msgstr "Các bước phê duyệt của tài liệu"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__team_id
+#: model:ir.ui.menu,name:document_approval.document_approval_team_menu
+msgid "Approval Team"
+msgstr "Nhóm phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval_step__state__approve
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_signature_view_form
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approve_view_form
+msgid "Approve"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.document_approval_reject_reason_menu_root
+msgid "Approve/Reject Reason"
+msgstr "Lý do Phê duyệt/Từ chối"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__approved
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval_step__current_state__approved
+msgid "Approved"
+msgstr "Đã phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__approver_ids
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_step__approver_id
+msgid "Approver"
+msgstr "Người phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_step__document_approve_team_id
+msgid "Approver Team"
+msgstr "Nhóm người phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__visibility__approvers
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_team_view_form
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Approvers"
+msgstr "Người phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_attachment_count
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__message_attachment_count
+msgid "Attachment Count"
+msgstr "Số lượng tệp đính kèm"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_partner_ids
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Đối tác)"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_channel_ids
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Người theo dõi (Kênh)"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_type_icon
+#: model:ir.model.fields,help:document_approval.field_document_approval_team__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Biểu tượng Font Awesome, ví dụ: fa-tasks"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__has_message
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__has_message
+msgid "Has Message"
+msgstr "Có tin nhắn"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__id
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__id
+msgid "ID"
+msgstr "Mã định danh"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__message_needaction
+#: model:ir.model.fields,help:document_approval.field_document_approval_team__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Nếu chọn, tin nhắn mới cần bạn chú ý."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__message_has_error
+#: model:ir.model.fields,help:document_approval.field_document_approval_team__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Nếu chọn, một số tin nhắn gặp lỗi gửi."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__message_has_sms_error
+#: model:ir.model.fields,help:document_approval.field_document_approval_team__message_has_sms_error
+msgid "If checked, some messages have a delivery error via SMS."
+msgstr "Nếu chọn, một số tin nhắn gặp lỗi gửi qua SMS."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__is_favorite
+msgid "Is Favorite"
+msgstr "Được đánh dấu yêu thích"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__write_uid
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__write_date
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối lúc"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_main_attachment_id
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Tệp đính kèm chính"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_ids
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__message_ids
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__message_main_attachment_id
+#: model:ir.model.fields,help:document_approval.field_document_approval_team__message_main_attachment_id
+msgid "Main attachment used for communication."
+msgstr "Tệp đính kèm chính dùng để trao đổi."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__message_ids
+#: model:ir.model.fields,help:document_approval.field_document_approval_team__message_ids
+msgid "Messages and communication history."
+msgstr "Tin nhắn và lịch sử trao đổi."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_exception_icon
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__activity_exception_icon
+msgid "Activity Exception Icon"
+msgstr "Biểu tượng ngoại lệ hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_exception_icon
+#: model:ir.model.fields,help:document_approval.field_document_approval_team__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Biểu tượng hiển thị hoạt động ngoại lệ."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__draft
+msgid "Draft"
+msgstr "Nháp"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__submitted
+msgid "Submitted"
+msgstr "Đã gửi"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__rejected
+msgid "Rejected"
+msgstr "Bị từ chối"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__create_uid
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__create_date
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__create_date
+msgid "Created on"
+msgstr "Tạo vào lúc"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__state
+msgid "Indicates the current state of the approval document."
+msgstr "Chỉ trạng thái hiện tại của tài liệu phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__user_id
+msgid "Responsible"
+msgstr "Người phụ trách"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Submit"
+msgstr "Gửi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Reset to Draft"
+msgstr "Đặt lại thành Nháp"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__name
+msgid "Team Name"
+msgstr "Tên nhóm"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__member_ids
+msgid "Members"
+msgstr "Thành viên"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_team__member_ids
+msgid "Users that are part of this approval team."
+msgstr "Người dùng thuộc nhóm phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__active
+msgid "Active"
+msgstr "Hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_team__active
+msgid "If unchecked, the approval team will be hidden without being deleted."
+msgstr "Nếu bỏ chọn, nhóm phê duyệt sẽ bị ẩn mà không bị xóa."
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_root
+msgid "Document Approvals"
+msgstr "Phê duyệt tài liệu"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.action_document_approval
+msgid "Approvals"
+msgstr "Các phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.action_document_approval_team
+msgid "Approval Teams"
+msgstr "Nhóm phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_team_view_tree
+msgid "Approval Team"
+msgstr "Nhóm phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_team_view_form
+msgid "Team"
+msgstr "Nhóm"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_tree
+msgid "Approval"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__approval_team_id
+msgid "Approval Team"
+msgstr "Nhóm phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_team_id
+msgid "The team responsible for handling this approval."
+msgstr "Nhóm chịu trách nhiệm xử lý phê duyệt này."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_team_view_form
+msgid "Team Members"
+msgstr "Thành viên nhóm"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__approval_date
+msgid "Approval Date"
+msgstr "Ngày phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_date
+msgid "The date when the approval was granted."
+msgstr "Ngày phê duyệt được thông qua."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Search Approval"
+msgstr "Tìm kiếm phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Responsible"
+msgstr "Người phụ trách"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Approval Team"
+msgstr "Nhóm phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__comments
+msgid "Comments"
+msgstr "Bình luận"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__comments
+msgid "Additional comments or notes about this approval."
+msgstr "Bình luận hoặc ghi chú bổ sung về phê duyệt này."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Comments"
+msgstr "Bình luận"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__reference
+msgid "Reference"
+msgstr "Tham chiếu"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__reference
+msgid "A reference to an external document or record."
+msgstr "Tham chiếu đến tài liệu hoặc bản ghi bên ngoài."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__amount
+msgid "Amount"
+msgstr "Số tiền"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__amount
+msgid "The amount that requires approval."
+msgstr "Số tiền cần phê duyệt."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Amount"
+msgstr "Số tiền"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__currency_id
+msgid "Currency"
+msgstr "Tiền tệ"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__currency_id
+msgid "The currency in which the amount is specified."
+msgstr "Loại tiền tệ của số tiền cần phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__approved
+msgid "Approved"
+msgstr "Đã phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Approve"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__approval_user_id
+msgid "Approved By"
+msgstr "Phê duyệt bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_user_id
+msgid "The user who approved this document."
+msgstr "Người đã phê duyệt tài liệu này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__deadline_date
+msgid "Deadline"
+msgstr "Hạn chót"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__deadline_date
+msgid "The final date by which this approval should be completed."
+msgstr "Ngày cuối cùng cần hoàn thành phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__priority
+msgid "Priority"
+msgstr "Mức ưu tiên"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__priority__0
+msgid "Low"
+msgstr "Thấp"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__priority__1
+msgid "Normal"
+msgstr "Bình thường"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__priority__2
+msgid "High"
+msgstr "Cao"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "High Priority"
+msgstr "Ưu tiên cao"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Low Priority"
+msgstr "Ưu tiên thấp"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Normal Priority"
+msgstr "Ưu tiên bình thường"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__attachment_ids
+msgid "Attachments"
+msgstr "Tệp đính kèm"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__attachment_ids
+msgid "Attach files related to this approval."
+msgstr "Đính kèm các tệp liên quan đến phê duyệt này."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Attachments"
+msgstr "Tệp đính kèm"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.action_document_approval_attachment
+msgid "Approval Attachments"
+msgstr "Tệp đính kèm phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_attachment_view_tree
+msgid "Attachment"
+msgstr "Tệp đính kèm"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_attachment__name
+msgid "File Name"
+msgstr "Tên tệp"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_attachment__datas
+msgid "File Content"
+msgstr "Nội dung tệp"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_attachment__document_approval_id
+msgid "Approval"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_attachment__document_approval_id
+msgid "The approval to which this file is attached."
+msgstr "Phê duyệt mà tệp này được đính kèm."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Related Approvals"
+msgstr "Phê duyệt liên quan"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__related_approval_ids
+msgid "Related Approvals"
+msgstr "Phê duyệt liên quan"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__related_approval_ids
+msgid "Other approvals that are linked to this one."
+msgstr "Các phê duyệt khác có liên quan đến phê duyệt này."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Related Documents"
+msgstr "Tài liệu liên quan"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__related_document_ids
+msgid "Related Documents"
+msgstr "Tài liệu liên quan"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__related_document_ids
+msgid "Other documents that are linked to this approval."
+msgstr "Các tài liệu khác có liên quan đến phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__rejection_reason
+msgid "Rejection Reason"
+msgstr "Lý do từ chối"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__rejection_reason
+msgid "The reason why this approval was rejected."
+msgstr "Lý do tại sao phê duyệt này bị từ chối."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Rejection Reason"
+msgstr "Lý do từ chối"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__rejected
+msgid "Rejected"
+msgstr "Bị từ chối"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__cancelled
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__draft
+msgid "Draft"
+msgstr "Bản nháp"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__submitted
+msgid "Submitted"
+msgstr "Đã gửi"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__approved
+msgid "Approved"
+msgstr "Đã phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__in_progress
+msgid "In Progress"
+msgstr "Đang xử lý"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Approve"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Set to Draft"
+msgstr "Chuyển về nháp"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__approval_sequence
+msgid "Approval Sequence"
+msgstr "Thứ tự phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_sequence
+msgid "The order in which approvals should be processed."
+msgstr "Thứ tự mà các phê duyệt cần được xử lý."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__company_id
+msgid "The company related to this approval."
+msgstr "Công ty liên quan đến phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__department_id
+msgid "Department"
+msgstr "Phòng ban"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__department_id
+msgid "The department responsible for this approval."
+msgstr "Phòng ban chịu trách nhiệm cho phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__currency_id
+msgid "Currency"
+msgstr "Tiền tệ"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__currency_id
+msgid "Currency used for amounts in this approval."
+msgstr "Đơn vị tiền tệ sử dụng cho số tiền trong phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__amount
+msgid "Amount"
+msgstr "Số tiền"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__amount
+msgid "The monetary amount related to this approval."
+msgstr "Số tiền liên quan đến phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__notes
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__notes
+msgid "Additional notes or comments about this approval."
+msgstr "Ghi chú hoặc nhận xét bổ sung về phê duyệt này."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__is_urgent
+msgid "Urgent"
+msgstr "Khẩn cấp"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__is_urgent
+msgid "Mark this approval as urgent."
+msgstr "Đánh dấu phê duyệt này là khẩn cấp."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Urgent Approvals"
+msgstr "Phê duyệt khẩn cấp"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__tag_ids
+msgid "Tags"
+msgstr "Thẻ"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__tag_ids
+msgid "Categorize approvals with tags."
+msgstr "Phân loại phê duyệt bằng thẻ."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_tag__name
+msgid "Tag Name"
+msgstr "Tên thẻ"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_tag__color
+msgid "Color"
+msgstr "Màu sắc"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_tag_view_tree
+msgid "Approval Tag"
+msgstr "Thẻ phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.action_document_approval_tag
+msgid "Approval Tags"
+msgstr "Thẻ phê duyệt"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_tag
+msgid "Tags"
+msgstr "Thẻ"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__color
+msgid "Color Index"
+msgstr "Mã màu"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__kanban_state
+msgid "Kanban State"
+msgstr "Trạng thái Kanban"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__kanban_state__normal
+msgid "In Progress"
+msgstr "Đang xử lý"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__kanban_state__done
+msgid "Ready for next stage"
+msgstr "Sẵn sàng cho giai đoạn tiếp theo"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__kanban_state__blocked
+msgid "Blocked"
+msgstr "Bị chặn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_kanban
+msgid "Ready"
+msgstr "Sẵn sàng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_kanban
+msgid "Blocked"
+msgstr "Bị chặn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_kanban
+msgid "In Progress"
+msgstr "Đang xử lý"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_kanban
+msgid "Set to Ready"
+msgstr "Chuyển sang Sẵn sàng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_kanban
+msgid "Set to Blocked"
+msgstr "Chuyển sang Bị chặn"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_ids
+msgid "Activities"
+msgstr "Hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_state
+msgid "Activity State"
+msgstr "Trạng thái hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__activity_state__overdue
+msgid "Overdue"
+msgstr "Quá hạn"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__activity_state__today
+msgid "Today"
+msgstr "Hôm nay"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__activity_state__planned
+msgid "Planned"
+msgstr "Đã lên kế hoạch"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Trang trí ngoại lệ hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Biểu tượng loại hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_is_follower
+msgid "Is Follower"
+msgstr "Là người theo dõi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Người theo dõi (Đối tác)"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_follower_ids
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__has_message
+msgid "Has Message"
+msgstr "Có tin nhắn"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_ids
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Tệp đính kèm chính"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_has_error
+msgid "Message Delivery error"
+msgstr "Lỗi gửi tin nhắn"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_has_error_counter
+msgid "Number of errors"
+msgstr "Số lỗi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_needaction
+msgid "Action Needed"
+msgstr "Cần hành động"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Số hành động"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_unread
+msgid "Unread Messages"
+msgstr "Tin nhắn chưa đọc"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Số tin nhắn chưa đọc"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__website_message_ids
+msgid "Website Messages"
+msgstr "Tin nhắn Website"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__website_message_ids
+msgid "Website communication history"
+msgstr "Lịch sử trao đổi trên Website"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Chatter"
+msgstr "Nhật ký trao đổi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__access_url
+msgid "Portal Access URL"
+msgstr "Đường dẫn truy cập Cổng thông tin"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__access_token
+msgid "Access Token"
+msgstr "Mã truy cập"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__access_token
+msgid "Security token used to ensure the integrity and authenticity of access."
+msgstr "Mã bảo mật dùng để đảm bảo tính toàn vẹn và xác thực khi truy cập."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__rating_ids
+msgid "Ratings"
+msgstr "Đánh giá"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__rating_last_value
+msgid "Last Rating Value"
+msgstr "Giá trị đánh giá gần nhất"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__rating_last_feedback
+msgid "Last Rating Feedback"
+msgstr "Phản hồi đánh giá gần nhất"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__rating_last_image
+msgid "Last Rating Image"
+msgstr "Ảnh đánh giá gần nhất"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__rating_last_text
+msgid "Last Rating Text"
+msgstr "Nội dung đánh giá gần nhất"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__rating_avg
+msgid "Average Rating"
+msgstr "Đánh giá trung bình"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__rating_avg
+msgid "The average rating based on feedback."
+msgstr "Đánh giá trung bình dựa trên phản hồi."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_user_id
+msgid "Responsible User"
+msgstr "Người phụ trách"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_user_id
+msgid "User responsible for next activity."
+msgstr "Người dùng chịu trách nhiệm cho hoạt động tiếp theo."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Hạn chót hoạt động tiếp theo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_summary
+msgid "Next Activity Summary"
+msgstr "Tóm tắt hoạt động tiếp theo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_type_id
+msgid "Next Activity Type"
+msgstr "Loại hoạt động tiếp theo"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_type_id
+msgid "Type of the next activity."
+msgstr "Loại hoạt động tiếp theo."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Next Activity"
+msgstr "Hoạt động tiếp theo"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Activity"
+msgstr "Hoạt động"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Scheduled Activities"
+msgstr "Hoạt động đã lên lịch"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__id
+msgid "ID"
+msgstr "ID"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__user_id
+msgid "User"
+msgstr "Người dùng"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__user_id
+msgid "The user responsible for this document approval."
+msgstr "Người dùng chịu trách nhiệm phê duyệt tài liệu này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__note
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Additional Notes"
+msgstr "Ghi chú bổ sung"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__color
+msgid "Color"
+msgstr "Màu"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_kanban
+msgid "Color Index"
+msgstr "Mã màu"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__priority
+msgid "Priority"
+msgstr "Mức độ ưu tiên"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__priority__0
+msgid "Normal"
+msgstr "Bình thường"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__priority__1
+msgid "High"
+msgstr "Cao"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__priority__2
+msgid "Very High"
+msgstr "Rất cao"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "By Priority"
+msgstr "Theo mức ưu tiên"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "By Company"
+msgstr "Theo công ty"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "By Status"
+msgstr "Theo trạng thái"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "By User"
+msgstr "Theo người dùng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Approval Lines"
+msgstr "Các dòng phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__document_approval_line_ids
+msgid "Approval Line"
+msgstr "Dòng phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__document_approval_type_id
+msgid "Approval Type"
+msgstr "Loại phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__document_approval_type_id
+msgid "The type of approval this document belongs to."
+msgstr "Loại phê duyệt mà tài liệu này thuộc về."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__approval_count
+msgid "Approval Count"
+msgstr "Số lần phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_count
+msgid "Number of approval lines associated with this document."
+msgstr "Số dòng phê duyệt được liên kết với tài liệu này."
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.document_approval_action
+msgid "Document Approvals"
+msgstr "Phê duyệt tài liệu"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.document_approval_menu
+msgid "Approvals"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.document_approval_root_menu
+msgid "Document Approval"
+msgstr "Phê duyệt tài liệu"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_tree
+msgid "Approvals List"
+msgstr "Danh sách phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_kanban
+msgid "Approvals Board"
+msgstr "Bảng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Approval Details"
+msgstr "Chi tiết phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "General Information"
+msgstr "Thông tin chung"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__active
+msgid "Active"
+msgstr "Đang hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__active
+msgid "If unchecked, it will allow you to hide the approval without removing it."
+msgstr "Nếu bỏ chọn, bạn có thể ẩn phê duyệt mà không cần xóa nó."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Archived"
+msgstr "Đã lưu trữ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Set to Draft"
+msgstr "Đặt về bản nháp"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Approve"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__draft
+msgid "Draft"
+msgstr "Nháp"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__confirm
+msgid "Confirmed"
+msgstr "Đã xác nhận"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__approve
+msgid "Approved"
+msgstr "Đã phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__reject
+msgid "Rejected"
+msgstr "Bị từ chối"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Draft Approvals"
+msgstr "Phê duyệt nháp"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Confirmed Approvals"
+msgstr "Phê duyệt đã xác nhận"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Approved Approvals"
+msgstr "Phê duyệt thành công"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_search
+msgid "Rejected Approvals"
+msgstr "Phê duyệt bị từ chối"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Approval History"
+msgstr "Lịch sử phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Comments"
+msgstr "Bình luận"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Add a note..."
+msgstr "Thêm ghi chú..."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_kanban
+msgid "New Approval"
+msgstr "Phê duyệt mới"
+
+#. module: document_approval
+#: model:res.groups,name:document_approval.group_document_approval_user
+msgid "Approval User"
+msgstr "Người dùng phê duyệt"
+
+#. module: document_approval
+#: model:res.groups,name:document_approval.group_document_approval_manager
+msgid "Approval Manager"
+msgstr "Quản lý phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_is_follower
+msgid "Is Follower"
+msgstr "Là người theo dõi"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__message_is_follower
+msgid "Check if the current user is a follower."
+msgstr "Kiểm tra nếu người dùng hiện tại là người theo dõi."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_partner_ids
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__message_partner_ids
+msgid "Partners that follow this approval document."
+msgstr "Các đối tác theo dõi tài liệu phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_ids
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__message_ids
+msgid "Messages and communication history related to this approval."
+msgstr "Tin nhắn và lịch sử trao đổi liên quan đến phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_ids
+msgid "Activities"
+msgstr "Hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_ids
+msgid "Planned activities for this document."
+msgstr "Các hoạt động đã lên kế hoạch cho tài liệu này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_state
+msgid "Activity State"
+msgstr "Trạng thái hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_state
+msgid "Status based on activities."
+msgstr "Trạng thái dựa trên hoạt động."
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__activity_state__planned
+msgid "Planned"
+msgstr "Đã lên kế hoạch"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__activity_state__today
+msgid "Today"
+msgstr "Hôm nay"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__activity_state__overdue
+msgid "Overdue"
+msgstr "Quá hạn"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__activity_state__done
+msgid "Done"
+msgstr "Hoàn thành"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Trang trí ngoại lệ hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Loại hoạt động ngoại lệ trên bản ghi."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Biểu tượng loại hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Biểu tượng Font Awesome, ví dụ: fa-tasks"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__has_message
+msgid "Has Message"
+msgstr "Có tin nhắn"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__has_message
+msgid "Indicates if there are messages related to this record."
+msgstr "Chỉ ra nếu có tin nhắn liên quan đến bản ghi này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__has_activity
+msgid "Has Activity"
+msgstr "Có hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__has_activity
+msgid "Indicates if there are activities related to this record."
+msgstr "Chỉ ra nếu có hoạt động liên quan đến bản ghi này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__has_follower
+msgid "Has Follower"
+msgstr "Có người theo dõi"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__has_follower
+msgid "Indicates if there are followers related to this record."
+msgstr "Chỉ ra nếu có người theo dõi liên quan đến bản ghi này."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__website_message_ids
+msgid "Website Messages"
+msgstr "Tin nhắn từ website"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__website_message_ids
+msgid "Messages sent through the website."
+msgstr "Các tin nhắn được gửi qua website."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_user_id
+msgid "Responsible User"
+msgstr "Người phụ trách"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_user_id
+msgid "User responsible for next activity."
+msgstr "Người dùng chịu trách nhiệm cho hoạt động tiếp theo."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_type_id
+msgid "Activity Type"
+msgstr "Loại hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_type_id
+msgid "Type of the next activity."
+msgstr "Loại hoạt động tiếp theo."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Hạn chót hoạt động kế tiếp"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_date_deadline
+msgid "Deadline for the next activity."
+msgstr "Hạn chót cho hoạt động tiếp theo."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_summary
+msgid "Next Activity Summary"
+msgstr "Tóm tắt hoạt động kế tiếp"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_summary
+msgid "Summary of the next activity."
+msgstr "Tóm tắt của hoạt động tiếp theo."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_exception_icon
+msgid "Activity Exception Icon"
+msgstr "Biểu tượng ngoại lệ hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Biểu tượng để chỉ ra một hoạt động ngoại lệ."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__activity_calendar_event_id
+msgid "Calendar Event"
+msgstr "Sự kiện lịch"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_calendar_event_id
+msgid "Calendar event related to the activity."
+msgstr "Sự kiện lịch liên quan đến hoạt động."
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_line__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_line__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_line__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_line__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_line__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_job__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_job__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_job__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_job__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_job__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_type__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_type__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_type__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_type__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_type__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_route__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_route__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_route__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_route__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_route__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_type_line__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_type_line__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_type_line__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_type_line__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_type_line__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_category__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_category__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_category__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_category__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_category__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_stage__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_stage__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_stage__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_stage__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_stage__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_tag__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_tag__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_tag__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_tag__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_tag__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_job_type__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_job_type__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_job_type__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_job_type__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_job_type__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_department__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_department__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_department__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_department__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_department__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_config__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_config__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_config__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_config__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_config__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__sequence
+msgid "Gives the sequence order when displaying a list of stages."
+msgstr "Thứ tự sắp xếp khi hiển thị danh sách các giai đoạn."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Loại hoạt động ngoại lệ trên bản ghi."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_state
+msgid "Status based on activities"
+msgstr "Trạng thái dựa trên hoạt động"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_summary
+msgid "Summary of the activity."
+msgstr "Tóm tắt hoạt động."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_type_icon
+msgid "Icon to indicate an activity type."
+msgstr "Biểu tượng để biểu thị loại hoạt động."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_date_deadline
+msgid "Deadline for the next activity"
+msgstr "Hạn chót cho hoạt động tiếp theo"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Biểu tượng để biểu thị một hoạt động ngoại lệ."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__activity_user_id
+msgid "User responsible for the next activity."
+msgstr "Người dùng chịu trách nhiệm cho hoạt động tiếp theo."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__kanban_state
+msgid "A situation the document is in. It determines the relative priority of the document."
+msgstr "Tình trạng hiện tại của tài liệu. Nó xác định mức độ ưu tiên tương đối."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__company_id
+msgid "The company this approval belongs to."
+msgstr "Công ty mà phê duyệt này thuộc về."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__partner_id
+msgid "The partner linked to this approval."
+msgstr "Đối tác được liên kết với phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__currency_id
+msgid "Currency used for this approval."
+msgstr "Loại tiền tệ được sử dụng cho phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__deadline
+msgid "The deadline for this approval."
+msgstr "Hạn chót của phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__name
+msgid "Name of the approval."
+msgstr "Tên của phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__ref
+msgid "Reference for this approval."
+msgstr "Tham chiếu của phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__stage_id
+msgid "Current stage of the approval."
+msgstr "Giai đoạn hiện tại của phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__state
+msgid "The status of the approval."
+msgstr "Trạng thái của phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__tag_ids
+msgid "Tags assigned to this approval."
+msgstr "Thẻ được gán cho phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__user_id
+msgid "User who created the approval."
+msgstr "Người dùng tạo phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__template_id
+msgid "Template used for this approval."
+msgstr "Mẫu được sử dụng cho phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__product_id
+msgid "The product related to this line."
+msgstr "Sản phẩm liên quan đến dòng này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__product_uom_id
+msgid "Unit of Measure for the product."
+msgstr "Đơn vị đo lường của sản phẩm."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__price_unit
+msgid "Unit price of the product."
+msgstr "Đơn giá của sản phẩm."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__quantity
+msgid "Quantity of the product."
+msgstr "Số lượng sản phẩm."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__subtotal
+msgid "Subtotal amount for this line."
+msgstr "Thành tiền của dòng này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__description
+msgid "Description of the product or service."
+msgstr "Mô tả sản phẩm hoặc dịch vụ."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__sequence
+msgid "The sequence of this line in the approval."
+msgstr "Thứ tự của dòng này trong phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__user_id
+msgid "User assigned for approval."
+msgstr "Người dùng được phân công phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__stage_id
+msgid "Stage in which the user is responsible for approval."
+msgstr "Giai đoạn mà người dùng chịu trách nhiệm phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__status
+msgid "Status of the user approval."
+msgstr "Trạng thái phê duyệt của người dùng."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__note
+msgid "Notes from the user regarding the approval."
+msgstr "Ghi chú của người dùng liên quan đến phê duyệt."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "General Information"
+msgstr "Thông tin chung"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approval Lines"
+msgstr "Chi tiết phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "History"
+msgstr "Lịch sử"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_search
+msgid "Search Approvals"
+msgstr "Tìm kiếm phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_search
+msgid "My Approvals"
+msgstr "Phê duyệt của tôi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_search
+msgid "To Approve"
+msgstr "Chờ phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_search
+msgid "Done"
+msgstr "Hoàn tất"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_search
+msgid "Canceled"
+msgstr "Đã hủy"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_tree
+msgid "Reference"
+msgstr "Tham chiếu"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_tree
+msgid "Requestor"
+msgstr "Người yêu cầu"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_tree
+msgid "Stage"
+msgstr "Giai đoạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_tree
+msgid "Deadline"
+msgstr "Hạn chót"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_tree
+msgid "Amount"
+msgstr "Số tiền"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_kanban
+msgid "Approvals"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_kanban
+msgid "Created by:"
+msgstr "Tạo bởi:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_kanban
+msgid "Deadline:"
+msgstr "Hạn chót:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_kanban
+msgid "State:"
+msgstr "Trạng thái:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_kanban
+msgid "Total:"
+msgstr "Tổng:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_tree
+msgid "Approval Line"
+msgstr "Chi tiết phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_form
+msgid "Approval Type"
+msgstr "Loại phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_tree
+msgid "Approval Types"
+msgstr "Các loại phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_form
+msgid "Approval Stage"
+msgstr "Giai đoạn phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_tree
+msgid "Approval Stages"
+msgstr "Các giai đoạn phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_form
+msgid "Approval User"
+msgstr "Người phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_tree
+msgid "Approval Users"
+msgstr "Người dùng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_search
+msgid "Search Approval Stages"
+msgstr "Tìm kiếm giai đoạn phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_search
+msgid "Search Approval Types"
+msgstr "Tìm kiếm loại phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_search
+msgid "Search Approval Lines"
+msgstr "Tìm kiếm chi tiết phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_search
+msgid "Search Approval Users"
+msgstr "Tìm kiếm người phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.action_document_approval
+msgid "Document Approvals"
+msgstr "Phê duyệt chứng từ"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.action_document_approval_stage
+msgid "Approval Stages"
+msgstr "Giai đoạn phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.action_document_approval_type
+msgid "Approval Types"
+msgstr "Loại phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.action_document_approval_line
+msgid "Approval Lines"
+msgstr "Chi tiết phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.action_document_approval_user
+msgid "Approval Users"
+msgstr "Người phê duyệt"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_root
+msgid "Document Approval"
+msgstr "Phê duyệt chứng từ"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval
+msgid "Approvals"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_stage
+msgid "Stages"
+msgstr "Giai đoạn"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_type
+msgid "Types"
+msgstr "Loại"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_line
+msgid "Lines"
+msgstr "Chi tiết"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_user
+msgid "Users"
+msgstr "Người dùng"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__create_date
+msgid "The date and time when the record was created."
+msgstr "Ngày giờ khi bản ghi được tạo."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__write_date
+msgid "The date and time when the record was last updated."
+msgstr "Ngày giờ khi bản ghi được cập nhật lần cuối."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__create_uid
+msgid "The user who created this record."
+msgstr "Người đã tạo bản ghi này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__write_uid
+msgid "The user who last updated this record."
+msgstr "Người đã cập nhật bản ghi này lần cuối."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__create_date
+msgid "The date and time when this stage was created."
+msgstr "Ngày giờ khi giai đoạn này được tạo."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__write_date
+msgid "The date and time when this stage was last updated."
+msgstr "Ngày giờ khi giai đoạn này được cập nhật lần cuối."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__create_date
+msgid "The date and time when this type was created."
+msgstr "Ngày giờ khi loại này được tạo."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__write_date
+msgid "The date and time when this type was last updated."
+msgstr "Ngày giờ khi loại này được cập nhật lần cuối."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__create_date
+msgid "The date and time when this line was created."
+msgstr "Ngày giờ khi dòng này được tạo."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__write_date
+msgid "The date and time when this line was last updated."
+msgstr "Ngày giờ khi dòng này được cập nhật lần cuối."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__create_date
+msgid "The date and time when this user approval was created."
+msgstr "Ngày giờ khi người dùng phê duyệt này được tạo."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__write_date
+msgid "The date and time when this user approval was last updated."
+msgstr "Ngày giờ khi người dùng phê duyệt này được cập nhật lần cuối."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__sequence
+msgid "The sequence order of the stage."
+msgstr "Thứ tự của giai đoạn."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__sequence
+msgid "The sequence order of the type."
+msgstr "Thứ tự của loại."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__sequence
+msgid "The sequence number of the approval."
+msgstr "Số thứ tự của phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_user_ids
+msgid "Users responsible for approving this document."
+msgstr "Người dùng chịu trách nhiệm phê duyệt chứng từ này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_line_ids
+msgid "Lines of products/services to be approved."
+msgstr "Các dòng sản phẩm/dịch vụ cần phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_stage_id
+msgid "Current stage of the approval process."
+msgstr "Giai đoạn hiện tại của quy trình phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_type_id
+msgid "Type of approval for this document."
+msgstr "Loại phê duyệt cho chứng từ này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__approval_type_id
+msgid "The approval type this stage belongs to."
+msgstr "Loại phê duyệt mà giai đoạn này thuộc về."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__document_approval_id
+msgid "The document approval this line is linked to."
+msgstr "Chứng từ phê duyệt mà dòng này liên kết đến."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__product_id
+msgid "The product/service that requires approval."
+msgstr "Sản phẩm/dịch vụ cần phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__quantity
+msgid "The quantity of the product/service."
+msgstr "Số lượng sản phẩm/dịch vụ."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__price_unit
+msgid "The price per unit of the product/service."
+msgstr "Đơn giá sản phẩm/dịch vụ."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__price_subtotal
+msgid "The subtotal amount for this line."
+msgstr "Tổng cộng cho dòng này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__document_approval_id
+msgid "The document approval this user is linked to."
+msgstr "Chứng từ phê duyệt mà người dùng này liên kết đến."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__user_id
+msgid "The user assigned to approve this document."
+msgstr "Người dùng được giao phê duyệt chứng từ này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__status
+msgid "The current status of this user approval."
+msgstr "Trạng thái hiện tại của phê duyệt người dùng này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__comment
+msgid "Optional comment provided by the user."
+msgstr "Ghi chú tùy chọn do người dùng nhập."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__state
+msgid "The status of the document approval."
+msgstr "Trạng thái của chứng từ phê duyệt."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Reject"
+msgstr "Từ chối"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approve"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Reset to Draft"
+msgstr "Đặt lại về nháp"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Set to In Progress"
+msgstr "Chuyển sang Đang xử lý"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_form
+msgid "Stage Name"
+msgstr "Tên giai đoạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_form
+msgid "Stage Sequence"
+msgstr "Thứ tự giai đoạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_form
+msgid "Type Name"
+msgstr "Tên loại"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_form
+msgid "Type Sequence"
+msgstr "Thứ tự loại"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_form
+msgid "Line Sequence"
+msgstr "Thứ tự dòng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_form
+msgid "Subtotal"
+msgstr "Tạm tính"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_form
+msgid "User Comment"
+msgstr "Ghi chú người dùng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_form
+msgid "User Status"
+msgstr "Trạng thái người dùng"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__name
+msgid "A unique name/number for the approval document."
+msgstr "Tên/số duy nhất cho chứng từ phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__date
+msgid "The date when the document approval was created."
+msgstr "Ngày chứng từ phê duyệt được tạo."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__description
+msgid "Additional description or notes for the approval."
+msgstr "Mô tả bổ sung hoặc ghi chú cho phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__name
+msgid "Name of the approval stage."
+msgstr "Tên của giai đoạn phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__name
+msgid "Name of the approval type."
+msgstr "Tên của loại phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__name
+msgid "Description of the approval line."
+msgstr "Mô tả chi tiết phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__name
+msgid "Display name of the approval user."
+msgstr "Tên hiển thị của người dùng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_line_ids
+msgid "Approval lines related to this document."
+msgstr "Các dòng phê duyệt liên quan đến chứng từ này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_user_ids
+msgid "Approval users assigned to this document."
+msgstr "Người dùng phê duyệt được gán cho chứng từ này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__stage_ids
+msgid "Stages that belong to this approval type."
+msgstr "Các giai đoạn thuộc loại phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__sequence
+msgid "Defines the order of stages for this approval type."
+msgstr "Xác định thứ tự các giai đoạn cho loại phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__sequence
+msgid "Defines the order of this approval type."
+msgstr "Xác định thứ tự của loại phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__sequence
+msgid "Defines the order of this line."
+msgstr "Xác định thứ tự của dòng này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__stage_id
+msgid "Stage of the document approval."
+msgstr "Giai đoạn của chứng từ phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_type_id
+msgid "Type of the document approval."
+msgstr "Loại chứng từ phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__sequence
+msgid "Defines the order of the approval user."
+msgstr "Xác định thứ tự của người dùng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__sequence
+msgid "Defines the order in which this stage will be displayed."
+msgstr "Xác định thứ tự hiển thị của giai đoạn này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__sequence
+msgid "Defines the order in which this approval type will be displayed."
+msgstr "Xác định thứ tự hiển thị của loại phê duyệt này."
+
+#. module: document_approval
+#: model_terms:ir.actions.act_window,help:document_approval.action_document_approval
+msgid "Click the create button to create a new approval document."
+msgstr "Nhấn nút tạo để tạo chứng từ phê duyệt mới."
+
+#. module: document_approval
+#: model_terms:ir.actions.act_window,help:document_approval.action_document_approval_type
+msgid "Click the create button to create a new approval type."
+msgstr "Nhấn nút tạo để thêm loại phê duyệt mới."
+
+#. module: document_approval
+#: model_terms:ir.actions.act_window,help:document_approval.action_document_approval_stage
+msgid "Click the create button to create a new approval stage."
+msgstr "Nhấn nút tạo để thêm giai đoạn phê duyệt mới."
+
+#. module: document_approval
+#: model_terms:ir.actions.act_window,help:document_approval.action_document_approval_line
+msgid "Click the create button to create a new approval line."
+msgstr "Nhấn nút tạo để thêm dòng phê duyệt mới."
+
+#. module: document_approval
+#: model_terms:ir.actions.act_window,help:document_approval.action_document_approval_user
+msgid "Click the create button to create a new approval user."
+msgstr "Nhấn nút tạo để thêm người dùng phê duyệt mới."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__approval_date
+msgid "The date on which this user performed the approval action."
+msgstr "Ngày người dùng thực hiện hành động phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__is_mandatory
+msgid "Whether this user's approval is mandatory for the document."
+msgstr "Phê duyệt của người dùng này có bắt buộc cho chứng từ hay không."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__is_default
+msgid "If set, this stage will be used as the default one."
+msgstr "Nếu bật, giai đoạn này sẽ được sử dụng mặc định."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_tree
+msgid "Approval Types"
+msgstr "Các loại phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_tree
+msgid "Approval Stages"
+msgstr "Các giai đoạn phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_tree
+msgid "Approval Lines"
+msgstr "Các dòng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_tree
+msgid "Approval Users"
+msgstr "Người dùng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_tree
+msgid "Approval Documents"
+msgstr "Chứng từ phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.report,name:document_approval.action_report_document_approval
+msgid "Approval Document Report"
+msgstr "Báo cáo chứng từ phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__user_id
+msgid "User who created this approval document."
+msgstr "Người dùng đã tạo chứng từ phê duyệt này."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Document Approval Report"
+msgstr "Báo cáo phê duyệt chứng từ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Date:"
+msgstr "Ngày:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Name:"
+msgstr "Tên:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Type:"
+msgstr "Loại:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Stage:"
+msgstr "Giai đoạn:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Description:"
+msgstr "Mô tả:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Approval Lines:"
+msgstr "Các dòng phê duyệt:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Approval Users:"
+msgstr "Người dùng phê duyệt:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Subtotal:"
+msgstr "Tạm tính:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Total:"
+msgstr "Tổng cộng:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Created by:"
+msgstr "Tạo bởi:"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Approved by:"
+msgstr "Phê duyệt bởi:"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__company_id
+msgid "Company related to this approval document."
+msgstr "Công ty liên quan đến chứng từ phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__currency_id
+msgid "Currency of the approval document."
+msgstr "Loại tiền tệ của chứng từ phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__currency_id
+msgid "Currency of the approval line."
+msgstr "Loại tiền tệ của dòng phê duyệt."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Total Amount"
+msgstr "Tổng số tiền"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Line Items"
+msgstr "Các mục dòng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Users"
+msgstr "Người dùng"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__price_unit
+msgid "Unit price of the approval line."
+msgstr "Đơn giá của dòng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__quantity
+msgid "Quantity of the approval line."
+msgstr "Số lượng của dòng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__subtotal
+msgid "Subtotal of the approval line."
+msgstr "Thành tiền của dòng phê duyệt."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Quantity"
+msgstr "Số lượng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Unit Price"
+msgstr "Đơn giá"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Subtotal"
+msgstr "Thành tiền"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "User"
+msgstr "Người dùng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.report_document_approval_document
+msgid "Comment"
+msgstr "Nhận xét"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_form
+msgid "Approval User Details"
+msgstr "Chi tiết người dùng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_form
+msgid "Approval Line Details"
+msgstr "Chi tiết dòng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_form
+msgid "Approval Stage Details"
+msgstr "Chi tiết giai đoạn phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_form
+msgid "Approval Type Details"
+msgstr "Chi tiết loại phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approval Document Details"
+msgstr "Chi tiết chứng từ phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__comment
+msgid "Comments or notes from the approver."
+msgstr "Ghi chú hoặc nhận xét từ người phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__note
+msgid "Additional notes related to the approval."
+msgstr "Ghi chú bổ sung liên quan đến phê duyệt."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__active
+msgid "If unchecked, this approval document will be hidden without removing it."
+msgstr "Nếu bỏ chọn, chứng từ phê duyệt này sẽ bị ẩn mà không bị xóa."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__active
+msgid "If unchecked, this approval type will be hidden without removing it."
+msgstr "Nếu bỏ chọn, loại phê duyệt này sẽ bị ẩn mà không bị xóa."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__active
+msgid "If unchecked, this stage will be hidden without removing it."
+msgstr "Nếu bỏ chọn, giai đoạn này sẽ bị ẩn mà không bị xóa."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_search
+msgid "Search Approval Stages"
+msgstr "Tìm kiếm giai đoạn phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_search
+msgid "Search Approval Types"
+msgstr "Tìm kiếm loại phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_search
+msgid "Search Approval Documents"
+msgstr "Tìm kiếm chứng từ phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_search
+msgid "Search Approval Users"
+msgstr "Tìm kiếm người dùng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_search
+msgid "Search Approval Lines"
+msgstr "Tìm kiếm dòng phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.document_approval_action
+msgid "Approval Documents"
+msgstr "Chứng từ phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.document_approval_stage_action
+msgid "Approval Stages"
+msgstr "Giai đoạn phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.document_approval_type_action
+msgid "Approval Types"
+msgstr "Loại phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.document_approval_line_action
+msgid "Approval Lines"
+msgstr "Dòng phê duyệt"
+
+#. module: document_approval
+#: model:ir.actions.act_window,name:document_approval.document_approval_user_action
+msgid "Approval Users"
+msgstr "Người dùng phê duyệt"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_root
+msgid "Approval Management"
+msgstr "Quản lý phê duyệt"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval
+msgid "Approvals"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_stage
+msgid "Stages"
+msgstr "Giai đoạn"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_type
+msgid "Types"
+msgstr "Loại"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_line
+msgid "Lines"
+msgstr "Các dòng"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.menu_document_approval_user
+msgid "Users"
+msgstr "Người dùng"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__sequence
+msgid "Defines the order of the stage."
+msgstr "Xác định thứ tự của giai đoạn."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__sequence
+msgid "Defines the order of the type."
+msgstr "Xác định thứ tự của loại."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_search
+msgid "My Approvals"
+msgstr "Phê duyệt của tôi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_search
+msgid "Active Approvals"
+msgstr "Phê duyệt đang hoạt động"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_search
+msgid "Archived Approvals"
+msgstr "Phê duyệt đã lưu trữ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_search
+msgid "Active Types"
+msgstr "Loại đang hoạt động"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_search
+msgid "Archived Types"
+msgstr "Loại đã lưu trữ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_search
+msgid "Active Stages"
+msgstr "Giai đoạn đang hoạt động"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_search
+msgid "Archived Stages"
+msgstr "Giai đoạn đã lưu trữ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_search
+msgid "Active Users"
+msgstr "Người dùng đang hoạt động"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_search
+msgid "Archived Users"
+msgstr "Người dùng đã lưu trữ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_search
+msgid "Active Lines"
+msgstr "Dòng đang hoạt động"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_search
+msgid "Archived Lines"
+msgstr "Dòng đã lưu trữ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_form
+msgid "Stage Sequence"
+msgstr "Thứ tự giai đoạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_form
+msgid "Type Sequence"
+msgstr "Thứ tự loại"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__name
+msgid "Name of the approval document."
+msgstr "Tên của chứng từ phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__name
+msgid "Name of the approval line."
+msgstr "Tên của dòng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__name
+msgid "Name of the approval stage."
+msgstr "Tên của giai đoạn phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__name
+msgid "Name of the approval type."
+msgstr "Tên của loại phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__name
+msgid "Name of the approval user."
+msgstr "Tên của người dùng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__description
+msgid "Detailed description of the approval document."
+msgstr "Mô tả chi tiết về chứng từ phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__description
+msgid "Detailed description of the approval line."
+msgstr "Mô tả chi tiết về dòng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__description
+msgid "Detailed description of the approval stage."
+msgstr "Mô tả chi tiết về giai đoạn phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__description
+msgid "Detailed description of the approval type."
+msgstr "Mô tả chi tiết về loại phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__description
+msgid "Detailed description of the approval user."
+msgstr "Mô tả chi tiết về người dùng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__date
+msgid "Date when the approval document was created."
+msgstr "Ngày chứng từ phê duyệt được tạo."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__date
+msgid "Date when the approval line was created."
+msgstr "Ngày dòng phê duyệt được tạo."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__sequence
+msgid "Sequence of the approval stage."
+msgstr "Thứ tự của giai đoạn phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__sequence
+msgid "Sequence of the approval type."
+msgstr "Thứ tự của loại phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__sequence
+msgid "Sequence of the approval line."
+msgstr "Thứ tự của dòng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__sequence
+msgid "Sequence of the approval document."
+msgstr "Thứ tự của chứng từ phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__sequence
+msgid "Sequence of the approval user."
+msgstr "Thứ tự của người dùng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__active
+msgid "Indicates whether the approval document is active."
+msgstr "Chỉ ra chứng từ phê duyệt có đang hoạt động hay không."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__active
+msgid "Indicates whether the approval line is active."
+msgstr "Chỉ ra dòng phê duyệt có đang hoạt động hay không."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__active
+msgid "Indicates whether the approval stage is active."
+msgstr "Chỉ ra giai đoạn phê duyệt có đang hoạt động hay không."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__active
+msgid "Indicates whether the approval type is active."
+msgstr "Chỉ ra loại phê duyệt có đang hoạt động hay không."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__active
+msgid "Indicates whether the approval user is active."
+msgstr "Chỉ ra người dùng phê duyệt có đang hoạt động hay không."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_form
+msgid "Stage Details"
+msgstr "Chi tiết giai đoạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_form
+msgid "Type Details"
+msgstr "Chi tiết loại"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_form
+msgid "User Details"
+msgstr "Chi tiết người dùng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_form
+msgid "Line Details"
+msgstr "Chi tiết dòng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Document Details"
+msgstr "Chi tiết chứng từ"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__user_id
+msgid "User who created the approval document."
+msgstr "Người dùng đã tạo chứng từ phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__user_id
+msgid "User who created the approval line."
+msgstr "Người dùng đã tạo dòng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__user_id
+msgid "User who created the approval stage."
+msgstr "Người dùng đã tạo giai đoạn phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__user_id
+msgid "User who created the approval type."
+msgstr "Người dùng đã tạo loại phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__user_id
+msgid "User linked to the approval."
+msgstr "Người dùng liên kết với phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__stage_id
+msgid "Stage of the approval document."
+msgstr "Giai đoạn của chứng từ phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__stage_id
+msgid "Stage of the approval line."
+msgstr "Giai đoạn của dòng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__stage_id
+msgid "Stage of the approval type."
+msgstr "Giai đoạn của loại phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__stage_id
+msgid "Stage of the approval user."
+msgstr "Giai đoạn của người dùng phê duyệt."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__approval_type_id
+msgid "Approval type linked to this stage."
+msgstr "Loại phê duyệt liên kết với giai đoạn này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_type_id
+msgid "Approval type linked to this document."
+msgstr "Loại phê duyệt liên kết với chứng từ này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__approval_type_id
+msgid "Approval type linked to this line."
+msgstr "Loại phê duyệt liên kết với dòng này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__approval_type_id
+msgid "Approval type linked to this user."
+msgstr "Loại phê duyệt liên kết với người dùng này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__approval_user_id
+msgid "Approval user linked to this document."
+msgstr "Người dùng phê duyệt liên kết với chứng từ này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__approval_user_id
+msgid "Approval user linked to this line."
+msgstr "Người dùng phê duyệt liên kết với dòng này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__approval_user_id
+msgid "Approval user linked to this stage."
+msgstr "Người dùng phê duyệt liên kết với giai đoạn này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__approval_user_id
+msgid "Approval user linked to this type."
+msgstr "Người dùng phê duyệt liên kết với loại này."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_search
+msgid "Search Approval Documents"
+msgstr "Tìm kiếm chứng từ phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_search
+msgid "Search Approval Lines"
+msgstr "Tìm kiếm dòng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_search
+msgid "Search Approval Stages"
+msgstr "Tìm kiếm giai đoạn phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_search
+msgid "Search Approval Types"
+msgstr "Tìm kiếm loại phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_search
+msgid "Search Approval Users"
+msgstr "Tìm kiếm người dùng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_tree
+msgid "Approval Documents List"
+msgstr "Danh sách chứng từ phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_tree
+msgid "Approval Lines List"
+msgstr "Danh sách dòng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_tree
+msgid "Approval Stages List"
+msgstr "Danh sách giai đoạn phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_tree
+msgid "Approval Types List"
+msgstr "Danh sách loại phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_tree
+msgid "Approval Users List"
+msgstr "Danh sách người dùng phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__company_id
+msgid "Company related to this approval document."
+msgstr "Công ty liên quan đến chứng từ phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_line__company_id
+msgid "Company related to this approval line."
+msgstr "Công ty liên quan đến dòng phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_stage__company_id
+msgid "Company related to this approval stage."
+msgstr "Công ty liên quan đến giai đoạn phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_type__company_id
+msgid "Company related to this approval type."
+msgstr "Công ty liên quan đến loại phê duyệt này."
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval_user__company_id
+msgid "Company related to this approval user."
+msgstr "Công ty liên quan đến người dùng phê duyệt này."
+
+#. module: document_approval
+#: model_terms:ir.actions.act_window,help:document_approval.action_document_approval
+msgid "Create a new approval document to start the process."
+msgstr "Tạo chứng từ phê duyệt mới để bắt đầu quy trình."
+
+#. module: document_approval
+#: model_terms:ir.actions.act_window,help:document_approval.action_document_approval_line
+msgid "Create a new approval line to assign responsibilities."
+msgstr "Tạo dòng phê duyệt mới để phân công trách nhiệm."
+
+#. module: document_approval
+#: model_terms:ir.actions.act_window,help:document_approval.action_document_approval_stage
+msgid "Define stages for approval documents."
+msgstr "Xác định các giai đoạn cho chứng từ phê duyệt."
+
+#. module: document_approval
+#: model_terms:ir.actions.act_window,help:document_approval.action_document_approval_type
+msgid "Define types of approvals for better categorization."
+msgstr "Xác định các loại phê duyệt để phân loại tốt hơn."
+
+#. module: document_approval
+#: model_terms:ir.actions.act_window,help:document_approval.action_document_approval_user
+msgid "Assign users responsible for different approvals."
+msgstr "Chỉ định người dùng chịu trách nhiệm cho các phê duyệt khác nhau."
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "General Information"
+msgstr "Thông tin chung"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approval Details"
+msgstr "Chi tiết phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Responsible Users"
+msgstr "Người dùng chịu trách nhiệm"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Stages"
+msgstr "Các giai đoạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Comments"
+msgstr "Bình luận"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Attachments"
+msgstr "Tệp đính kèm"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_form
+msgid "Approval Line Details"
+msgstr "Chi tiết dòng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_form
+msgid "Line Information"
+msgstr "Thông tin dòng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_form
+msgid "Stage Details"
+msgstr "Chi tiết giai đoạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_form
+msgid "Type Details"
+msgstr "Chi tiết loại"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_form
+msgid "User Details"
+msgstr "Chi tiết người dùng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Add an approval line"
+msgstr "Thêm dòng phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Add a responsible user"
+msgstr "Thêm người dùng chịu trách nhiệm"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Add a stage"
+msgstr "Thêm giai đoạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Add a type"
+msgstr "Thêm loại"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Add an attachment"
+msgstr "Thêm tệp đính kèm"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_form
+msgid "Stage Name"
+msgstr "Tên giai đoạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_form
+msgid "Type Name"
+msgstr "Tên loại"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_form
+msgid "User Name"
+msgstr "Tên người dùng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_form
+msgid "Line Name"
+msgstr "Tên dòng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Document Reference"
+msgstr "Tham chiếu chứng từ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approval Reference"
+msgstr "Tham chiếu phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Internal Notes"
+msgstr "Ghi chú nội bộ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "External Notes"
+msgstr "Ghi chú bên ngoài"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "History"
+msgstr "Lịch sử"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Log"
+msgstr "Nhật ký"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Activity"
+msgstr "Hoạt động"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Chatter"
+msgstr "Trao đổi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_stage_form
+msgid "Stage Sequence"
+msgstr "Thứ tự giai đoạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_type_form
+msgid "Type Sequence"
+msgstr "Thứ tự loại"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_user_form
+msgid "User Role"
+msgstr "Vai trò người dùng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_line_form
+msgid "Line Sequence"
+msgstr "Thứ tự dòng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approval Workflow"
+msgstr "Quy trình phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Workflow Steps"
+msgstr "Các bước quy trình"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approval Progress"
+msgstr "Tiến trình phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Completion"
+msgstr "Hoàn tất"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Pending Actions"
+msgstr "Hành động chờ xử lý"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Actions"
+msgstr "Hành động"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Validation"
+msgstr "Xác nhận"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Rejection"
+msgstr "Từ chối"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Cancellation"
+msgstr "Hủy bỏ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Resubmission"
+msgstr "Gửi lại"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Delegation"
+msgstr "Ủy quyền"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Escalation"
+msgstr "Leo thang"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Reminders"
+msgstr "Nhắc nhở"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Notifications"
+msgstr "Thông báo"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Deadlines"
+msgstr "Hạn chót"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Due Date"
+msgstr "Ngày đến hạn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Start Date"
+msgstr "Ngày bắt đầu"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "End Date"
+msgstr "Ngày kết thúc"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Reminder Date"
+msgstr "Ngày nhắc nhở"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Notification Date"
+msgstr "Ngày thông báo"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Priority"
+msgstr "Ưu tiên"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "High"
+msgstr "Cao"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Medium"
+msgstr "Trung bình"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Low"
+msgstr "Thấp"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Confidential"
+msgstr "Bí mật"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Visibility"
+msgstr "Khả năng hiển thị"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Public"
+msgstr "Công khai"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Private"
+msgstr "Riêng tư"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Internal"
+msgstr "Nội bộ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "External"
+msgstr "Bên ngoài"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Classification"
+msgstr "Phân loại"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Category"
+msgstr "Danh mục"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Subcategory"
+msgstr "Danh mục con"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Tags"
+msgstr "Thẻ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Keywords"
+msgstr "Từ khóa"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Reference"
+msgstr "Tham chiếu"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Reference Type"
+msgstr "Loại tham chiếu"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Reference Number"
+msgstr "Số tham chiếu"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Linked Document"
+msgstr "Tài liệu liên kết"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Linked Records"
+msgstr "Bản ghi liên kết"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Related Information"
+msgstr "Thông tin liên quan"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Audit Trail"
+msgstr "Dấu vết kiểm toán"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Version"
+msgstr "Phiên bản"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Revision"
+msgstr "Sửa đổi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Change Log"
+msgstr "Nhật ký thay đổi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Created By"
+msgstr "Tạo bởi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Created On"
+msgstr "Ngày tạo"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Last Updated By"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Last Updated On"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approved By"
+msgstr "Được phê duyệt bởi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approved On"
+msgstr "Ngày phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Rejected By"
+msgstr "Bị từ chối bởi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Rejected On"
+msgstr "Ngày bị từ chối"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Workflow"
+msgstr "Luồng công việc"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Workflow Step"
+msgstr "Bước trong luồng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Workflow Stage"
+msgstr "Giai đoạn luồng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Workflow Transition"
+msgstr "Chuyển tiếp luồng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Workflow Rules"
+msgstr "Quy tắc luồng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Workflow Conditions"
+msgstr "Điều kiện luồng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Workflow Actions"
+msgstr "Hành động luồng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Workflow History"
+msgstr "Lịch sử luồng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Transition Log"
+msgstr "Nhật ký chuyển tiếp"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approval Path"
+msgstr "Lộ trình phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Approval Sequence"
+msgstr "Thứ tự phê duyệt"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Parallel Approvals"
+msgstr "Phê duyệt song song"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Sequential Approvals"
+msgstr "Phê duyệt tuần tự"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Minimum Approvals"
+msgstr "Số phê duyệt tối thiểu"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Maximum Approvals"
+msgstr "Số phê duyệt tối đa"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Required Approvals"
+msgstr "Phê duyệt bắt buộc"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Optional Approvals"
+msgstr "Phê duyệt tùy chọn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Escalation Rules"
+msgstr "Quy tắc leo thang"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Delegation Rules"
+msgstr "Quy tắc ủy quyền"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Reminder Rules"
+msgstr "Quy tắc nhắc nhở"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Notification Rules"
+msgstr "Quy tắc thông báo"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Deadline Rules"
+msgstr "Quy tắc hạn chót"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "SLA"
+msgstr "Thỏa thuận SLA"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "SLA Target"
+msgstr "Mục tiêu SLA"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "SLA Breach"
+msgstr "Vi phạm SLA"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Compliance"
+msgstr "Tuân thủ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Compliance Rules"
+msgstr "Quy tắc tuân thủ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Compliance Check"
+msgstr "Kiểm tra tuân thủ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Compliance Status"
+msgstr "Trạng thái tuân thủ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Attachments"
+msgstr "Tệp đính kèm"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Attached Documents"
+msgstr "Tài liệu đính kèm"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Related Documents"
+msgstr "Tài liệu liên quan"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Supporting Documents"
+msgstr "Tài liệu hỗ trợ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Evidence"
+msgstr "Bằng chứng"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "References"
+msgstr "Tài liệu tham khảo"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Linked Records"
+msgstr "Bản ghi liên kết"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Linked Tasks"
+msgstr "Nhiệm vụ liên kết"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Linked Projects"
+msgstr "Dự án liên kết"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Linked Processes"
+msgstr "Quy trình liên kết"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Linked Workflows"
+msgstr "Luồng công việc liên kết"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Linked Approvals"
+msgstr "Phê duyệt liên kết"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Comments"
+msgstr "Bình luận"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Internal Notes"
+msgstr "Ghi chú nội bộ"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Feedback"
+msgstr "Phản hồi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Discussion"
+msgstr "Thảo luận"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Messages"
+msgstr "Tin nhắn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Chatter"
+msgstr "Trao đổi"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Appointments"
+msgstr "Cuộc hẹn"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Rejection"
+msgstr "Từ chối"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.view_document_approval_form
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__visibility
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Visibility"
+msgstr "Hiển thị"
+
+#. module: document_apporval_custom
+#: model_terms:ir.ui.view,arch_db:document_apporval_custom.document_approval_inherit_form_views
+msgid "Visibility"
+msgstr "Hiển thị"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__state__waiting
+msgid "Waiting"
+msgstr "Đang chờ"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__message_follower_ids
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__message_follower_ids
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__visibility__followers
+msgid "Followers"
+msgstr "Người theo dõi"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_file__approval_id
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Approval"
+msgstr "Phê duyệt"
+
+#. module: document_apporval_custom
+#: model_terms:ir.ui.view,arch_db:document_apporval_custom.document_approval_inherit_form_views
+msgid "Approval"
+msgstr "Phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__approve_initiator_id
+msgid "Initiator"
+msgstr "Người khởi tạo"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__step_count
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__step_ids
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_team__step_ids
+msgid "Step"
+msgstr "Bước"
+
+#. module: document_approval
+#: model:ir.model.fields.selection,name:document_approval.selection__document_approval__visibility__approvers
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_team_view_form
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Approvers"
+msgstr "Người phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__method
+msgid "Method"
+msgstr "Phương thức"
+
+#. module: document_approval
+#: model:ir.model.fields,help:document_approval.field_document_approval__team_lead_id
+msgid "team Leader"
+msgstr "Trưởng nhóm"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval__team_lead_id
+msgid "Team leader"
+msgstr "Trưởng nhóm"
+
+#. module: document_apporval_custom
+#: model_terms:ir.ui.view,arch_db:document_apporval_custom.document_approval_inherit_form_views
+msgid "Approvers"
+msgstr "Người phê duyệt"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_step__role
+msgid "Role/Position"
+msgstr "Vai trò/Chức vụ"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_step__steps
+msgid "Steps"
+msgstr "Các bước"
+
+#. module: document_approval
+#: model:ir.model.fields,field_description:document_approval.field_document_approval_step__note
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: document_approval
+#: model:ir.ui.menu,name:document_approval.document_approval_configuration_menu
+msgid "Configuration"
+msgstr "Cấu hình"
+
+
+

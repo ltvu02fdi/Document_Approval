@@ -9,8 +9,8 @@ class DocumentApprovalLine(models.Model):
     _order = 'sequence, id desc'
 
     sequence = fields.Integer(string='Sequence', default=0)
+    type_voucher = fields.Char(string='Type voucher')
     voucher_code = fields.Char(string='Voucher Code')
-    voucher_name = fields.Char(string='Voucher Name')
     expense_description = fields.Char(string='Expense Description')
     expense_date = fields.Date(string='Expense Date', default=lambda self: fields.Date.today())
     quantity = fields.Integer(string='Quantity', default=1)

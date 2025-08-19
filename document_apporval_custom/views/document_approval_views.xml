@@ -9,9 +9,9 @@
                 <xpath expr="//form/sheet" position="replace">
                     <sheet>
                         <div>
-                            <h3 class="text-center">NAME</h3>
+                            <h3 class="text-center">SỐ PHIẾU</h3>
                             <h3 class="text-center">
-                                <field name="name" readonly="1" required="1"
+                                <field name="request_name" readonly="1" required="1"
                                        style="margin-right: 35%%; margin-left: 35%%; max-width: 30%%; font-style: italic;"
                                        placeholder="Number"/>
                             </h3>
@@ -20,7 +20,7 @@
                             <group>
                                 <field name="request_type" required="1"/>
                                 <field name="request_code" required="1"/>
-                                <field name="request_name" required="1"/>
+                                <field name="name" string="Tên đề nghị" required="1"/>
                                 <field name="request_employee_id" required="1"
                                        options='{"no_open": True, "no_create": True, "no_edit": True}'/>
                             </group>
@@ -49,8 +49,8 @@
                                     <field name="document_approval_ids" readonly="state not in ['draft']">
                                         <list editable="bottom">
                                             <field name="sequence"/>
+                                            <field name="type_voucher"/>
                                             <field name="voucher_code"/>
-                                            <field name="voucher_name"/>
                                             <field name="expense_description"/>
                                             <field name="quantity"/>
                                             <field name="uom_id"/>
