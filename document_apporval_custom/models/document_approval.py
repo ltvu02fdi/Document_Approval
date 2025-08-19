@@ -15,7 +15,7 @@ class DocumentApproval(models.Model):
     name = fields.Char(string='Request Name', required=True,
                        help='Name of the record.')
     request_code = fields.Char(string="Request Code", tracking=True)
-    request_name = fields.Char(string="Request Name", tracking=True)
+    request_name = fields.Char(string="Request Name", tracking=True, default=_('Mới'))
     request_employee_id = fields.Many2one('hr.employee', string="Request Employee")
     job_id = fields.Many2one('hr.job',
                              string="Job Title",
@@ -50,5 +50,5 @@ class DocumentApproval(models.Model):
 
     @api.model
     def create(self, vals):
-        vals['name'] = self.env['ir.sequence'].next_by_code('document.approval') or 'New'
+        vals['request_name'] = self.env['ir.sequence'].next_by_code('document.approval') or 'New'
         return super(DocumentApproval, self).create(vals)
