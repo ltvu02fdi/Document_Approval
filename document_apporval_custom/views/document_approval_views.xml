@@ -11,7 +11,7 @@
                         <div>
                             <h3 class="text-center">SỐ PHIẾU</h3>
                             <h3 class="text-center">
-                                <field name="request_name" readonly="1" required="1"
+                                <field name="request_code" readonly="1" required="1"
                                        style="margin-right: 35%%; margin-left: 35%%; max-width: 30%%; font-style: italic;"
                                        placeholder="Number"/>
                             </h3>
@@ -19,13 +19,12 @@
                         <group string="Approval Information">
                             <group>
                                 <field name="request_type" required="1"/>
-                                <field name="request_code" required="1"/>
-                                <field name="name" string="Tên đề nghị" required="1"/>
+                                <field name="request_date"/>
+                                <field name="name" string="Tên đề nghị" invisible="1"/>
                                 <field name="request_employee_id" required="1"
                                        options='{"no_open": True, "no_create": True, "no_edit": True}'/>
                             </group>
                             <group>
-                                <field name="request_date"/>
                                 <field name="due_date"/>
                                 <field name="job_id"/>
                                 <field name="department_id" required="1"
@@ -35,9 +34,12 @@
                         <group string="Recipient Information">
                             <group>
                                 <field name="recipient"/>
+                                <field name="payment_method" required="1"/>
                             </group>
                             <group>
                                 <field name="tax_code"/>
+                                <field name="account_number" invisible="payment_method not in ['bank_transfer']"
+                                       required="payment_method in ['bank_transfer']"/>
                             </group>
                         </group>
                         <group string="Description">
@@ -49,14 +51,14 @@
                                     <field name="document_approval_ids" readonly="state not in ['draft']">
                                         <list editable="bottom">
                                             <field name="sequence"/>
-                                            <field name="type_voucher"/>
+                                            <field name="type_voucher" required="1"/>
                                             <field name="voucher_code"/>
                                             <field name="expense_description"/>
                                             <field name="quantity"/>
                                             <field name="uom_id"/>
                                             <field name="price_unit"/>
                                             <field name="amount"/>
-                                            <field name="attachment_ids"/>
+                                            <field name="attachment_ids" widget="many2many_binary"/>
                                             <field name="note"/>
                                         </list>
                                     </field>
@@ -102,6 +104,30 @@
                             <field name="approve_initiator_id"/>
                         </group>
                     </sheet>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="document_approval_inherit_list_views" model="ir.ui.view">
+            <field name="name">document.approval.inherit.list.views</field>
+            <field name="model">document.approval</field>
+            <field name="inherit_id" ref="document_approval.document_approval_view_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="replace">
+                    <list decoration-danger="state == 'reject'"
+                          decoration-warning="state  == 'waiting'"
+                          decoration-primary="state  == 'draft'"
+                          decoration-success="state  == 'approved'">
+                        <field name="request_code" readonly="state != 'draft'"/>
+                        <field name="approve_initiator_id"/>
+                        <field name="company_id" readonly="state != 'draft'"/>
+                        <field name="state"
+                               decoration-success="state == 'approved'"
+                               decoration-danger="state == 'reject'"
+                               decoration-primary="state  == 'draft'"
+                               decoration-warning="state  == 'waiting'"
+                               widget="badge" optional="show"/>
+                    </list>
                 </xpath>
             </field>
         </record>

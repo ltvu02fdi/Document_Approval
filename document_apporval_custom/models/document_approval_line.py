@@ -9,14 +9,21 @@ class DocumentApprovalLine(models.Model):
     _order = 'sequence, id desc'
 
     sequence = fields.Integer(string='Sequence', default=0)
-    type_voucher = fields.Char(string='Type voucher')
+    type_voucher = fields.Selection(selection=[('receipt', 'Phiếu thu / Biên nhận'),
+                                               ('customs', 'Tờ khai HQ'),
+                                               ('bl', 'B/L'),
+                                               ('contract', 'Hợp đồng'),
+                                               ('goods_receipt', 'Phiếu nhập kho'),
+                                               ('handover_minutes', 'BB giao nhận'),
+                                               ('reconciliation_minutes', 'BB đối soát'),
+                                               ('invoice', 'Hoá đơn tài chính') ], string='Type voucher')
     voucher_code = fields.Char(string='Voucher Code')
     expense_description = fields.Char(string='Expense Description')
     expense_date = fields.Date(string='Expense Date', default=lambda self: fields.Date.today())
     quantity = fields.Integer(string='Quantity', default=1)
     uom_id = fields.Many2one(
-        'uom.uom',string="Uom")
-    price_unit = fields.Float(string="Price Unit",)
+        'uom.uom', string="Uom")
+    price_unit = fields.Float(string="Price Unit", )
     amount = fields.Monetary(
         string="Total Amount (VNĐ)",
         compute="_compute_amount",
@@ -29,12 +36,12 @@ class DocumentApprovalLine(models.Model):
         string="Currency",
         default=lambda self: self.env.company.currency_id.id,
     )
-    attachment_ids = fields.Many2many(
-        "ir.attachment",
-        "document_approval_line_ir_attachment_rel",
-        "line_id",
-        "attachment_id",
-        string="Attachment",
+    attachment_ids = fields.One2many(
+        'ir.attachment', 'res_id',
+        domain=lambda self: [
+            ('res_model', '=', self._name)
+        ],
+        string="Attachment"
     )
     note = fields.Text(string="Note")
     document_approval_id = fields.Many2one('document.approval', string='Document Approval',
