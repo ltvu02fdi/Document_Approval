@@ -29,8 +29,7 @@ class DocumentApproval(models.Model):
     _inherit = ["mail.thread", "mail.activity.mixin"]
     _description = "Document Approvals"
 
-    name = fields.Char(string='Name', required=True,
-                       help='Name of the record.')
+    name = fields.Char(string='Name', help='Name of the record.')
     is_active = fields.Boolean(string='Active', copy=False,
                                help='Used to check the record active or not.')
     description = fields.Text(string="Description",

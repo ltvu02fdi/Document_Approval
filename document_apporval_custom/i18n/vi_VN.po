@@ -174,7 +174,7 @@ msgstr "Đơn giá"
 #. module: document_apporval_custom
 #: model:ir.model.fields.selection,name:document_apporval_custom.selection__document_approval__request_type__purchase_request
 msgid "Purchase Request"
-msgstr "Yêu cầu Mua hàng"
+msgstr "Đề nghị Mua hàng"
 
 #. module: document_apporval_custom
 #: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__quantity
@@ -4223,6 +4223,11 @@ msgstr "Ghi chú"
 #: model:ir.ui.menu,name:document_approval.document_approval_configuration_menu
 msgid "Configuration"
 msgstr "Cấu hình"
+
+#. module: document_approval
+#: model_terms:ir.ui.view,arch_db:document_approval.document_approval_view_form
+msgid "Send for Approval"
+msgstr "Gửi duyệt"
 
 
 

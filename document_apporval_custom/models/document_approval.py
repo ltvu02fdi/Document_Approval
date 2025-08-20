@@ -10,13 +10,10 @@ class DocumentApproval(models.Model):
                                                ('payment_request', 'Payment Request'),
                                                ('cash_request', 'Cast Advance Request'),
                                                ],
-                                    default='purchase_request', string="Request Type",
+                                    default='purchase_request', string="Request Type", index=True,
                                     help='Request Type.')
-    name = fields.Char(string='Request Name', required=True,
-                       help='Name of the record.')
-    request_code = fields.Char(string="Request Code", tracking=True)
-    request_name = fields.Char(string="Request Name", tracking=True, default=_('Mới'))
-    request_employee_id = fields.Many2one('hr.employee', string="Request Employee")
+    request_code = fields.Char(string="Request Code", tracking=True, default=_('Mới'), index=True)
+    request_employee_id = fields.Many2one('hr.employee', string="Request Employee", index=True)
     job_id = fields.Many2one('hr.job',
                              string="Job Title",
                              related='request_employee_id.job_id', store=True)
@@ -36,19 +33,20 @@ class DocumentApproval(models.Model):
     document_approval_ids = fields.One2many('document.approval.line', 'document_approval_id',
                                             string="Document Approvals Line", tracking=True)
     tax_code = fields.Char(string="Tax Code")
-
-    @api.constrains('request_code')
-    def _check_validate_code(self):
-        for rec in self:
-            if rec.request_code:
-                exists = self.search([
-                    ('request_code', '=', rec.request_code),
-                    ('id', '!=', rec.id)
-                ], limit=1)
-                if exists:
-                    raise ValidationError("Request code already exists, please enter another one!")
+    account_number = fields.Char(string="STK")
 
     @api.model
     def create(self, vals):
-        vals['request_name'] = self.env['ir.sequence'].next_by_code('document.approval') or 'New'
+        if vals.get('request_code', _('New')) == _('New'):
+            if vals.get('request_type') == 'purchase_request':
+                seq_code = 'purchase.request.seq'
+            elif vals.get('request_type') == 'payment_request':
+                seq_code = 'payment.request.seq'
+            elif vals.get('request_type') == 'cash_request':
+                seq_code = 'cash.request.seq'
+            else:
+                seq_code = None
+
+            if seq_code:
+                vals['request_code'] = self.env['ir.sequence'].next_by_code(seq_code) or _('New')
         return super(DocumentApproval, self).create(vals)
