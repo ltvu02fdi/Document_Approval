@@ -50,3 +50,18 @@ class DocumentApproval(models.Model):
             if seq_code:
                 vals['request_code'] = self.env['ir.sequence'].next_by_code(seq_code) or _('New')
         return super(DocumentApproval, self).create(vals)
+
+    def action_print(self):
+        if self.request_type == 'purchase_request':
+            url = 'report/pdf/document_apporval_custom.report_template_document_approval_view/%s' % (self.id)
+        else:
+            pass
+        return {
+            'type': 'ir.actions.act_url',
+            'url': url,
+            'target': 'new',
+            'res_id': self.id,
+        }
+
+    # def action_print(self):
+    #     return self.env.ref('document_approval_custom.qweb_document_approval').report_action(self)

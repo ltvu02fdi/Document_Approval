@@ -7,10 +7,11 @@
     "description": "User can create and upload various document for approvals."
                    "Manager can approve or reject documents.",
     'author': 'Cybrosys Techno Solutions',
-    'depends': ['document_approval', 'hr'],
+    'depends': ['base', 'document_approval', 'hr', 'web'],
     'data': [
         'security/ir.model.access.csv',
         'data/data.xml',
         'views/document_approval_views.xml',
+        'report/report_purchase_request.xml',
     ],
 }
