@@ -6,6 +6,11 @@
             <field name="model">document.approval</field>
             <field name="inherit_id" ref="document_approval.document_approval_view_form"/>
             <field name="arch" type="xml">
+                <xpath expr="//form/header" position="inside">
+                    <button string="Print PDF"
+                            name="action_print" type="object"
+                            invisible="state != 'approved'" class="oe_highlight"/>
+                </xpath>
                 <xpath expr="//form/sheet" position="replace">
                     <sheet>
                         <div>
@@ -18,27 +23,31 @@
                         </div>
                         <group string="Approval Information">
                             <group>
-                                <field name="request_type" required="1"/>
-                                <field name="request_date"/>
-                                <field name="name" string="Tên đề nghị" invisible="1"/>
+                                <field name="request_type" required="1" readonly="state not in ['draft']"/>
+                                <field name="request_date" readonly="state not in ['draft']"/>
+                                <field name="name" invisible="1"/>
                                 <field name="request_employee_id" required="1"
+                                       readonly="state not in ['draft']"
                                        options='{"no_open": True, "no_create": True, "no_edit": True}'/>
                             </group>
                             <group>
-                                <field name="due_date"/>
-                                <field name="job_id"/>
+                                <field name="due_date" readonly="state not in ['draft']"/>
+                                <field name="job_id" readonly="state not in ['draft']"/>
                                 <field name="department_id" required="1"
+                                       readonly="state not in ['draft']"
                                        options='{"no_open": True, "no_create": True, "no_edit": True}'/>
                             </group>
                         </group>
                         <group string="Recipient Information">
                             <group>
-                                <field name="recipient"/>
-                                <field name="payment_method" required="1"/>
+                                <field name="recipient" readonly="state not in ['draft']"/>
+                                <field name="payment_method" required="1" readonly="state not in ['draft']"/>
                             </group>
                             <group>
-                                <field name="tax_code"/>
-                                <field name="account_number" invisible="payment_method not in ['bank_transfer']"
+                                <field name="tax_code" readonly="state not in ['draft']"/>
+                                <field name="account_number"
+                                       invisible="payment_method not in ['bank_transfer']"
+                                       readonly="state not in ['draft']"
                                        required="payment_method in ['bank_transfer']"/>
                             </group>
                         </group>
@@ -53,6 +62,7 @@
                                             <field name="sequence"/>
                                             <field name="type_voucher" required="1"/>
                                             <field name="voucher_code"/>
+                                            <field name="expense_date"/>
                                             <field name="expense_description"/>
                                             <field name="quantity"/>
                                             <field name="uom_id"/>
