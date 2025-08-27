@@ -12,6 +12,7 @@
         'security/ir.model.access.csv',
         'data/data.xml',
         'views/document_approval_views.xml',
+        'report/report_payment_request.xml',
         'report/report_purchase_request.xml',
     ],
 }

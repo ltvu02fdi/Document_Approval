@@ -63,6 +63,7 @@
                                             <field name="type_voucher" required="1"/>
                                             <field name="voucher_code"/>
                                             <field name="expense_date"/>
+                                            <field name="product_name"/>
                                             <field name="expense_description"/>
                                             <field name="quantity"/>
                                             <field name="uom_id"/>

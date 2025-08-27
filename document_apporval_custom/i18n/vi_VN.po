@@ -4229,5 +4229,10 @@ msgstr "Cấu hình"
 msgid "Send for Approval"
 msgstr "Gửi duyệt"
 
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval_line__product_name
+msgid "Product Name"
+msgstr "Tên hàng"
+
 
 

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data>
-        <template id="ev_internal_layout_document_approval_purchase_request">
+        <template id="ev_internal_layout_document_approval">
             <div class="article">
                 <t t-raw="0"/>
             </div>
         </template>
-        <template id="report_template_document_approval_purchase_request_view">
+        <template id="report_template_document_approval_view">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="document_apporval_custom.ev_internal_layout_document_approval_purchase_request"
-                       t-lang="en_US">
+                    <t t-call="document_apporval_custom.ev_internal_layout_document_approval" t-lang="en_US">
                         <div class="page" style="font-size:14px; font-family: 'Times New Roman'">
                             <style>
                                 .table {
@@ -51,7 +50,7 @@
                             <!-- Tiêu đề -->
                             <div style="width: 100%; margin-top: 10px; padding: 5px; text-align: center;">
                                 <h3 style="margin: 0; font-size:22px; font-weight: 500;">
-                                    <b>ĐỀ NGHỊ MUA HÀNG</b>
+                                    <b>ĐỀ NGHỊ THANH TOÁN</b>
                                 </h3>
                                 <i>
                                     <b>
@@ -67,17 +66,24 @@
 
                             <!-- Thông tin đề nghị -->
                             <div style="margin-top: 10px;">
-                                <div>- Người đề xuất:
+                                <div>- Người đề nghị:
                                     <span t-esc="o.request_employee_id.name"/>
                                 </div>
-                                <div>- Chức danh:
+                                <div>- Chức vụ:
                                     <span t-esc="o.job_id.name"/>
                                 </div>
-                                <div>- Bộ phận:
-                                    <span t-esc="o.department_id.name"/>
-                                </div>
-                                <div>- Người sử dụng:
+                                <div>- Thanh toán cho:
                                     <span t-esc="o.recipient"/>
+                                </div>
+                                <div>- Hình thức thanh toán:
+                                    <t t-if="o.payment_method == 'bank_transfer'">Chuyển khoản</t>
+                                    <t t-elif="o.payment_method == 'cash'">Tiền mặt</t>
+                                </div>
+                                <div>- STK:
+                                    <span t-esc="o.account_number"/>
+                                </div>
+                                <div>- Nội dung:
+                                    <span t-esc="o.description"/>
                                 </div>
                             </div>
 
@@ -86,11 +92,11 @@
                                 <thead>
                                     <tr>
                                         <th width="6%" style="text-align:center;">STT</th>
-                                        <th width="15%" style="text-align:center;">Tên hàng</th>
-                                        <th width="15%" style="text-align:center;">Số lượng</th>
-                                        <th width="12%" style="text-align:center;">Đơn giá</th>
-                                        <th width="15%" style="text-align:center;">Thành tiền</th>
-                                        <th width="15%" style="text-align:center;">Ghi chú</th>
+                                        <th width="15%" style="text-align:center;">Loại chứng từ</th>
+                                        <th width="15%" style="text-align:center;">Mã chứng từ</th>
+                                        <th width="12%" style="text-align:center;">Ngày</th>
+                                        <th width="30%" style="text-align:center;">Nội dung</th>
+                                        <th width="15%" style="text-align:center;">Số tiền</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -103,34 +109,35 @@
                                                 <t t-esc="number"/>
                                             </td>
                                             <td>
-                                                <span t-esc="l.product_name"/>
+                                                <t t-if="l.type_voucher == 'receipt'">Phiếu thu / Biên nhận</t>
+                                                <t t-elif="l.type_voucher == 'customs'">Tờ khai HQ</t>
+                                                <t t-elif="l.type_voucher == 'bl'">B/L</t>
+                                                <t t-elif="l.type_voucher == 'contract'">Hợp đồng</t>
+                                                <t t-elif="l.type_voucher == 'goods_receipt'">Phiếu nhập kho</t>
+                                                <t t-elif="l.type_voucher == 'handover_minutes'">BB giao nhận</t>
+                                                <t t-elif="l.type_voucher == 'reconciliation_minutes'">BB đối soát</t>
+                                                <t t-elif="l.type_voucher == 'invoice'">Hoá đơn tài chính</t>
                                             </td>
                                             <td>
-                                                <span t-esc="l.quantity"/>
+                                                <span t-esc="l.voucher_code"/>
                                             </td>
                                             <td>
-                                                <span t-esc="l.price_unit"/>
+                                                <span t-esc="l.expense_date"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="l.expense_description"/>
                                             </td>
                                             <td style="text-align: right;">
                                                 <span t-esc="'{0:,.2f}'.format(l.amount)"/>
-                                            </td>
-                                            <td>
-                                                <span t-esc="l.note"/>
                                             </td>
                                         </tr>
                                         <t t-set="total_amount" t-value="total_amount + l.amount"/>
                                         <t t-set="number" t-value="number + 1"/>
                                     </t>
                                     <tr>
-                                        <td colspan="2" style="text-align: center; font-weight: bold;">Tổng cộng</td>
-                                        <td>
-                                        </td>
-                                        <td>
-                                        </td>
+                                        <td colspan="5" style="text-align: center; font-weight: bold;">Tổng cộng</td>
                                         <td style="text-align: right; font-weight: bold;">
                                             <span t-esc="'{0:,.2f}'.format(total_amount)"/>
-                                        </td>
-                                        <td>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -181,7 +188,7 @@
         </template>
 
 
-        <record id="paperformat_qweb_document_approval_purchase_request" model="report.paperformat">
+        <record id="paperformat_qweb_document_approval" model="report.paperformat">
             <field name="name">A4 Document Approval</field>
             <field name="default" eval="True"/>
             <field name="format">A4</field>
@@ -197,16 +204,14 @@
             <field name="dpi">90</field>
         </record>
 
-        <record id="qweb_document_approval_purchase_request" model="ir.actions.report">
-            <field name="name">Document Approval Purchase Request</field>
+        <record id="qweb_document_approval" model="ir.actions.report">
+            <field name="name">Document Approval</field>
             <field name="model">document.approval</field>
             <field name="report_type">qweb-pdf</field>
-            <field name="report_name">document_apporval_custom.report_template_document_approval_purchase_request_view</field>
-            <field name="report_file">document_apporval_custom.report_template_document_approval_purchase_request_view
-            </field>
-            <field name="paperformat_id"
-                   ref="document_apporval_custom.paperformat_qweb_document_approval_purchase_request"/>
-            <field name="print_report_name">'Document Approval Purchase Request - %s' % (object.name)</field>
+            <field name="report_name">document_apporval_custom.report_template_document_approval_view</field>
+            <field name="report_file">document_apporval_custom.report_template_document_approval_view</field>
+            <field name="paperformat_id" ref="document_apporval_custom.paperformat_qweb_document_approval"/>
+            <field name="print_report_name">'Document Approval - %s' % (object.request_code)</field>
         </record>
     </data>
 </odoo>
