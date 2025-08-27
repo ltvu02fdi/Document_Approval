@@ -18,6 +18,7 @@ class DocumentApprovalLine(models.Model):
                                                ('reconciliation_minutes', 'BB đối soát'),
                                                ('invoice', 'Hoá đơn tài chính') ], string='Type voucher')
     voucher_code = fields.Char(string='Voucher Code')
+    product_name = fields.Char(string='Product Name')
     expense_description = fields.Char(string='Expense Description')
     expense_date = fields.Date(string='Expense Date', default=lambda self: fields.Date.today())
     quantity = fields.Integer(string='Quantity', default=1)

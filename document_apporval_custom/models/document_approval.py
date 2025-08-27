@@ -52,8 +52,10 @@ class DocumentApproval(models.Model):
         return super(DocumentApproval, self).create(vals)
 
     def action_print(self):
-        if self.request_type == 'purchase_request':
+        if self.request_type == 'payment_request':
             url = 'report/pdf/document_apporval_custom.report_template_document_approval_view/%s' % (self.id)
+        elif self.request_type == 'payment_request':
+            url = 'report/pdf/document_apporval_custom.report_template_document_approval_purchase_request_view/%s' % (self.id)
         else:
             pass
         return {
