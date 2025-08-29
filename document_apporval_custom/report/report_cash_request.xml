@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data>
-        <template id="ev_internal_layout_document_approval">
+        <template id="ev_internal_layout_document_approval_cash_request">
             <div class="article">
                 <t t-raw="0"/>
             </div>
         </template>
-        <template id="report_template_document_approval_view">
+        <template id="report_template_document_approval_cash_request_view">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
-                    <t t-call="document_apporval_custom.ev_internal_layout_document_approval" t-lang="en_US">
+                    <t t-call="document_apporval_custom.ev_internal_layout_document_approval_cash_request"
+                       t-lang="en_US">
                         <div class="page" style="font-size:14px; font-family: 'Times New Roman'">
                             <style>
+                                body, table, td, th, div, span {
+                                font-family: 'Times New Roman', Times, serif !important;
+                                }
                                 .table {
                                 border-collapse: collapse;
                                 width: 100%;
@@ -50,7 +54,7 @@
                             <!-- Tiêu đề -->
                             <div style="width: 100%; margin-top: 10px; padding: 5px; text-align: center;">
                                 <h3 style="margin: 0; font-size:22px; font-weight: 500;">
-                                    <b>ĐỀ NGHỊ THANH TOÁN</b>
+                                    <b>ĐỀ NGHỊ TẠM ỨNG</b>
                                 </h3>
                                 <i>
                                     <b>
@@ -72,18 +76,15 @@
                                 <div>- Chức vụ:
                                     <span t-esc="o.job_id.name"/>
                                 </div>
-                                <div>- Thanh toán cho:
+                                <div>- Tạm ứng cho:
                                     <span t-esc="o.recipient"/>
                                 </div>
-                                <div>- Hình thức thanh toán:
+                                <div>- Hình thức tạm ứng:
                                     <t t-if="o.payment_method == 'bank_transfer'">Chuyển khoản</t>
                                     <t t-elif="o.payment_method == 'cash'">Tiền mặt</t>
                                 </div>
                                 <div>- STK:
                                     <span t-esc="o.account_number"/>
-                                </div>
-                                <div>- Nội dung:
-                                    <span t-esc="o.description"/>
                                 </div>
                             </div>
 
@@ -92,10 +93,7 @@
                                 <thead>
                                     <tr>
                                         <th width="6%" style="text-align:center;">STT</th>
-                                        <th width="15%" style="text-align:center;">Loại chứng từ</th>
-                                        <th width="15%" style="text-align:center;">Mã chứng từ</th>
-                                        <th width="12%" style="text-align:center;">Ngày</th>
-                                        <th width="30%" style="text-align:center;">Nội dung</th>
+                                        <th width="50%" style="text-align:center;">Nội dung tạm ứng</th>
                                         <th width="15%" style="text-align:center;">Số tiền</th>
                                     </tr>
                                 </thead>
@@ -109,22 +107,6 @@
                                                 <t t-esc="number"/>
                                             </td>
                                             <td>
-                                                <t t-if="l.type_voucher == 'receipt'">Phiếu thu / Biên nhận</t>
-                                                <t t-elif="l.type_voucher == 'customs'">Tờ khai HQ</t>
-                                                <t t-elif="l.type_voucher == 'bl'">B/L</t>
-                                                <t t-elif="l.type_voucher == 'contract'">Hợp đồng</t>
-                                                <t t-elif="l.type_voucher == 'goods_receipt'">Phiếu nhập kho</t>
-                                                <t t-elif="l.type_voucher == 'handover_minutes'">BB giao nhận</t>
-                                                <t t-elif="l.type_voucher == 'reconciliation_minutes'">BB đối soát</t>
-                                                <t t-elif="l.type_voucher == 'invoice'">Hoá đơn tài chính</t>
-                                            </td>
-                                            <td>
-                                                <span t-esc="l.voucher_code"/>
-                                            </td>
-                                            <td>
-                                                <span t-esc="l.expense_date"/>
-                                            </td>
-                                            <td>
                                                 <span t-esc="l.expense_description"/>
                                             </td>
                                             <td style="text-align: right;">
@@ -135,7 +117,8 @@
                                         <t t-set="number" t-value="number + 1"/>
                                     </t>
                                     <tr>
-                                        <td colspan="5" style="text-align: center; font-weight: bold;">Tổng cộng</td>
+                                        <td colspan="2" style="text-align: center; font-weight: bold;">Tổng cộng</td>
+
                                         <td style="text-align: right; font-weight: bold;">
                                             <span t-esc="'{0:,.2f}'.format(total_amount)"/>
                                         </td>
@@ -188,8 +171,8 @@
         </template>
 
 
-        <record id="paperformat_qweb_document_approval" model="report.paperformat">
-            <field name="name">A4 Document Approval</field>
+        <record id="paperformat_qweb_document_approval_cash_request" model="report.paperformat">
+            <field name="name">A4 Document Approval Cash Request</field>
             <field name="default" eval="True"/>
             <field name="format">A4</field>
             <field name="page_height">0</field>
@@ -204,14 +187,14 @@
             <field name="dpi">90</field>
         </record>
 
-        <record id="qweb_document_approval" model="ir.actions.report">
-            <field name="name">Document Approval</field>
+        <record id="qweb_document_approval_cash_request" model="ir.actions.report">
+            <field name="name">Document Approval Cash Request</field>
             <field name="model">document.approval</field>
             <field name="report_type">qweb-pdf</field>
-            <field name="report_name">document_apporval_custom.report_template_document_approval_view</field>
-            <field name="report_file">document_apporval_custom.report_template_document_approval_view</field>
-            <field name="paperformat_id" ref="document_apporval_custom.paperformat_qweb_document_approval"/>
-            <field name="print_report_name">'Document Approval - %s' % (object.name)</field>
+            <field name="report_name">document_apporval_custom.report_template_document_approval_cash_request_view</field>
+            <field name="report_file">document_apporval_custom.report_template_document_approval_cash_request_view</field>
+            <field name="paperformat_id" ref="document_apporval_custom.paperformat_qweb_document_approval_cash_request"/>
+            <field name="print_report_name">'Cash Request Report - %s' % (object.name)</field>
         </record>
     </data>
 </odoo>

@@ -54,16 +54,13 @@ class DocumentApproval(models.Model):
     def action_print(self):
         if self.request_type == 'payment_request':
             url = 'report/pdf/document_apporval_custom.report_template_document_approval_view/%s' % (self.id)
-        elif self.request_type == 'payment_request':
+        elif self.request_type == 'purchase_request':
             url = 'report/pdf/document_apporval_custom.report_template_document_approval_purchase_request_view/%s' % (self.id)
-        else:
-            pass
+        elif self.request_type == 'cash_request':
+            url = 'report/pdf/document_apporval_custom.report_template_document_approval_cash_request_view/%s' % (self.id)
         return {
             'type': 'ir.actions.act_url',
             'url': url,
             'target': 'new',
             'res_id': self.id,
         }
-
-    # def action_print(self):
-    #     return self.env.ref('document_approval_custom.qweb_document_approval').report_action(self)
