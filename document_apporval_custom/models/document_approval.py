@@ -9,6 +9,7 @@ class DocumentApproval(models.Model):
     request_type = fields.Selection(selection=[('purchase_request', 'Purchase Request'),
                                                ('payment_request', 'Payment Request'),
                                                ('cash_request', 'Cast Advance Request'),
+                                               ('advance_settlement', 'Advance Settlement'),
                                                ],
                                     default='purchase_request', string="Request Type", index=True,
                                     help='Request Type.')
@@ -44,6 +45,8 @@ class DocumentApproval(models.Model):
                 seq_code = 'payment.request.seq'
             elif vals.get('request_type') == 'cash_request':
                 seq_code = 'cash.request.seq'
+            elif vals.get('request_type') == 'advance_settlement':
+                seq_code = 'advance.settlement.seq'
             else:
                 seq_code = None
 
@@ -58,6 +61,8 @@ class DocumentApproval(models.Model):
             url = 'report/pdf/document_apporval_custom.report_template_document_approval_purchase_request_view/%s' % (self.id)
         elif self.request_type == 'cash_request':
             url = 'report/pdf/document_apporval_custom.report_template_document_approval_cash_request_view/%s' % (self.id)
+        elif self.request_type == 'advance_settlement':
+            url = 'report/pdf/document_apporval_custom.report_template_advance_settlement_view/%s' % (self.id)
         return {
             'type': 'ir.actions.act_url',
             'url': url,

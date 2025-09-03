@@ -15,5 +15,6 @@
         'report/report_cash_request.xml',
         'report/report_payment_request.xml',
         'report/report_purchase_request.xml',
+        'report/report_advance_settlement.xml',
     ],
 }

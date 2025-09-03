@@ -4234,5 +4234,10 @@ msgstr "Gửi duyệt"
 msgid "Product Name"
 msgstr "Tên hàng"
 
+#. module: document_apporval_custom
+#: model:ir.model.fields.selection,name:document_apporval_custom.selection__document_approval__request_type__advance_settlement
+msgid "Advance Settlement"
+msgstr "Đề nghị quyết toán tạm ứng"
+
 
 
