@@ -31,5 +31,13 @@
             <field name="prefix">DNTU</field>
             <field name="padding">4</field>
         </record>
+
+        <!-- advance settlement -->
+        <record id="seq_advance_settlement" model="ir.sequence">
+            <field name="name">Cash Advance Settlement</field>
+            <field name="code">advance.settlement.seq</field>
+            <field name="prefix">DNQTTU</field>
+            <field name="padding">4</field>
+        </record>
     </data>
 </odoo>

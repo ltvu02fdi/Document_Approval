@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="document_approval.document_approval_view_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//form/header" position="inside">
-                    <button string="Print PDF"
+                    <button string="IN PDF"
                             name="action_print" type="object"
                             invisible="state != 'approved'" class="oe_highlight"/>
                 </xpath>

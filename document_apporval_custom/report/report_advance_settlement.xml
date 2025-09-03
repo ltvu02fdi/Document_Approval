@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="ev_internal_layout_advance_settlement">
+            <div class="article">
+                <t t-raw="0"/>
+            </div>
+        </template>
+        <template id="report_template_advance_settlement_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="document_apporval_custom.ev_internal_layout_advance_settlement" t-lang="en_US">
+                        <div class="page" style="font-size:14px; font-family: 'Times New Roman'">
+                            <style>
+                                .table {
+                                border-collapse: collapse;
+                                width: 100%;
+                                }
+                                .table th, .table td {
+                                border: 1px solid black;
+                                padding: 5px;
+                                }
+                                .no-border-table {
+                                border: none !important;
+                                border-collapse: separate !important;
+                                width: 100%;
+                                }
+                                .no-border-table th,
+                                .no-border-table td {
+                                border: none !important;
+                                padding: 3px;
+                                }
+                            </style>
+
+                            <!-- Phần đầu: không viền -->
+                            <table class="no-border-table">
+                                <tr>
+                                    <td width="60%">
+                                        <div style="padding-right:20px;font-size:16px">
+                                            <span t-esc="o.company_id.name" style="text-transform: uppercase;"/>
+                                            <br/>
+                                            <span t-esc="o.company_id.street"/>
+                                        </div>
+                                    </td>
+                                    <td width="40%">
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Tiêu đề -->
+                            <div style="width: 100%; margin-top: 10px; padding: 5px; text-align: center;">
+                                <h3 style="margin: 0; font-size:22px; font-weight: 500;">
+                                    <b>ĐỀ NGHỊ QUYẾT TOÁN TẠM ỨNG</b>
+                                </h3>
+                                <i>
+                                    <b>
+                                        Ngày
+                                        <span t-esc="(o.create_date + relativedelta(hours=7)).strftime('%d')"/>
+                                        tháng
+                                        <span t-esc="(o.create_date + relativedelta(hours=7)).strftime('%m')"/>
+                                        năm
+                                        <span t-esc="(o.create_date + relativedelta(hours=7)).strftime('%Y')"/>
+                                    </b>
+                                </i>
+                            </div>
+
+                            <!-- Thông tin đề nghị -->
+                            <div style="margin-top: 10px;">
+                                <div>- Người đề nghị:
+                                    <span t-esc="o.request_employee_id.name"/>
+                                </div>
+                                <div>- Chức vụ:
+                                    <span t-esc="o.job_id.name"/>
+                                </div>
+                                <div>- Thanh toán cho:
+                                    <span t-esc="o.recipient"/>
+                                </div>
+                                <div>- Hình thức quyết toán:
+                                    <t t-if="o.payment_method == 'bank_transfer'">Chuyển khoản</t>
+                                    <t t-elif="o.payment_method == 'cash'">Tiền mặt</t>
+                                </div>
+                                <div>- STK:
+                                    <span t-esc="o.account_number"/>
+                                </div>
+                            </div>
+
+                            <!-- Bảng dữ liệu: có viền -->
+                            <table class="table" style="margin-top: 10px;">
+                                <thead>
+                                    <tr>
+                                        <th width="6%" style="text-align:center;">STT</th>
+                                        <th width="15%" style="text-align:center;">Loại chứng từ</th>
+                                        <th width="15%" style="text-align:center;">Mã chứng từ</th>
+                                        <th width="12%" style="text-align:center;">Ngày</th>
+                                        <th width="30%" style="text-align:center;">Nội dung</th>
+                                        <th width="15%" style="text-align:center;">Số tiền</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="number" t-value="1"/>
+                                    <t t-set="total_amount" t-value="0"/>
+                                    <t t-foreach="o.document_approval_ids.filtered(lambda l: l.document_approval_id.state == 'approved')"
+                                       t-as="l">
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                <t t-esc="number"/>
+                                            </td>
+                                            <td>
+                                                <t t-if="l.type_voucher == 'receipt'">Phiếu thu / Biên nhận</t>
+                                                <t t-elif="l.type_voucher == 'customs'">Tờ khai HQ</t>
+                                                <t t-elif="l.type_voucher == 'bl'">B/L</t>
+                                                <t t-elif="l.type_voucher == 'contract'">Hợp đồng</t>
+                                                <t t-elif="l.type_voucher == 'goods_receipt'">Phiếu nhập kho</t>
+                                                <t t-elif="l.type_voucher == 'handover_minutes'">BB giao nhận</t>
+                                                <t t-elif="l.type_voucher == 'reconciliation_minutes'">BB đối soát</t>
+                                                <t t-elif="l.type_voucher == 'invoice'">Hoá đơn tài chính</t>
+                                            </td>
+                                            <td>
+                                                <span t-esc="l.voucher_code"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="l.expense_date"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="l.expense_description"/>
+                                            </td>
+                                            <td style="text-align: right;">
+                                                <span t-esc="'{0:,.2f}'.format(l.amount)"/>
+                                            </td>
+                                        </tr>
+                                        <t t-set="total_amount" t-value="total_amount + l.amount"/>
+                                        <t t-set="number" t-value="number + 1"/>
+                                    </t>
+                                    <tr>
+                                        <td colspan="5" style="text-align: center; font-weight: bold;">Tổng cộng</td>
+                                        <td style="text-align: right; font-weight: bold;">
+                                            <span t-esc="'{0:,.2f}'.format(total_amount)"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- Chữ ký: không viền -->
+                            <table class="no-border-table" style="margin-top: 30px;">
+                                <tr>
+                                    <td width="20%">
+                                    </td>
+                                    <td width="20%">
+                                    </td>
+                                    <td width="20%">
+                                    </td>
+                                    <td width="40%" style="text-align: center;">
+                                        <span style="font-style:italic">
+                                            Hà Nội, Ngày ...... tháng ...... năm ..........
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center;">
+                                    <td>
+                                        <b>Ban giám đốc</b>
+                                        <br/>
+                                        <p style="font-style:italic">(Ký, họ tên)</p>
+                                    </td>
+                                    <td>
+                                        <b>Phòng kế toán</b>
+                                        <br/>
+                                        <p style="font-style:italic">(Ký, họ tên)</p>
+                                    </td>
+                                    <td>
+                                        <b>Trưởng bộ phận</b>
+                                        <br/>
+                                        <p style="font-style:italic">(Ký, họ tên)</p>
+                                    </td>
+                                    <td>
+                                        <b>Người đề nghị</b>
+                                        <br/>
+                                        <p style="font-style:italic">(Ký, họ tên)</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+        <record id="paperformat_qweb_advance_settlement" model="report.paperformat">
+            <field name="name">A4 Document Approval</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">8</field>
+            <field name="margin_bottom">8</field>
+            <field name="margin_left">6</field>
+            <field name="margin_right">6</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="qweb_advance_settlement" model="ir.actions.report">
+            <field name="name">Advance Settlement</field>
+            <field name="model">document.approval</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">document_apporval_custom.report_template_advance_settlement_view</field>
+            <field name="report_file">document_apporval_custom.report_template_advance_settlement_view</field>
+            <field name="paperformat_id" ref="document_apporval_custom.paperformat_qweb_advance_settlement"/>
+            <field name="print_report_name">'Advance Settlement - %s' % (object.name)</field>
+        </record>
+    </data>
+</odoo>
