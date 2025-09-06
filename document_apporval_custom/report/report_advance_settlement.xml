@@ -12,6 +12,9 @@
                     <t t-call="document_apporval_custom.ev_internal_layout_advance_settlement" t-lang="en_US">
                         <div class="page" style="font-size:14px; font-family: 'Times New Roman'">
                             <style>
+                                body, table, td, th, div, span {
+                                font-family: 'Times New Roman', Times, serif !important;
+                                }
                                 .table {
                                 border-collapse: collapse;
                                 width: 100%;
@@ -35,14 +38,16 @@
                             <!-- Phần đầu: không viền -->
                             <table class="no-border-table">
                                 <tr>
-                                    <td width="60%">
-                                        <div style="padding-right:20px;font-size:16px">
+                                    <td width="65%">
+                                        <div style="padding-right:20px;font-size:14px">
                                             <span t-esc="o.company_id.name" style="text-transform: uppercase;"/>
                                             <br/>
                                             <span t-esc="o.company_id.street"/>
                                         </div>
                                     </td>
-                                    <td width="40%">
+                                    <td width="35%" style="text-align: right;">
+                                        <img t-att-src="'data:image/png;base64,%s' % (o.company_id.logo or '')"
+                                             style="max-height: 80px; max-width: 150px;"/>
                                     </td>
                                 </tr>
                             </table>
@@ -160,21 +165,29 @@
                                         <b>Ban giám đốc</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
+                                        <br/>
+                                        <b>Đồng ý</b>
                                     </td>
                                     <td>
                                         <b>Phòng kế toán</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
+                                        <br/>
+                                        <b>Đồng ý</b>
                                     </td>
                                     <td>
                                         <b>Trưởng bộ phận</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
+                                        <br/>
+                                        <b>Đồng ý</b>
                                     </td>
                                     <td>
                                         <b>Người đề nghị</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
+                                        <br/>
+                                        <b>Đồng ý</b>
                                     </td>
                                 </tr>
                             </table>

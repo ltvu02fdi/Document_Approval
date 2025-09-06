@@ -62,7 +62,7 @@
                                             <field name="sequence"/>
                                             <field name="type_voucher" required="1"/>
                                             <field name="voucher_code"/>
-                                            <field name="expense_date"/>
+                                            <field name="expense_date" string="Ngày"/>
                                             <field name="product_name"/>
                                             <field name="expense_description"/>
                                             <field name="quantity"/>
@@ -130,6 +130,7 @@
                           decoration-primary="state  == 'draft'"
                           decoration-success="state  == 'approved'">
                         <field name="request_code" readonly="state != 'draft'"/>
+                        <field name="request_type"/>
                         <field name="approve_initiator_id"/>
                         <field name="company_id" readonly="state != 'draft'"/>
                         <field name="state"
