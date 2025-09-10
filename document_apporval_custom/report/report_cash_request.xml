@@ -95,6 +95,7 @@
                                 <thead>
                                     <tr>
                                         <th width="6%" style="text-align:center;">STT</th>
+                                        <th width="15%" style="text-align:center;">Loại chứng từ</th>
                                         <th width="50%" style="text-align:center;">Nội dung tạm ứng</th>
                                         <th width="15%" style="text-align:center;">Số tiền</th>
                                     </tr>
@@ -109,6 +110,16 @@
                                                 <t t-esc="number"/>
                                             </td>
                                             <td>
+                                                <t t-if="l.type_voucher == 'receipt'">Phiếu thu / Biên nhận</t>
+                                                <t t-elif="l.type_voucher == 'customs'">Tờ khai HQ</t>
+                                                <t t-elif="l.type_voucher == 'bl'">B/L</t>
+                                                <t t-elif="l.type_voucher == 'contract'">Hợp đồng</t>
+                                                <t t-elif="l.type_voucher == 'goods_receipt'">Phiếu nhập kho</t>
+                                                <t t-elif="l.type_voucher == 'handover_minutes'">BB giao nhận</t>
+                                                <t t-elif="l.type_voucher == 'reconciliation_minutes'">BB đối soát</t>
+                                                <t t-elif="l.type_voucher == 'invoice'">Hoá đơn tài chính</t>
+                                            </td>
+                                            <td>
                                                 <span t-esc="l.expense_description"/>
                                             </td>
                                             <td style="text-align: right;">
@@ -119,7 +130,7 @@
                                         <t t-set="number" t-value="number + 1"/>
                                     </t>
                                     <tr>
-                                        <td colspan="2" style="text-align: center; font-weight: bold;">Tổng cộng</td>
+                                        <td colspan="3" style="text-align: center; font-weight: bold;">Tổng cộng</td>
 
                                         <td style="text-align: right; font-weight: bold;">
                                             <span t-esc="'{0:,.2f}'.format(total_amount)"/>
