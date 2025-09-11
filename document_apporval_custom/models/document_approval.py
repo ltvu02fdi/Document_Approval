@@ -10,6 +10,7 @@ class DocumentApproval(models.Model):
                                                ('payment_request', 'Payment Request'),
                                                ('cash_request', 'Cast Advance Request'),
                                                ('advance_settlement', 'Advance Settlement'),
+                                               ('client_request', 'Client Request'),
                                                ],
                                     default='purchase_request', string="Request Type", index=True,
                                     help='Request Type.')
@@ -29,12 +30,31 @@ class DocumentApproval(models.Model):
     description = fields.Text(string="Description")
     company_id = fields.Many2one('res.company', string="Company", default=lambda self: self.env.company)
     payment_method = fields.Selection(selection=[('cash', 'Cash'), ('bank_transfer', 'Bank Transfer')],
-                                      default='cash', string="Payment Method")
+                                      string="Payment Method")
     recipient = fields.Char(string="Recipient")
     document_approval_ids = fields.One2many('document.approval.line', 'document_approval_id',
                                             string="Document Approvals Line", tracking=True)
     tax_code = fields.Char(string="Tax Code")
     account_number = fields.Char(string="STK")
+
+    client_name = fields.Char(string="Client Name")
+    client_lead = fields.Char(string="Client Lead")
+    team_member = fields.Char(string="Team Member")
+    date_hospitality = fields.Date(string="Date Hospitality", default=lambda self: fields.Date.today())
+    venue = fields.Char(string="Venue")
+    price_unit = fields.Float(string="Price Unit")
+
+    @api.constrains("price_unit")
+    def _check_price_unit(self):
+        for rec in self:
+            if rec.price_unit <= 0:
+                raise ValidationError("Chi phí dự kiến phải lớn hơn 0.")
+
+    @api.onchange('request_type')
+    def _onchange_payment_method(self):
+        for rec in self:
+            if rec.request_type == 'client_request':
+                rec.payment_method = False
 
     @api.model
     def create(self, vals):
@@ -47,6 +67,8 @@ class DocumentApproval(models.Model):
                 seq_code = 'cash.request.seq'
             elif vals.get('request_type') == 'advance_settlement':
                 seq_code = 'advance.settlement.seq'
+            elif vals.get('request_type') == 'client_request':
+                seq_code = 'client.request.seq'
             else:
                 seq_code = None
 
@@ -63,6 +85,8 @@ class DocumentApproval(models.Model):
             url = 'report/pdf/document_apporval_custom.report_template_document_approval_cash_request_view/%s' % (self.id)
         elif self.request_type == 'advance_settlement':
             url = 'report/pdf/document_apporval_custom.report_template_advance_settlement_view/%s' % (self.id)
+        elif self.request_type == 'client_request':
+            url = 'report/pdf/document_apporval_custom.report_template_document_approval_client_request_view/%s' % (self.id)
         return {
             'type': 'ir.actions.act_url',
             'url': url,

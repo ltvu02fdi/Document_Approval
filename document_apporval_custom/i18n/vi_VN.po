@@ -192,6 +192,11 @@ msgid "Recipient Information"
 msgstr "Thông tin người nhận"
 
 #. module: document_apporval_custom
+#: model_terms:ir.ui.view,arch_db:document_apporval_custom.document_approval_inherit_form_views
+msgid "Customer Information"
+msgstr "Thông tin khách hàng"
+
+#. module: document_apporval_custom
 #: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__request_code
 msgid "Request Code"
 msgstr "Mã đề nghị"
@@ -4238,6 +4243,41 @@ msgstr "Tên hàng"
 #: model:ir.model.fields.selection,name:document_apporval_custom.selection__document_approval__request_type__advance_settlement
 msgid "Advance Settlement"
 msgstr "Đề nghị quyết toán tạm ứng"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__client_name
+msgid "Client Name"
+msgstr "Tên đoàn khách"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__client_lead
+msgid "Client Lead"
+msgstr "Trưởng đoàn"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__team_member
+msgid "Team Member"
+msgstr "Thành viên(Số người)"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__date_hospitality
+msgid "Date Hospitality"
+msgstr "Thời gian tiếp khách"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__venue
+msgid "Venue"
+msgstr "Nơi tiếp khách"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields,field_description:document_apporval_custom.field_document_approval__price_unit
+msgid "Price Unit"
+msgstr "Chi phí dự kiến"
+
+#. module: document_apporval_custom
+#: model:ir.model.fields.selection,name:document_apporval_custom.selection__document_approval__request_type__client_request
+msgid "Client Request"
+msgstr "Đề xuất tiếp khách"
 
 
 
