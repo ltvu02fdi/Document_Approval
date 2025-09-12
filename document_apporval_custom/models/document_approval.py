@@ -5,6 +5,7 @@ from datetime import date
 
 class DocumentApproval(models.Model):
     _inherit = 'document.approval'
+    _order = 'request_date desc'
 
     request_type = fields.Selection(selection=[('purchase_request', 'Purchase Request'),
                                                ('payment_request', 'Payment Request'),

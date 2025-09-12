@@ -41,7 +41,7 @@
                                 <tr>
                                     <td width="65%">
                                         <div style="padding-right:20px;font-size:14px">
-                                            <span t-esc="o.company_id.name" style="text-transform: uppercase;"/>
+                                            <b><span t-esc="o.company_id.name" style="text-transform: uppercase;"/></b>
                                             <br/>
                                             <span t-esc="o.company_id.street"/>
                                         </div>
@@ -72,16 +72,24 @@
 
                             <!-- Thông tin đề nghị -->
                             <div style="margin-top: 10px;">
-                                <div>- Người đề xuất:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Người đề xuất</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.request_employee_id.name"/>
                                 </div>
-                                <div>- Chức danh:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Chức danh</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.job_id.name"/>
                                 </div>
-                                <div>- Bộ phận:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Bộ phận</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.department_id.name"/>
                                 </div>
-                                <div>- Người sử dụng:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Người sử dụng</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.recipient"/>
                                 </div>
                             </div>
@@ -90,13 +98,13 @@
                             <table class="table" style="margin-top: 10px;">
                                 <thead>
                                     <tr>
-                                        <th width="6%" style="text-align:center;">STT</th>
-                                        <th width="15%" style="text-align:center;">Tên hàng</th>
-                                        <th width="15%" style="text-align:center;">Loại chứng từ</th>
-                                        <th width="15%" style="text-align:center;">Số lượng</th>
-                                        <th width="12%" style="text-align:center;">Đơn giá</th>
-                                        <th width="15%" style="text-align:center;">Thành tiền</th>
-                                        <th width="15%" style="text-align:center;">Ghi chú</th>
+                                        <th width="6%" style="text-align:center;"><b>STT</b></th>
+                                        <th width="15%" style="text-align:center;"><b>Tên hàng</b></th>
+                                        <th width="15%" style="text-align:center;"><b>Loại chứng từ</b></th>
+                                        <th width="15%" style="text-align:center;"><b>Số lượng</b></th>
+                                        <th width="12%" style="text-align:center;"><b>Đơn giá</b></th>
+                                        <th width="15%" style="text-align:center;"><b>Thành tiền</b></th>
+                                        <th width="15%" style="text-align:center;"><b>Ghi chú</b></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -173,28 +181,28 @@
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                         <b>Phòng kế toán</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                         <b>Trưởng bộ phận</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                         <b>Người đề nghị</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                 </tr>
                             </table>

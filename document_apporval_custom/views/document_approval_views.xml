@@ -144,6 +144,7 @@
                           decoration-success="state  == 'approved'">
                         <field name="request_code" readonly="state != 'draft'"/>
                         <field name="request_type"/>
+                        <field name="request_date"/>
                         <field name="approve_initiator_id"/>
                         <field name="company_id" readonly="state != 'draft'"/>
                         <field name="state"

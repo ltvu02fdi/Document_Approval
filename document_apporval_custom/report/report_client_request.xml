@@ -41,7 +41,7 @@
                                 <tr>
                                     <td width="65%">
                                         <div style="padding-right:20px;font-size:14px">
-                                            <span t-esc="o.company_id.name" style="text-transform: uppercase;"/>
+                                            <b><span t-esc="o.company_id.name" style="text-transform: uppercase;"/></b>
                                             <br/>
                                             <span t-esc="o.company_id.street"/>
                                         </div>
@@ -52,6 +52,7 @@
                                     </td>
                                 </tr>
                             </table>
+                            <br/>
 
                             <!-- Tiêu đề -->
                             <div style="width: 100%; margin-top: 10px; padding: 5px; text-align: center;">
@@ -69,41 +70,70 @@
                                     </b>
                                 </i>
                             </div>
+                            <!-- Kính gửi -->
+                            <div style="width: 98%; margin-top: 10px; padding: 5px; text-align: center; font-size:16px;">
+                                <b>Kính gửi:</b> <b>BAN LÃNH ĐẠO <span t-esc="o.company_id.name"/></b>
+                            </div>
 
                             <!-- Thông tin đề nghị -->
                             <div style="margin-top: 10px;">
-                                <div>- Người đề xuất:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Người đề xuất</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.request_employee_id.name"/>
                                 </div>
-                                <div>- Chức danh:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Chức danh</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.job_id.name"/>
                                 </div>
-                                <div>- Bộ phận:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Bộ phận</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.department_id.name"/>
                                 </div>
-                                <div>- Lý do tiếp khách:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Lý do tiếp khách</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.description"/>
                                 </div>
                             </div>
                             <!-- Thông tin khách hàng -->
-                            <div style="margin-top: 20px;">
-                                <div>- Tên đoàn khách:
+                            <div style="margin-top: 20px; width: 94%; float: right;">
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Tên đoàn khách</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.client_name"/>
                                 </div>
-                                <div>- Trưởng đoàn (tên):
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Trưởng đoàn (tên)</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.client_lead"/>
                                 </div>
-                                <div>- Thành viên(Số nguười):
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Thành viên (số nguời)</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.team_member"/>
                                 </div>
-                                <div>- Thời gian tiếp khách:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Thời gian tiếp khách</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.date_hospitality"/>
                                 </div>
-                                <div>- Nơi tiếp khách:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Nơi tiếp khách</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.venue"/>
                                 </div>
-                                <div>- Chi phí dự kiến:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Chi phí dự kiến</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.price_unit"/>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 20px; width: 94%; float: right;">
+                                <div> Kính mong Ban lãnh đạo Công Ty xem xét!
                                 </div>
                             </div>
 
@@ -127,7 +157,7 @@
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                     </td>
@@ -136,7 +166,7 @@
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                     </td>
@@ -145,7 +175,7 @@
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                 </tr>
                             </table>
