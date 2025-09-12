@@ -44,17 +44,24 @@ class DocumentApproval(models.Model):
     venue = fields.Char(string="Venue")
     price_unit = fields.Float(string="Price Unit")
 
-    @api.constrains("price_unit")
+    @api.constrains('price_unit', 'request_type')
     def _check_price_unit(self):
         for rec in self:
-            if rec.price_unit <= 0:
-                raise ValidationError("Chi phí dự kiến phải lớn hơn 0.")
+            if rec.request_type == 'client_request':
+                if rec.price_unit <= 0:
+                    raise ValidationError("Chi phí dự kiến phải lớn hơn 0.")
 
     @api.onchange('request_type')
     def _onchange_payment_method(self):
         for rec in self:
             if rec.request_type == 'client_request':
                 rec.payment_method = False
+                rec.client_name = False
+                rec.client_lead = False
+                rec.team_member = False
+                rec.date_hospitality = False
+                rec.venue = False
+                rec.price_unit = False
 
     @api.model
     def create(self, vals):
