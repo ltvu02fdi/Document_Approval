@@ -1,0 +1,12 @@
+<odoo>
+    <record id="ir_cron_sync_attendance" model="ir.cron">
+        <field name="name">Sync ZK Attendance</field>
+        <field name="model_id" ref="operdo_hrm.model_zk_device"/>
+        <field name="state">code</field>
+        <field name="code">model.sync_attendance()</field>
+        <field name="active">True</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="nextcall" eval="(DateTime.now() + relativedelta(days=1)).replace(hour=0, minute=1, second=0, microsecond=0)"/>
+    </record>
+</odoo>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <record id="view_employee_tree_inherit" model="ir.ui.view">
+                <field name="name">hr.employee.list.inherit</field>
+                <field name="model">hr.employee</field>
+                <field name="inherit_id" ref="hr.view_employee_tree"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//field[@name='name']" position="before">
+                        <field name="id" readonly="1"/>
+                    </xpath>
+                    <xpath expr="//field[@name='country_id']" position="after">
+                        <field name="attendance_code" optional="hide"/>
+                        <field name="start_date" optional="hide"/>
+                        <field name="start_date_company" optional="hide"/>
+                        <field name="private_street" optional="hide"/>
+                    </xpath>
+                </field>
+            </record>
+            <record id="view_employee_form_inherit" model="ir.ui.view">
+                <field name="name">hr.employee.form.inherit</field>
+                <field name="model">hr.employee</field>
+                <field name="inherit_id" ref="hr.view_employee_form"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//group/group/field[@name='work_email']" position="before">
+                        <field name="id" readonly="1"/>
+                        <field name="attendance_code" optional="hide"/>
+                    </xpath>
+                    <xpath expr="//field[@name='coach_id']" position="after">
+                        <field name="start_date"/>
+                        <field name="start_date_company"/>
+                        <field name="contract_ids"/>
+                    </xpath>
+                    <xpath expr="//group/field[@name='study_school']" position="replace">
+                        <field name="degree"/>
+                    </xpath>
+                    <xpath expr="//group/group/field[@name='category_ids']" position="after">
+                        <field name="notes"/>
+                    </xpath>
+                    <xpath expr="//group/field[@name='identification_id']" position="after">
+                        <field name="date_of_ID_issuance"/>
+                        <field name="place_of_ID_issuance"/>
+                        <field name="social_insurance"/>
+                        <field name="tax_code"/>
+                    </xpath>
+                </field>
+            </record>
+    </data>
+</odoo>

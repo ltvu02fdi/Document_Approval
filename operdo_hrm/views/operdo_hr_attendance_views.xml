@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_attendance_calendar" model="ir.ui.view">
+            <field name="name">hr.attendance.calendar</field>
+            <field name="model">hr.attendance</field>
+            <field name="arch" type="xml">
+                <calendar string="Attendances"
+                          date_start="check_in"
+                          date_stop="check_out"
+                          color="employee_id"
+                          event_open_popup="true"
+                          >
+                    <field name="employee_id"/>
+                    <field name="check_in"/>
+                    <field name="check_out"/>
+                </calendar>
+            </field>
+        </record>
+        <record id="hr_attendance_action_calendar_view" model="ir.actions.act_window.view">
+            <field name="act_window_id" ref="hr_attendance.hr_attendance_action"/>
+            <field name="view_mode">calendar</field>
+            <field name="view_id" ref="view_attendance_calendar"/>
+            <field name="sequence">1</field>
+        </record>
+    </data>
+</odoo>

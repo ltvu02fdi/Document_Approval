@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+            <record id="view_department_tree_inherit" model="ir.ui.view">
+                <field name="name">hr.department.list.inherit</field>
+                <field name="model">hr.department</field>
+                <field name="inherit_id" ref="hr.view_department_tree"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//field[@name='company_id']" position="before">
+                        <field name="id" readonly="1"/>
+                    </xpath>
+                </field>
+            </record>
+            <record id="view_department_form_inherit_show_id" model="ir.ui.view">
+                <field name="name">hr.department.form.inherit.show.id</field>
+                <field name="model">hr.department</field>
+                <field name="inherit_id" ref="hr.view_department_form"/>
+                <field name="arch" type="xml">
+                    <xpath expr="//group/group/field[@name='name']" position="before">
+                        <field name="id" readonly="1"/>
+                    </xpath>
+                </field>
+            </record>
+    </data>
+</odoo>

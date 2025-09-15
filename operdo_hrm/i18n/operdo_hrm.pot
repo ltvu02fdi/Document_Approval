@@ -1,0 +1,112 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* operdo_hrm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-22 07:20+0000\n"
+"PO-Revision-Date: 2025-08-22 07:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: operdo_hrm
+#: model:ir.model,name:operdo_hrm.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: operdo_hrm
+#. odoo-python
+#: code:addons/operdo_hrm/models/inherit_hr_employee_private.py:0
+msgid "Import Template for Employees"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__start_date
+msgid "Start Date"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__start_date_company
+msgid "Start Date Company"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__attendance_code
+msgid "Attendance Code"
+msgstr ""
+
+#. module: operdo_hrm
+#. odoo-python
+#: code:addons/operdo_hrm/models/inherit_hr_employee_private.py:0
+msgid ""
+"The identification number '%s' already exists in another employee record "
+"(ID: %s - %s)."
+msgstr ""
+
+#. module: operdo_hrm
+#. odoo-python
+#: code:addons/operdo_hrm/models/inherit_hr_employee_private.py:0
+msgid ""
+"The mobile phone number '%s' already exists in another employee record (ID: "
+"%s - %s)."
+msgstr ""
+
+#. module: operdo_hrm
+#. odoo-python
+#: code:addons/operdo_hrm/models/inherit_hr_employee_private.py:0
+msgid ""
+"The visa number '%s' already exists in another employee record (ID: %s - "
+"%s)."
+msgstr ""
+
+#. module: operdo_hrm
+#. odoo-python
+#: code:addons/operdo_hrm/models/inherit_hr_employee_private.py:0
+msgid ""
+"The work email '%s' already exists in another employee record (ID: %s - %s)."
+msgstr ""
+
+#. module: operdo_hrm
+#. odoo-python
+#: code:addons/operdo_hrm/models/inherit_hr_employee_private.py:0
+msgid ""
+"The work phone number '%s' already exists in another employee record (ID: %s"
+" - %s)."
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:hr.field_hr_employee__employee_type
+msgid "Employee Type"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__tax_code
+msgid "Personal tax code"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__place_of_ID_issuance
+msgid "Place of ID card issuance"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__social_insurance
+msgid "Social insurance book number"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__date_of_ID_issuance
+msgid "Date of ID issuance"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:hr.field_hr_employee__private_phone
+#: model:ir.model.fields,field_description:hr.field_res_users__private_phone
+msgid "Private Phone"
+msgstr ""
