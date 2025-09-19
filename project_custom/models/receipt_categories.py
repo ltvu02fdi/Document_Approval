@@ -35,7 +35,6 @@ class ReceiptCategory(models.Model):
         res = super(ReceiptCategory, self).write(vals)
         return res
 
-    @api.depends('code','name')
     def name_get(self):
         result = []
         for record in self:

@@ -9,6 +9,7 @@
     'depends': ['base', 'mail', 'hr', 'web', 'uom'],
     'data': [
         'security/ir.model.access.csv',
+        'security/security.xml',
         'views/expense_categories_views.xml',
         'views/receipt_categories_views.xml',
         'views/document_date_views.xml',

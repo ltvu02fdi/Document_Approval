@@ -5,14 +5,14 @@
         <field name="arch" type="xml">
             <list editable="bottom">
                 <field name="date_entry" column_invisible="1" force_save="1"/>
-                <field name="category_id" required="1"/>
+                <field name="category_id" required="1" options="{'no_edit': True, 'no_create': True}"/>
                 <field name="code_category"/>
-                <field name="amount"/>
-                 <field name="description_receipt" required="1"/>
-<!--                <field name="document_date" required="1"/>-->
-                <field name="document_date_id" required="1"/>
-                <field name="document_code" required="1"/>
-                <field name="payer" required="1"/>
+                <field name="amount" required="1"/>
+                 <field name="description_receipt" />
+                <field name="document_date" required="1"/>
+                <field name="document_date_id" column_invisible="1"/>
+                <field name="document_code"/>
+                <field name="payer"/>
                 <field name="department_id" required="1"/>
                 <field name="company_id" optional="show" groups="base.group_multi_company" readonly="1"/>
             </list>
