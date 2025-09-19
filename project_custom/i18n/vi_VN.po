@@ -207,6 +207,18 @@ msgid "Document Date"
 msgstr "Ngày chứng từ"
 
 #. module: project_custom
+#: model:ir.model.fields,field_description:project_custom.field_cash_inflows__document_date_id
+#: model:ir.model.fields,field_description:project_custom.field_cash_outflows__document_date_id
+msgid "Document Date"
+msgstr "Ngày chứng từ"
+
+#. module: project_custom
+#: model:ir.model.fields,field_description:project_custom.field_expense_categories__partner_id
+#: model:ir.model.fields,field_description:project_custom.field_receipt_categories__partner_id
+msgid "Partner"
+msgstr "Mã cha"
+
+#. module: project_custom
 #: model:ir.model.fields,field_description:project_custom.field_cash_inflows__date_entry
 #: model:ir.model.fields,field_description:project_custom.field_cash_outflows__date_entry
 #: model:ir.model.fields,field_description:project_custom.field_planned_expenditure__date_entry
@@ -217,6 +229,11 @@ msgstr "Ngày nhập"
 #: model:ir.ui.menu,name:project_custom.expense_categories_menu
 msgid "Expense Categories"
 msgstr "Danh mục chi"
+
+#. module: project_custom
+#: model:ir.ui.menu,name:project_custom.document_date_menu
+msgid "Document Date"
+msgstr "Danh mục ngày"
 
 #. module: project_custom
 #: model:ir.model,name:project_custom.model_expense_categories

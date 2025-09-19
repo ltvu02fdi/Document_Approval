@@ -16,6 +16,7 @@ class CashOutflow(models.Model):
     amount = fields.Float(string="Amount")
     description_receipt = fields.Char(string="Description Receipt")
     document_date = fields.Date(string="Document Date", default=fields.Date.today())
+    document_date_id = fields.Many2one("document.date", string="Document Date", ondelete='restrict')
     document_code = fields.Char(string="Document Code",)
     payer = fields.Char(string="Payer")
     department_id = fields.Many2one("hr.department", string="Department")
@@ -26,8 +27,3 @@ class CashOutflow(models.Model):
         for rec in self:
             if rec.amount <= 0:
                 raise ValidationError("Số tiền phải lớn hơn 0.")
-
-
-
-
-

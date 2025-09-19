@@ -14,6 +14,7 @@ class ExpenseCategory(models.Model):
 
     code = fields.Char(string="Code", help="Code cannot be empty", index=True)
     name = fields.Char(string="Name", help="Name cannot be empty", copy=False)
+    partner_id = fields.Many2one("expense.categories", string="Partner", copy=False)
     active = fields.Boolean(string="Active", default=True)
     company_id = fields.Many2one("res.company", string="Company", default=lambda self: self._default_company_id())
 
@@ -33,4 +34,12 @@ class ExpenseCategory(models.Model):
             vals['code'] = vals['code'].upper().replace(" ", "")
         res = super(ExpenseCategory, self).write(vals)
         return res
+
+    def name_get(self):
+        result = []
+        for record in self:
+            name = f"[{record.code}] " if record.code else ""
+            name += record.name or ""
+            result.append((record.id, name))
+        return result
 

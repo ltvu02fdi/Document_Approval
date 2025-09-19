@@ -4,3 +4,4 @@ access_receipt_categories,access_receipt_categories,model_receipt_categories,bas
 access_cash_inflows,access_cash_inflows,model_cash_inflows,base.group_user,1,1,1,1
 access_cash_outflows,access_cash_outflows,model_cash_outflows,base.group_user,1,1,1,1
 access_planned_expenditure,access_planned_expenditure,model_planned_expenditure,base.group_user,1,1,1,1
+access_document_date,access_document_date,model_document_date,base.group_user,1,0,0,0
