@@ -15,6 +15,7 @@ class ExpenseCategory(models.Model):
     code = fields.Char(string="Code", help="Code cannot be empty", index=True)
     name = fields.Char(string="Name", help="Name cannot be empty", copy=False)
     partner_id = fields.Many2one("expense.categories", string="Partner", copy=False)
+    partner_code = fields.Char(related='partner_id.code', string="Partner Code", store=True, copy=False )
     active = fields.Boolean(string="Active", default=True)
     company_id = fields.Many2one("res.company", string="Company", default=lambda self: self._default_company_id())
 

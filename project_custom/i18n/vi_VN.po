@@ -179,9 +179,13 @@ msgid "Department"
 msgstr "Phòng ban"
 
 #. module: project_custom
-#: model:ir.model.fields,field_description:project_custom.field_cash_inflows__description_receipt
 #: model:ir.model.fields,field_description:project_custom.field_cash_outflows__description_receipt
 #: model:ir.model.fields,field_description:project_custom.field_planned_expenditure__description_receipt
+msgid "Description Receipt"
+msgstr "Nội dung chi"
+
+#. module: project_custom
+#: model:ir.model.fields,field_description:project_custom.field_cash_inflows__description_receipt
 msgid "Description Receipt"
 msgstr "Nội dung thu"
 
@@ -216,6 +220,12 @@ msgstr "Ngày chứng từ"
 #: model:ir.model.fields,field_description:project_custom.field_expense_categories__partner_id
 #: model:ir.model.fields,field_description:project_custom.field_receipt_categories__partner_id
 msgid "Partner"
+msgstr "Tên cha"
+
+#. module: project_custom
+#: model:ir.model.fields,field_description:project_custom.field_expense_categories__partner_code
+#: model:ir.model.fields,field_description:project_custom.field_receipt_categories__partner_code
+msgid "Partner Code"
 msgstr "Mã cha"
 
 #. module: project_custom
@@ -462,9 +472,13 @@ msgstr ""
 
 #. module: project_custom
 #: model:ir.model.fields,field_description:project_custom.field_cash_inflows__payer
-#: model:ir.model.fields,field_description:project_custom.field_cash_outflows__payer
 msgid "Payer"
 msgstr "Thông tin người nộp tiền"
+
+#. module: project_custom
+#: model:ir.model.fields,field_description:project_custom.field_cash_outflows__payer
+msgid "Payer"
+msgstr "Thông tin người nhận tiền"
 
 #. module: project_custom
 #: model:ir.actions.act_window,name:project_custom.planned_expenditure_action
