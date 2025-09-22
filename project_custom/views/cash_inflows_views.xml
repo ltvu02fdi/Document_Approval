@@ -4,7 +4,7 @@
         <field name="model">cash.inflows</field>
         <field name="arch" type="xml">
             <list editable="bottom">
-                <field name="date_entry" column_invisible="1" force_save="1"/>
+                <field name="date_entry" force_save="1"/>
                 <field name="category_id" required="1" options="{'no_edit': True, 'no_create': True}"/>
                 <field name="code_category"/>
                 <field name="amount" required="1"/>

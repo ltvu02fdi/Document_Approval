@@ -2,7 +2,7 @@
 <odoo>
     <!-- Menus for document approvals -->
     <menuitem id="cash_menu_root" name="Cash"
-              sequence="2"
+              sequence="1"
               web_icon="project_custom,static/description/icon.png">
         <menuitem id="cash_inflows_menu" name="Cash Inflows"
                   sequence="3"
