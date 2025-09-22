@@ -27,3 +27,10 @@ class CashOutflow(models.Model):
         for rec in self:
             if rec.amount <= 0:
                 raise ValidationError("Số tiền phải lớn hơn 0.")
+
+    @api.model
+    def get_import_templates(self):
+        return [{
+            'label': 'Tải về mẫu tiền chi',
+            'template': '/project_custom/static/template/tien_chi.xlsx',
+        }]

@@ -7,6 +7,7 @@
                 <field name="date_entry" required="1"/>
                 <field name="category_id" required="1"/>
                 <field name="code_category"/>
+                <field name="plan_expenditure_date" required="1"/>
                 <field name="amount" required="1"/>
                  <field name="description_receipt" />
                 <field name="department_id" required="1"/>

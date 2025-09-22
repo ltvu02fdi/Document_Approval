@@ -13,6 +13,7 @@ class PlannedExpenditure(models.Model):
     date_entry = fields.Date(string="Entry Date", default=lambda self: fields.Date.today())
     category_id = fields.Many2one("expense.categories", string="Category")
     code_category = fields.Char(string="Code Category", related="category_id.code", store=True)
+    plan_expenditure_date = fields.Date(string="Planned Expenditure Date", default=fields.Date.today())
     amount = fields.Float(string="Amount")
     description_receipt = fields.Char(string="Description Receipt")
     department_id = fields.Many2one("hr.department", string="Department")

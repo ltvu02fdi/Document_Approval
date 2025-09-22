@@ -211,6 +211,11 @@ msgid "Document Date"
 msgstr "Ngày chứng từ"
 
 #. module: project_custom
+#: model:ir.model.fields,field_description:project_custom.field_planned_expenditure__plan_expenditure_date
+msgid "Plan Expenditure Date"
+msgstr "Ngày dự chi"
+
+#. module: project_custom
 #: model:ir.model.fields,field_description:project_custom.field_cash_inflows__document_date_id
 #: model:ir.model.fields,field_description:project_custom.field_cash_outflows__document_date_id
 msgid "Document Date"
