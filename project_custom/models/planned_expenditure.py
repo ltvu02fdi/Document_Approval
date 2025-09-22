@@ -24,3 +24,10 @@ class PlannedExpenditure(models.Model):
         for rec in self:
             if rec.amount <= 0:
                 raise ValidationError("Số tiền phải lớn hơn 0.")
+
+    @api.model
+    def get_import_templates(self):
+        return [{
+            'label': 'Tải về mẫu dự chi',
+            'template': '/project_custom/static/template/du_chi.xlsx',
+        }]

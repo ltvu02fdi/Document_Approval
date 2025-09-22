@@ -29,10 +29,10 @@
               parent="cash_configuration_menu"
               action="receipt_categories_action"/>
 
-    <menuitem id="document_date_menu" name="Document Date"
-              sequence="17"
-              parent="cash_configuration_menu"
-              action="document_date_action"/>
+<!--    <menuitem id="document_date_menu" name="Document Date"-->
+<!--              sequence="17"-->
+<!--              parent="cash_configuration_menu"-->
+<!--              action="document_date_action"/>-->
 
     <menuitem id="cash_hr_department_menu" name="Department"
               sequence="18"
