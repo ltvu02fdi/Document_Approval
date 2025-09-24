@@ -28,6 +28,14 @@ class CashOutflow(models.Model):
             if rec.amount <= 0:
                 raise ValidationError("Số tiền phải lớn hơn 0.")
 
+    @api.constrains("category_id")
+    def _check_partner_in_category(self):
+        for rec in self:
+            if rec.category_id and not rec.category_id.partner_id:
+                raise ValidationError(
+                    _("Không được phép chọn mã cha.")
+                )
+
     @api.model
     def get_import_templates(self):
         return [{
