@@ -19,11 +19,38 @@
         </field>
     </record>
 
+        <!-- Pivot View -->
+    <record id="view_cash_inflows_pivot" model="ir.ui.view">
+        <field name="name">cash.inflows.pivot</field>
+        <field name="model">cash.inflows</field>
+        <field name="arch" type="xml">
+            <pivot string="Cash Inflows Analysis">
+                <field name="document_date" type="row"/>
+                <field name="category_id" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_cash_inflows_graph" model="ir.ui.view">
+        <field name="name">cash.inflows.graph</field>
+        <field name="model">cash.inflows</field>
+        <field name="arch" type="xml">
+            <graph string="Cash Inflows Chart" type="bar">
+                <field name="document_date" type="row"/>
+                <field name="category_id" type="col"/>
+                <field name="amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+
     <record id="cash_inflows_action" model="ir.actions.act_window">
         <field name="name">Cash Inflows</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">cash.inflows</field>
-        <field name="view_mode">list</field>
+        <field name="view_mode">list,pivot,graph</field>
         <field name="view_ids"
                eval="[(5,0,0),
         (0, 0, {'view_mode': 'list', 'view_id': ref('cash_inflows_list_view')})]"/>
