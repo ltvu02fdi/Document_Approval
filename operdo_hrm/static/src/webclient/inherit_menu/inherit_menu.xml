@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="inherit_navbar_apps_menu"
+       t-inherit="web.NavBar.AppsMenu"
+       t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class, 'o_navbar_apps_menu')]" position="before">
+           <a class="logo_main_page" href="/web" style="cursor:pointer;">
+                <img src="/operdo_hrm/static/src/img/operdo.svg"
+                     alt="Logo" height="40"/>
+           </a>
+        </xpath>
+    </t>
+    <t id="extension_brand_logo" t-inherit="website.placeholder_header_brand" t-inherit-mode="extension">
+        <xpath expr="//a[@data-name='Navbar Logo']/span" position="replace">
+            <img src="/operdo_hrm/static/src/img/operdo.svg"
+                 alt="Logo" height="40"/>
+        </xpath>
+    </t>
+    <t id="inherit_navbar_apps_icon" t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension">
+        <xpath expr="//i[contains(@class, 'oi oi-apps')]" position="replace">
+            <i class="fa fa-bars"/>
+        </xpath>
+    </t>
+</templates>

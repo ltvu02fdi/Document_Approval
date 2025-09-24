@@ -38,10 +38,10 @@
                                        options='{"no_open": True, "no_create": True, "no_edit": True}'/>
                             </group>
                         </group>
-                        <group string="Recipient Information">
+                        <group string="Recipient Information" invisible="request_type in ['client_request']">
                             <group>
                                 <field name="recipient" readonly="state not in ['draft']"/>
-                                <field name="payment_method" required="1" readonly="state not in ['draft']"/>
+                                <field name="payment_method" required="request_type not in ['client_request']" readonly="state not in ['draft']"/>
                             </group>
                             <group>
                                 <field name="tax_code" readonly="state not in ['draft']"/>
@@ -51,13 +51,26 @@
                                        required="payment_method in ['bank_transfer']"/>
                             </group>
                         </group>
+                        <group string="Customer Information" invisible="request_type not in ['client_request']">
+                            <group>
+                                <field name="client_name" readonly="state not in ['draft']" required="request_type in ['client_request']"/>
+                                <field name="client_lead" readonly="state not in ['draft']" required="request_type in ['client_request']"/>
+                                <field name="team_member" readonly="state not in ['draft']" required="request_type in ['client_request']"/>
+                            </group>
+                            <group>
+                                <field name="date_hospitality" readonly="state not in ['draft']" required="request_type in ['client_request']"/>
+                                <field name="venue" readonly="state not in ['draft']" required="request_type in ['client_request']"/>
+                                <field name="price_unit" readonly="state not in ['draft']" required="request_type in ['client_request']"/>
+                            </group>
+                        </group>
                         <group string="Description">
                             <field name="description" required="1"/>
                         </group>
-                        <group>
+                        <group invisible="request_type in ['client_request']">
                             <notebook>
                                 <page string="Detail">
-                                    <field name="document_approval_ids" readonly="state not in ['draft']">
+                                    <field name="document_approval_ids"
+                                           required="request_type not in ['client_request']" readonly="state not in ['draft']">
                                         <list editable="bottom">
                                             <field name="sequence"/>
                                             <field name="type_voucher" required="1"/>
@@ -131,6 +144,7 @@
                           decoration-success="state  == 'approved'">
                         <field name="request_code" readonly="state != 'draft'"/>
                         <field name="request_type"/>
+                        <field name="request_date"/>
                         <field name="approve_initiator_id"/>
                         <field name="company_id" readonly="state != 'draft'"/>
                         <field name="state"

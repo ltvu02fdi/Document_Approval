@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_expense_categories,access_expense_categories,model_expense_categories,base.group_user,1,1,1,1
+access_receipt_categories,access_receipt_categories,model_receipt_categories,base.group_user,1,1,1,1
+access_cash_inflows,access_cash_inflows,model_cash_inflows,base.group_user,1,1,1,1
+access_cash_outflows,access_cash_outflows,model_cash_outflows,base.group_user,1,1,1,1
+access_planned_expenditure,access_planned_expenditure,model_planned_expenditure,base.group_user,1,1,1,1
+access_document_date,access_document_date,model_document_date,base.group_user,0,0,0,0

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menus for document approvals -->
+    <menuitem id="cash_menu_root" name="Cash"
+              sequence="1"
+              web_icon="project_custom,static/description/icon.png">
+        <menuitem id="cash_inflows_menu" name="Cash Inflows"
+                  sequence="3"
+                  action="cash_inflows_action"/>
+        <menuitem id="cash_outflows_menu" name="Cash Outflows"
+                  sequence="4"
+                  action="cash_outflows_action"/>
+        <menuitem id="planned_expenditure_menu" name="Planned Expenditure"
+                  sequence="5"
+                  action="planned_expenditure_action"/>
+    </menuitem>
+
+    <menuitem id="cash_configuration_menu" name="Configuration"
+              sequence="6"
+              parent="cash_menu_root"/>
+
+    <menuitem id="expense_categories_menu" name="Expense Categories"
+              sequence="16"
+              parent="cash_configuration_menu"
+              action="expense_categories_action"/>
+
+    <menuitem id="receipt_categories_menu" name="Receipt Categories"
+              sequence="17"
+              parent="cash_configuration_menu"
+              action="receipt_categories_action"/>
+
+<!--    <menuitem id="document_date_menu" name="Document Date"-->
+<!--              sequence="17"-->
+<!--              parent="cash_configuration_menu"-->
+<!--              action="document_date_action"/>-->
+
+    <menuitem id="cash_hr_department_menu" name="Department"
+              sequence="18"
+              parent="cash_configuration_menu"
+              action="hr.hr_department_tree_action"/>
+</odoo>

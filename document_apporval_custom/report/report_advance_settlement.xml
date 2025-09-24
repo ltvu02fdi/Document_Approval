@@ -40,7 +40,7 @@
                                 <tr>
                                     <td width="65%">
                                         <div style="padding-right:20px;font-size:14px">
-                                            <span t-esc="o.company_id.name" style="text-transform: uppercase;"/>
+                                            <b><span t-esc="o.company_id.name" style="text-transform: uppercase;"/></b>
                                             <br/>
                                             <span t-esc="o.company_id.street"/>
                                         </div>
@@ -71,20 +71,30 @@
 
                             <!-- Thông tin đề nghị -->
                             <div style="margin-top: 10px;">
-                                <div>- Người đề nghị:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Người đề nghị</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.request_employee_id.name"/>
                                 </div>
-                                <div>- Chức vụ:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Chức vụ</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.job_id.name"/>
                                 </div>
-                                <div>- Thanh toán cho:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Thanh toán cho</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.recipient"/>
                                 </div>
-                                <div>- Hình thức quyết toán:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Hình thức quyết toán</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <t t-if="o.payment_method == 'bank_transfer'">Chuyển khoản</t>
                                     <t t-elif="o.payment_method == 'cash'">Tiền mặt</t>
                                 </div>
-                                <div>- STK:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- STK</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.account_number"/>
                                 </div>
                             </div>
@@ -93,12 +103,12 @@
                             <table class="table" style="margin-top: 10px;">
                                 <thead>
                                     <tr>
-                                        <th width="6%" style="text-align:center;">STT</th>
-                                        <th width="15%" style="text-align:center;">Loại chứng từ</th>
-                                        <th width="15%" style="text-align:center;">Mã chứng từ</th>
-                                        <th width="12%" style="text-align:center;">Ngày</th>
-                                        <th width="30%" style="text-align:center;">Nội dung</th>
-                                        <th width="15%" style="text-align:center;">Số tiền</th>
+                                        <th width="6%" style="text-align:center;"><b>STT</b></th>
+                                        <th width="15%" style="text-align:center;"><b>Loại chứng từ</b></th>
+                                        <th width="15%" style="text-align:center;"><b>Mã chứng từ</b></th>
+                                        <th width="12%" style="text-align:center;"><b>Ngày</b></th>
+                                        <th width="30%" style="text-align:center;"><b>Nội dung</b></th>
+                                        <th width="15%" style="text-align:center;"><b>Số tiền</b></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -166,28 +176,28 @@
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đồng ý</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                         <b>Phòng kế toán</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đồng ý</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                         <b>Trưởng bộ phận</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đồng ý</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                         <b>Người đề nghị</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đồng ý</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                 </tr>
                             </table>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sync_device_all_user,access.sync.device.all.user,model_zk_device,"",1,1,1,1

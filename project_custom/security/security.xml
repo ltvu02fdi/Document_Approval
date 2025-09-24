@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cash_inflows_multi_company_global_rule" model="ir.rule">
+        <field name="name">Cash Inflows multi-company global</field>
+        <field name="model_id" ref="model_cash_inflows"/>
+        <field name="domain_force">['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]
+        </field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="cash_outflows_multi_company_global_rule" model="ir.rule">
+        <field name="name">Cash Outflows multi-company global</field>
+        <field name="model_id" ref="model_cash_outflows"/>
+        <field name="domain_force">['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]
+        </field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="document_date_multi_company_global_rule" model="ir.rule">
+        <field name="name">Document Date multi-company global</field>
+        <field name="model_id" ref="model_document_date"/>
+        <field name="domain_force">['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]
+        </field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="expense_categories_multi_company_global_rule" model="ir.rule">
+        <field name="name">Expense Categories multi-company global</field>
+        <field name="model_id" ref="model_expense_categories"/>
+        <field name="domain_force">['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]
+        </field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="planned_expenditure_multi_company_global_rule" model="ir.rule">
+        <field name="name">Planned Expenditure multi-company global</field>
+        <field name="model_id" ref="model_planned_expenditure"/>
+        <field name="domain_force">['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]
+        </field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="receipt_categories_multi_company_global_rule" model="ir.rule">
+        <field name="name">Receipt Categories multi-company global</field>
+        <field name="model_id" ref="model_receipt_categories"/>
+        <field name="domain_force">['|', ('company_id', 'in', company_ids), ('company_id', '=', False)]
+        </field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+</odoo>

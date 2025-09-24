@@ -41,7 +41,7 @@
                                 <tr>
                                     <td width="65%">
                                         <div style="padding-right:20px;font-size:14px">
-                                            <span t-esc="o.company_id.name" style="text-transform: uppercase;"/>
+                                            <b><span t-esc="o.company_id.name" style="text-transform: uppercase;"/></b>
                                             <br/>
                                             <span t-esc="o.company_id.street"/>
                                         </div>
@@ -72,20 +72,30 @@
 
                             <!-- Thông tin đề nghị -->
                             <div style="margin-top: 10px;">
-                                <div>- Người đề nghị:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Người đề nghị</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.request_employee_id.name"/>
                                 </div>
-                                <div>- Chức vụ:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Chức vụ</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.job_id.name"/>
                                 </div>
-                                <div>- Tạm ứng cho:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Tạm ứng cho</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.recipient"/>
                                 </div>
-                                <div>- Hình thức tạm ứng:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- Hình thức tạm ứng</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <t t-if="o.payment_method == 'bank_transfer'">Chuyển khoản</t>
                                     <t t-elif="o.payment_method == 'cash'">Tiền mặt</t>
                                 </div>
-                                <div>- STK:
+                                <div>
+                                    <span style="display:inline-block; min-width:150px;">- STK</span>
+                                    <span style="display:inline-block; width:10px; text-align:center;">:</span>
                                     <span t-esc="o.account_number"/>
                                 </div>
                             </div>
@@ -94,9 +104,10 @@
                             <table class="table" style="margin-top: 10px;">
                                 <thead>
                                     <tr>
-                                        <th width="6%" style="text-align:center;">STT</th>
-                                        <th width="50%" style="text-align:center;">Nội dung tạm ứng</th>
-                                        <th width="15%" style="text-align:center;">Số tiền</th>
+                                        <th width="6%" style="text-align:center;"><b>STT</b></th>
+                                        <th width="15%" style="text-align:center;"><b>Loại chứng từ</b></th>
+                                        <th width="50%" style="text-align:center;"><b>Nội dung tạm ứng</b></th>
+                                        <th width="15%" style="text-align:center;"><b>Số tiền</b></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -109,6 +120,16 @@
                                                 <t t-esc="number"/>
                                             </td>
                                             <td>
+                                                <t t-if="l.type_voucher == 'receipt'">Phiếu thu / Biên nhận</t>
+                                                <t t-elif="l.type_voucher == 'customs'">Tờ khai HQ</t>
+                                                <t t-elif="l.type_voucher == 'bl'">B/L</t>
+                                                <t t-elif="l.type_voucher == 'contract'">Hợp đồng</t>
+                                                <t t-elif="l.type_voucher == 'goods_receipt'">Phiếu nhập kho</t>
+                                                <t t-elif="l.type_voucher == 'handover_minutes'">BB giao nhận</t>
+                                                <t t-elif="l.type_voucher == 'reconciliation_minutes'">BB đối soát</t>
+                                                <t t-elif="l.type_voucher == 'invoice'">Hoá đơn tài chính</t>
+                                            </td>
+                                            <td>
                                                 <span t-esc="l.expense_description"/>
                                             </td>
                                             <td style="text-align: right;">
@@ -119,7 +140,7 @@
                                         <t t-set="number" t-value="number + 1"/>
                                     </t>
                                     <tr>
-                                        <td colspan="2" style="text-align: center; font-weight: bold;">Tổng cộng</td>
+                                        <td colspan="3" style="text-align: center; font-weight: bold;">Tổng cộng</td>
 
                                         <td style="text-align: right; font-weight: bold;">
                                             <span t-esc="'{0:,.2f}'.format(total_amount)"/>
@@ -149,28 +170,28 @@
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                         <b>Phòng kế toán</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                         <b>Trưởng bộ phận</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                     <td>
                                         <b>Người đề nghị</b>
                                         <br/>
                                         <p style="font-style:italic">(Ký, họ tên)</p>
                                         <br/>
-                                        <b>Đã ký</b>
+                                        <b>Đã duyệt</b>
                                     </td>
                                 </tr>
                             </table>

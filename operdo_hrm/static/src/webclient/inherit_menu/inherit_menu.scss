@@ -1,0 +1,61 @@
+.btn-primary{
+  background: rgb(57, 65, 171) !important;
+  border-color: #3941ab !important;
+}
+.o_main_navbar{
+  background: rgb(57, 65, 171) !important;
+}
+.logo_main_page{
+      align-content: center;
+      margin-left: 8px;
+  img{
+      height: 28px;
+  }
+}
+.o_menu_sections {
+  .o-dropdown-item{
+    background: rgb(57, 65, 171) !important;
+  }
+  .dropdown-toggle{
+    background: rgb(57, 65, 171) !important;
+  }
+}
+.o_control_panel{
+  .btn-outline-primary{
+      background: rgb(57, 65, 171) !important;
+      color: white !important;
+      border-color: #3941ab !important;
+  }
+  .o_control_panel_actions{
+    .o_button_icon {
+      color: rgb(57, 65, 171) !important;
+    }
+  }
+}
+.o_search_panel_section{
+  .o_search_panel_section_icon{
+    color: rgb(57, 65, 171) !important;
+  }
+}
+.o_kanban_renderer{
+  .text-primary{
+      color: rgb(57, 65, 171) !important;
+  }
+}
+.o-dropdown--menu{
+  .o_filter_menu{
+    .text-primary{
+        color: rgb(57, 65, 171) !important;
+    }
+  }
+  .o_group_by_menu{
+    .text-action{
+        color: rgb(57, 65, 171) !important;
+    }
+  }
+}
+.o_searchview_facet{
+  .text-bg-action {
+    background-color: rgb(57, 65, 171) !important;
+  }
+}

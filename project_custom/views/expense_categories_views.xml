@@ -1,0 +1,48 @@
+<odoo>
+    <record id="expense_categories_list_view" model="ir.ui.view">
+        <field name="name">expense.categories.list.view</field>
+        <field name="model">expense.categories</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="code" optional="show"/>
+                <field name="name" optional="show"/>
+                <field name="partner_code" optional="show"/>
+                <field name="partner_id" optional="show"/>
+                <field name="company_id" optional="show" groups="base.group_multi_company"/>
+            </list>
+        </field>
+    </record>
+    <record id="expense_categories_form_view" model="ir.ui.view">
+        <field name="name">expense.categories.form.view</field>
+        <field name="model">expense.categories</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="code" required="1"/>
+                            <field name="name" required="1"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="partner_code" readonly="1"/>
+                            <field name="partner_id" options="{'no_edit': True, 'no_create': True}"/>
+                            <field name="company_id" readonly="1" force_save="1" groups="base.group_multi_company"
+                                   options="{'no_edit': True, 'no_create': True}"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="o_attachment_preview"/>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="expense_categories_action" model="ir.actions.act_window">
+        <field name="name">Expense categories</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">expense.categories</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>
