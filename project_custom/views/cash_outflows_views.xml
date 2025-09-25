@@ -49,11 +49,19 @@
         <field name="name">Cash Outflows</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">cash.outflows</field>
-        <field name="view_mode">list,pivot,graph</field>
+        <field name="view_mode">graph,pivot,list</field>
         <field name="view_ids"
                eval="[(5,0,0),
         (0, 0, {'view_mode': 'list', 'view_id': ref('cash_outflows_list_view')})]"/>
         <field name="domain">[]</field>
         <field name="context">{}</field>
+    </record>
+
+            <!-- Ưu tiên hiển thị graph view -->
+    <record id="action_cash_outflows_analysis_view_graph" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_cash_outflows_graph"/>
+        <field name="act_window_id" ref="cash_outflows_action"/>
     </record>
 </odoo>
