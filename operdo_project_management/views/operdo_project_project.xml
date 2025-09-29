@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="project_project_view_form_simplified_inherit_department" model="ir.ui.view">
+            <field name="name">project.project.view.form.simplified.inherit.department</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.project_project_view_form_simplified"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@class='oe_title mb-lg-3 mb-md-2']/h1" position="after">
+                    <label for="department_id" string="Department"/>
+                    <field name="department_id"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="project_project_view_form_edit_inherit_department" model="ir.ui.view">
+            <field name="name">project.project.view.form.edit.inherit.department</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="after">
+                    <field name="department_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

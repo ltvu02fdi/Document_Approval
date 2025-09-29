@@ -1,0 +1,33 @@
+/* SPDX-License-Identifier: LGPL-3.0-or-later */
+:root {
+  --o-brand-primary: #3941AB;
+  --o-brand-secondary: #8098F9;
+  --o-brand-odoo: var(--o-brand-primary);
+
+  --opd-bg: #F8FAFF;
+  --opd-surface: #FFFFFF;
+  --opd-border: #E5E7EB;
+
+  /* Navbar gradient colors */
+  --opd-navbar-start: #3941AB;
+  --opd-navbar-end: #8098F9;
+  --opd-navbar-text: #ffffff;
+  --opd-navbar-hover: #2f37a0;
+
+  /* App switcher */
+  --opd-appmenu-bg: #0F172A;
+  --opd-appmenu-item-bg: #111827;
+  --opd-appmenu-item-text: #E5E7EB;
+  --opd-appmenu-item-active-bg: #8098F9;
+  --opd-appmenu-item-active-text: #0B1028;
+
+  /* Buttons */
+  --opd-btn-primary-bg: #3941AB;
+  --opd-btn-primary-border: #2f37a0;
+  --opd-btn-primary-text: #ffffff;
+
+  /* List view */
+  --opd-list-header-bg: #C7D7FE;
+  --opd-list-header-text: #0B1028;
+  --opd-list-hover: #F1F5FF;
+}

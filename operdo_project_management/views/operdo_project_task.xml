@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="quick_create_task_form_inherit_department_user" model="ir.ui.view">
+            <field name="name">project.task.form.quick_create.inherit.department.user</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.quick_create_task_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_ids']" position="attributes">
+                    <attribute name="domain">[('employee_id.department_id', '=', department_id)]</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_task_form2_inherit_department" model="ir.ui.view">
+            <field name="name">project.task.form.inherit.department</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_ids']" position="attributes">
+                    <attribute name="domain">[('employee_id.department_id', '=', department_id)]</attribute>
+                </xpath>
+                <field name="tag_ids" position="after">
+                    <field name="department_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

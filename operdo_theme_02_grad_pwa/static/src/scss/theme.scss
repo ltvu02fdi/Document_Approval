@@ -1,0 +1,105 @@
+/* SPDX-License-Identifier: LGPL-3.0-or-later */
+/* Gradient navbar + logo background approach (no XML) */
+
+/* Background */
+.o_web_client, .o_action_manager { background-color: var(--opd-bg); }
+
+/* Navbar with gradient */
+.o_main_navbar {
+  background: linear-gradient(90deg, var(--opd-navbar-start), var(--opd-navbar-end));
+  color: var(--opd-navbar-text);
+  border-bottom: 1px solid var(--opd-border);
+}
+.o_main_navbar .o_menu_brand, 
+.o_main_navbar .o_menu_sections .dropdown-toggle,
+.o_main_navbar .o_menu_systray > *, 
+.o_main_navbar a, .o_main_navbar button { color: var(--opd-navbar-text); }
+.o_main_navbar a:hover, .o_main_navbar button:hover { background-color: rgba(0,0,0,0.06); }
+
+/* Brand logo as background */
+.o_main_navbar .o_menu_brand {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 136px; /* leave space for logo */
+  background-image: url('/operdo_theme_02_grad_pwa/static/description/logo.png');
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 120px auto;
+  font-weight: 600;
+}
+
+/* App switcher */
+.o_app_switcher { background: var(--opd-appmenu-bg); }
+.o_app_switcher .o_app {
+  background: var(--opd-appmenu-item-bg);
+  color: var(--opd-appmenu-item-text);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.o_app_switcher .o_app.active {
+  background: var(--opd-appmenu-item-active-bg);
+  color: var(--opd-appmenu-item-active-text);
+}
+
+/* Buttons */
+.btn-primary, .o_form_button_save, .o_list_button_add {
+  background-color: var(--opd-btn-primary-bg);
+  border-color: var(--opd-btn-primary-border);
+  color: var(--opd-btn-primary-text);
+}
+.btn-primary:hover, .o_form_button_save:hover, .o_list_button_add:hover { filter: brightness(0.95); }
+
+/* List views */
+.o_list_view thead th {
+  background: var(--opd-list-header-bg);
+  color: var(--opd-list-header-text);
+  border-bottom-color: var(--opd-border);
+}
+.o_list_view tbody tr:hover { background: var(--opd-list-hover); }
+
+/* Form */
+.o_form_sheet_bg, .o_form_view .o_form_sheet { background: var(--opd-surface); }
+
+/* Kanban */
+.o_kanban_group .o_kanban_header {
+  background: linear-gradient(90deg, var(--o-brand-secondary), transparent);
+  color: #0B1028;
+}
+
+/* === Secondary menu (tabs dưới chữ App, ví dụ Orders/Products/...) === */
+.o_main_navbar .o_menu_sections {
+  background: transparent; /* để lộ gradient phía sau */
+}
+
+/* Tất cả item: trong suốt, chữ theo navbar */
+.o_main_navbar .o_menu_sections .nav .nav-link,
+.o_main_navbar .o_menu_sections .dropdown-toggle {
+  background: transparent !important;
+  color: var(--opd-navbar-text) !important;
+  border-radius: 0; /* giữ phẳng như Odoo tiêu chuẩn */
+}
+
+/* Hover/Focus: phủ nhẹ để thấy phản hồi */
+.o_main_navbar .o_menu_sections .nav .nav-link:hover,
+.o_main_navbar .o_menu_sections .nav .nav-link:focus,
+.o_main_navbar .o_menu_sections .dropdown-toggle:hover,
+.o_main_navbar .o_menu_sections .dropdown-toggle:focus {
+  background: rgba(255,255,255,0.10) !important;
+  color: var(--opd-navbar-text) !important;
+}
+
+/* Active: giữ trong suốt (khớp hẳn với dải gradient) */
+.o_main_navbar .o_menu_sections .nav .nav-link.active,
+.o_main_navbar .o_menu_sections .dropdown.show > .dropdown-toggle {
+  background: transparent !important;
+  color: #fff !important;
+  /* Nếu muốn gạch chân/viền để nhìn rõ active:
+  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.8);
+  */
+}
+
+/* Nếu có divider trong menu con: */
+.o_main_navbar .o_menu_sections .dropdown-menu .dropdown-divider {
+  border-top-color: rgba(255,255,255,0.15);
+}

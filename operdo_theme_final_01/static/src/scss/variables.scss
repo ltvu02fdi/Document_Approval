@@ -1,0 +1,50 @@
+/* SPDX-License-Identifier: LGPL-3.0-or-later */
+:root {
+  /* Brand palette */
+  --o-brand-primary: #3941AB;
+  --o-brand-secondary: #8098F9;
+  --o-brand-odoo: var(--o-brand-primary);
+
+  /* Base surfaces */
+  --opd-bg: #F8FAFF;
+  --opd-surface: #FFFFFF;
+  --opd-border: #E5E7EB;
+
+  /* Navbar */
+  --opd-navbar-start: #3941AB;
+  --opd-navbar-end:   #8098F9;
+  --opd-navbar-text:  #ffffff;
+  --opd-navbar-hover: rgba(255,255,255,0.10);
+
+  /* Secondary menu (tabs Orders/Products...) */
+  --opd-menu-bg:            transparent;
+  --opd-menu-text:          #ffffff;
+  --opd-menu-item-bg:       transparent;
+  --opd-menu-item-hover-bg: rgba(255,255,255,0.10);
+  --opd-menu-item-active-bg:transparent;
+  --opd-menu-divider:       rgba(255,255,255,0.15);
+
+  /* Dropdown panel */
+  --opd-dd-bg:            #3b46b7;            /* slightly brighter than start */
+  --opd-dd-text:          #ffffff;
+  --opd-dd-item-hover:    rgba(255,255,255,0.10);
+  --opd-dd-item-active:   rgba(255,255,255,0.16);
+
+  /* App switcher */
+  --opd-appmenu-bg:               #0F172A;
+  --opd-appmenu-item-bg:          #111827;
+  --opd-appmenu-item-text:        #E5E7EB;
+  --opd-appmenu-item-hover-bg:    rgba(255,255,255,0.06);
+  --opd-appmenu-item-active-bg:   #8098F9;
+  --opd-appmenu-item-active-text: #0B1028;
+
+  /* Buttons */
+  --opd-btn-primary-bg: #3941AB;
+  --opd-btn-primary-border: #2f37a0;
+  --opd-btn-primary-text: #ffffff;
+
+  /* List/Views */
+  --opd-list-header-bg: #C7D7FE;
+  --opd-list-header-text: #0B1028;
+  --opd-list-hover: #F1F5FF;
+}
