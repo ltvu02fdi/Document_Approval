@@ -1,0 +1,124 @@
+/* SPDX-License-Identifier: LGPL-3.0-or-later */
+
+/* Background */
+.o_web_client, .o_action_manager { background-color: var(--opd-bg); }
+
+/* Navbar with gradient */
+.o_main_navbar {
+  background: linear-gradient(90deg, var(--opd-navbar-start), var(--opd-navbar-end));
+  color: var(--opd-navbar-text);
+  border-bottom: 1px solid var(--opd-border);
+}
+.o_main_navbar a, .o_main_navbar button,
+.o_main_navbar .o_menu_systray > *,
+.o_main_navbar .o_menu_sections .dropdown-toggle,
+.o_main_navbar .o_menu_brand { color: var(--opd-navbar-text); }
+.o_main_navbar a:hover, .o_main_navbar button:hover { background-color: var(--opd-navbar-hover); }
+
+/* Logo badge to ensure contrast */
+.o_main_navbar .o_menu_brand {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 44px;
+  padding-left: 148px;
+  font-weight: 600;
+  overflow: visible;
+}
+.o_main_navbar .o_menu_brand::after {
+  content: "";
+  position: absolute;
+  left: 10px; top: 6px;
+  width: 128px; height: 32px;
+  background: rgba(57,65,171,0.9);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.o_main_navbar .o_menu_brand::before {
+  content: "";
+  position: absolute;
+  left: 16px; top: 8px;
+  width: 116px; height: 28px;
+  background-image: url('/operdo_theme_final_01/static/description/logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  z-index: 1;
+}
+
+/* Secondary menu (tabs Orders/Products...) aligned with gradient */
+.o_main_navbar .o_menu_sections { background: var(--opd-menu-bg); }
+.o_main_navbar .o_menu_sections .nav .nav-link,
+.o_main_navbar .o_menu_sections .dropdown-toggle {
+  background: var(--opd-menu-item-bg) !important;
+  color: var(--opd-menu-text) !important;
+  border-radius: 0;
+}
+.o_main_navbar .o_menu_sections .nav .nav-link:hover,
+.o_main_navbar .o_menu_sections .nav .nav-link:focus,
+.o_main_navbar .o_menu_sections .dropdown-toggle:hover,
+.o_main_navbar .o_menu_sections .dropdown-toggle:focus {
+  background: var(--opd-menu-item-hover-bg) !important;
+  color: var(--opd-menu-text) !important;
+}
+.o_main_navbar .o_menu_sections .nav .nav-link.active,
+.o_main_navbar .o_menu_sections .dropdown.show > .dropdown-toggle {
+  background: var(--opd-menu-item-active-bg) !important;
+  color: var(--opd-menu-text) !important;
+}
+
+/* Dropdown panel styling */
+.o_main_navbar .dropdown-menu {
+  background: var(--opd-dd-bg);
+  color: var(--opd-dd-text);
+  border: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+.o_main_navbar .dropdown-menu .dropdown-item {
+  background: transparent;
+  color: var(--opd-dd-text);
+}
+.o_main_navbar .dropdown-menu .dropdown-item:hover,
+.o_main_navbar .dropdown-menu .dropdown-item:focus {
+  background: var(--opd-dd-item-hover);
+  color: var(--opd-dd-text);
+}
+.o_main_navbar .dropdown-menu .dropdown-item.active,
+.o_main_navbar .dropdown-menu .dropdown-item[aria-current="true"] {
+  background: var(--opd-dd-item-active);
+  color: var(--opd-dd-text);
+}
+.o_main_navbar .dropdown-menu .dropdown-divider { border-top-color: var(--opd-menu-divider); }
+
+/* App switcher */
+.o_app_switcher { background: var(--opd-appmenu-bg); }
+.o_app_switcher .o_app {
+  background: var(--opd-appmenu-item-bg);
+  color: var(--opd-appmenu-item-text);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.o_app_switcher .o_app:hover { background: var(--opd-appmenu-item-hover-bg); }
+.o_app_switcher .o_app.active {
+  background: var(--opd-appmenu-item-active-bg);
+  color: var(--opd-appmenu-item-active-text);
+}
+
+/* Buttons */
+.btn-primary, .o_form_button_save, .o_list_button_add {
+  background-color: var(--opd-btn-primary-bg);
+  border-color: var(--opd-btn-primary-border);
+  color: var(--opd-btn-primary-text);
+}
+.btn-primary:hover, .o_form_button_save:hover, .o_list_button_add:hover { filter: brightness(0.95); }
+
+/* List views */
+.o_list_view thead th {
+  background: var(--opd-list-header-bg);
+  color: var(--opd-list-header-text);
+  border-bottom-color: var(--opd-border);
+}
+.o_list_view tbody tr:hover { background: var(--opd-list-hover); }
+
+/* Forms */
+.o_form_sheet_bg, .o_form_view .o_form_sheet { background: var(--opd-surface); }
+

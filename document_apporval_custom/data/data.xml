@@ -14,6 +14,7 @@
             <field name="code">purchase.request.seq</field>
             <field name="prefix">DNMH</field>
             <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
         </record>
 
         <!-- Payment Request -->
@@ -22,6 +23,7 @@
             <field name="code">payment.request.seq</field>
             <field name="prefix">DNTT</field>
             <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
         </record>
 
         <!-- Cash Request -->
@@ -30,6 +32,7 @@
             <field name="code">cash.request.seq</field>
             <field name="prefix">DNTU</field>
             <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
         </record>
 
         <!-- advance settlement -->
@@ -38,6 +41,7 @@
             <field name="code">advance.settlement.seq</field>
             <field name="prefix">DNQTTU</field>
             <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
         </record>
 
         <!-- Client Request -->
@@ -46,6 +50,7 @@
             <field name="code">client.request.seq</field>
             <field name="prefix">DXTK</field>
             <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
         </record>
     </data>
 </odoo>

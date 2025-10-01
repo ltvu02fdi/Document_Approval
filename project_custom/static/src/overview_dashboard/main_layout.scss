@@ -1,0 +1,18 @@
+.layout-overview{
+    height:100%;
+    width: 100%;
+    .side_panel{
+        flex: 0 0 10%;
+        height:100%;
+        width: 100%;
+        }
+    .dashboard{
+        flex: 0 0 90%;
+        height:100%;
+        width: 100%;
+        background: white;
+        .o_dashboard_container{
+            height:100%;
+            }
+        }
+    }

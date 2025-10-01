@@ -18,4 +18,9 @@
         'views/cash_outflows_views.xml',
         'views/menu_views.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'project_custom/static/src/**/*',
+        ],
+    },
 }

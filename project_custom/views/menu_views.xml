@@ -19,6 +19,15 @@
               sequence="6"
               parent="cash_menu_root"/>
 
+    <menuitem id="overview_menu" name="Overview"
+              sequence="2"
+              parent="cash_menu_root"/>
+
+    <menuitem id="overview_inflows_menu" name="Overview Finance"
+              sequence="1"
+              parent="overview_menu"
+              action="action_main_layout"/>
+
     <menuitem id="expense_categories_menu" name="Expense Categories"
               sequence="16"
               parent="cash_configuration_menu"

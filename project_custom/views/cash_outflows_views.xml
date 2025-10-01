@@ -19,15 +19,49 @@
         </field>
     </record>
 
+            <!-- Pivot View -->
+    <record id="view_cash_outflows_pivot" model="ir.ui.view">
+        <field name="name">cash.outflows.pivot</field>
+        <field name="model">cash.outflows</field>
+        <field name="arch" type="xml">
+            <pivot string="Cash Outflows Analysis">
+                <field name="document_date" type="row"/>
+                <field name="category_id" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Graph View -->
+    <record id="view_cash_outflows_graph" model="ir.ui.view">
+        <field name="name">cash.outflows.graph</field>
+        <field name="model">cash.outflows</field>
+        <field name="arch" type="xml">
+            <graph string="Cash Outflows Chart" type="bar">
+                <field name="document_date" type="row"/>
+                <field name="category_id" type="col"/>
+                <field name="amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
     <record id="cash_outflows_action" model="ir.actions.act_window">
         <field name="name">Cash Outflows</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">cash.outflows</field>
-        <field name="view_mode">list</field>
+        <field name="view_mode">graph,pivot,list</field>
         <field name="view_ids"
                eval="[(5,0,0),
         (0, 0, {'view_mode': 'list', 'view_id': ref('cash_outflows_list_view')})]"/>
         <field name="domain">[]</field>
         <field name="context">{}</field>
+    </record>
+
+            <!-- Ưu tiên hiển thị graph view -->
+    <record id="action_cash_outflows_analysis_view_graph" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_cash_outflows_graph"/>
+        <field name="act_window_id" ref="cash_outflows_action"/>
     </record>
 </odoo>

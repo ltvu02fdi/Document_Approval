@@ -1,0 +1,33 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* operdo_project_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-17 01:41+0000\n"
+"PO-Revision-Date: 2025-09-17 01:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: operdo_project_management
+#: model:ir.model.fields,field_description:operdo_project_management.field_project_project__department_id
+#: model:ir.model.fields,field_description:operdo_project_management.field_project_task__department_id
+#: model_terms:ir.ui.view,arch_db:operdo_project_management.project_project_view_form_simplified_inherit_department
+msgid "Department"
+msgstr "Phòng ban"
+
+#. module: operdo_project_management
+#: model:ir.model,name:operdo_project_management.model_project_project
+msgid "Project"
+msgstr "Dự án"
+
+#. module: operdo_project_management
+#: model:ir.model,name:operdo_project_management.model_project_task
+msgid "Task"
+msgstr "Nhiệm vụ"

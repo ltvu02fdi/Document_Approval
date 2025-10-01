@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="my_module.DashboardTemplate">
+        <div class="p-6 o_dashboard_container">
+            <div class="charts">
+                <div class="title">
+                    <h3>Tổng quan tài chính</h3>
+                </div>
+                <div class="body_charts">
+                    <div class="card_container">
+                        <div class="card_1 card_overview">
+                            <div class="content_big_card">
+                                <div class="content_card">
+                                    <div class="content">
+                                        <p>Tiền thu</p>
+                                    </div>
+                                    <div class="text_des inflow">
+                                        <p t-esc="state.inflow"></p>
+                                    </div>
+                                </div>
+                                <div class="logo">
+                                    <img src="/project_custom/static/img/logo_inflow.svg"/>
+                                </div>
+                            </div>
+                            <div class="wave">
+                                <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card_2 card_overview">
+                            <div class="content_big_card">
+                                <div class="content_card">
+                                    <div class="content">
+                                        <p>Tiền chi</p>
+                                    </div>
+                                    <div class="text_des outflow">
+                                        <p t-esc="state.outflow"></p>
+                                    </div>
+                                </div>
+                                <div class="logo">
+                                    <img src="/project_custom/static/img/logo_outflow.svg"/>
+                                </div>
+                            </div>
+                            <div class="wave">
+                                <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card_3 card_overview">
+                           <div class="content_big_card">
+                                <div class="content_card">
+                                    <div class="content">
+                                        <p>Số dư cuối kỳ đến hiện tại</p>
+                                    </div>
+                                    <div class="text_des dif">
+                                        <p t-esc="state.dif"></p>
+                                    </div>
+                                </div>
+                                <div class="logo">
+                                    <img src="/project_custom/static/img/logo_dif.svg"/>
+                                </div>
+                            </div>
+                            <div class="wave">
+                                <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list_dashboard">
+                        <div class="dashboard_1">
+                            <div id="lineBarChart" style="width:100%; height:400px;"></div>
+                        </div>
+                        <div class="dashboard_2">
+                            <div id="lineChart" style="width:100%; height:400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

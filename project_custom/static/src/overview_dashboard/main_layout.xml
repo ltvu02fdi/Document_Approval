@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="my_module.MainLayoutTemplate">
+        <div class="layout-overview flex h-full d-flex">
+            <!-- Side Panel -->
+            <div class="side_panel">
+                <SidePanel t-props='{"filter": state.filter, "onApply": updateFilter}'/>
+            </div>
+            <!-- Dashboard -->
+            <div class="dashboard">
+                <Dashboard t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
+            </div>
+        </div>
+    </t>
+</templates>
