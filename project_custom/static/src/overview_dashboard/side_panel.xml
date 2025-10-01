@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="my_module.SidePanelTemplate">
+        <div class="side_panel_operdo">
+            <div class="header_title">
+                <h3 class="title_filter">Ngày chứng từ</h3>
+                <div class="operdo_line"/>
+            </div>
+            <div class="body_filter">
+                <div class="filter_1 filter">
+                    <p class="text-fil">Từ</p>
+                    <div class="input-icon">
+                        <input type="text" t-ref="dateFrom" class="select" placeholder="DD/MM/YYYY"/>
+                        <img t-on-click="onClickCalendar" src="/project_custom/static/img/calendar.svg"></img>
+                    </div>
+                </div>
+
+                <div class="filter_2 filter">
+                    <p class="text-fil">Đến</p>
+                    <div class="input-icon">
+                        <input type="text" t-ref="dateTo" class="select" placeholder="DD/MM/YYYY"/>
+                        <img t-on-click="onClickCalendarDateTo" src="/project_custom/static/img/calendar.svg"></img>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-filter">
+                <p class="button_apply"
+                   style="cursor:pointer;"
+                   t-att-disabled="!state?.selected?.date_to or !state?.selected?.date_from"
+                   t-on-click="() => this.applyFilter()">
+                   Apply
+                </p>
+            </div>
+        </div>
+    </t>
+</templates>

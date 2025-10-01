@@ -20,7 +20,7 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'project_custom/static/src/js/finance_dashboard.js',
+            'project_custom/static/src/**/*',
         ],
     },
 }
