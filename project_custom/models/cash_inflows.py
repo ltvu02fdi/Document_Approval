@@ -21,6 +21,7 @@ class CashInflow(models.Model):
     payer = fields.Char(string="Payer")
     department_id = fields.Many2one("hr.department", string="Department")
     company_id = fields.Many2one("res.company", string="Company", default=lambda self: self._default_company_id())
+    partner_name = fields.Char(string="Partner Name",related="category_id.partner_id.name")
 
     @api.constrains('amount')
     def _check_amount(self):

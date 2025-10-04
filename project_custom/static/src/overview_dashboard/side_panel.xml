@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="my_module.SidePanelTemplate">
+    <t t-name="cash.SidePanelTemplate">
         <div class="side_panel_operdo">
             <div class="header_title">
                 <h3 class="title_filter">Ngày chứng từ</h3>
