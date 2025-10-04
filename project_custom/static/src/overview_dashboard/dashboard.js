@@ -159,8 +159,8 @@ export class Dashboard extends Component {
                             type: "line",
                             smooth: true,
                             showSymbol: true,
-                            symbol: 'circle',        // biểu tượng điểm là tròn
-                            symbolSize: 8,           // kích thước điểm
+                            symbol: 'circle',
+                            symbolSize: 8,
                             data: in_out_year_by_m.outflow,
                             lineStyle: { color: "#E83E3C", width: 2 },
                             itemStyle: {
@@ -225,7 +225,6 @@ export class Dashboard extends Component {
 
         this.state.inflow = rawInflow.amount.toLocaleString("vi-VN");
         this.state.outflow = rawOutflow.amount.toLocaleString("vi-VN");
-        this.state.dif = (rawInflow.amount - rawOutflow.amount).toLocaleString("vi-VN");
         if (this.lineBarChart) {
             this.lineBarChart.setOption({
                 xAxis: { data: rawInOutYearByM.labels },
@@ -238,4 +237,4 @@ export class Dashboard extends Component {
     }
 }
 
-Dashboard.template = "my_module.DashboardTemplate";
+Dashboard.template = "cash.DashboardTemplate";

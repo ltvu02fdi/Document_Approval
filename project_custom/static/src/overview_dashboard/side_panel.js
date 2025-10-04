@@ -7,7 +7,7 @@ import { CompanySelector  } from "@web/webclient/switch_company_menu/switch_comp
 
 
 export class SidePanel extends Component {
-    static template = "my_module.SidePanelTemplate";
+    static template = "cash.SidePanelTemplate";
     static props = ["filter", "onApply"];
     convertDateFormat(dateStr) {
         if (!dateStr) return null;

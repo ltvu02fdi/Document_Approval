@@ -23,10 +23,15 @@
               sequence="2"
               parent="cash_menu_root"/>
 
-    <menuitem id="overview_inflows_menu" name="Overview Finance"
+    <menuitem id="overview_financial_menu" name="Overview Finance"
               sequence="1"
               parent="overview_menu"
-              action="action_main_layout"/>
+              action="action_overview_finance"/>
+
+    <menuitem id="overview_inflow_menu" name="Overview Inflow"
+              sequence="2"
+              parent="overview_menu"
+              action="action_overview_inflow"/>
 
     <menuitem id="expense_categories_menu" name="Expense Categories"
               sequence="16"

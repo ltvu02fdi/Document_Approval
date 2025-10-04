@@ -1,0 +1,92 @@
+.charts_inflow{
+    height: 100%;
+    width: 100%;
+    padding: 30px 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .title{
+    height: 30px;
+    h3{
+        font-size:24px;
+        font-weight: 600;
+        margin-bottom: 0 !important;
+        color: #3941ab;
+        }
+    }
+    .body_charts{
+        height: calc(100% - 30px);
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .card_container{
+            display:flex;
+            height: 130px;
+            gap: 24px;
+            .card_1{
+                flex:1;
+                }
+            .card_2{
+                flex:1;
+                }
+            .card_3{
+                flex:1;
+                }
+        }
+        .card_overview{
+            position: relative;
+            border-radius: 6px;
+            background-color: #3941AB;
+            overflow: hidden;
+            padding: 30px;
+            .content_big_card{
+                display: flex;
+                justify-content: space-between;
+                z-index: 1;
+                position: relative;
+                .content_card{
+                    .content{
+                        display: flex;
+                        gap: 4px;
+                        p{
+                            font-weight: 500;
+                            font-size: 20px;
+                            color: white;
+                            margin-bottom: 0 !important;
+                            }
+                    }
+                    .text_des{
+                        p{
+                            font-weight: 600;
+                            font-size: 28px;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .wave{
+                position: absolute;
+                bottom: -7px;
+                z-index: 0;
+                left: 0;
+                width: 100%;
+                    svg{
+                        width: 100%;
+                    }
+            }
+        }
+        .list_dashboard{
+            height: 472px;
+            display: flex;
+            gap: 24px;
+            .dashboard_1{
+                flex:1;
+                box-shadow: 0px 1.85px 8.34px 0px #00000026;
+            }
+            .dashboard_2{
+                flex:1;
+                box-shadow: 0px 1.85px 8.34px 0px #00000026;
+            }
+        }
+    }
+}
