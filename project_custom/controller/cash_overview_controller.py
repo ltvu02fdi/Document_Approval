@@ -15,8 +15,8 @@ class CashOverviewFlowController(http.Controller):
             company_ids = [company_ids]
 
         filter_data = kw.get("filter") or {}
-        date_from_filter = filter_data.get("date_from")  # dạng dd/mm/YYYY
-        date_to_filter = filter_data.get("date_to")  # dạng dd/mm/YYYY
+        date_from_filter = filter_data.get("date_from")
+        date_to_filter = filter_data.get("date_to")
 
         if not date_from_filter or not date_to_filter:
             year = date.today().year
@@ -122,3 +122,23 @@ class CashOverviewFlowController(http.Controller):
             "inflow": inflow_amounts,
             "outflow": outflow_amounts,
         }
+    @http.route('/overview/get_dif_filter', type='json', auth='user')
+    def get_dif_filter(self, **kw):
+        company_ids = kw.get("active_company") or []
+        filter_data = kw.get("filter") or {}
+        date_from = filter_data.get("date_from")
+        date_to = filter_data.get("date_to")
+        if not isinstance(company_ids, (list, tuple)):
+            company_ids = [company_ids]
+        domain = [('company_id', 'in', company_ids)]
+        if date_from and date_to:
+            domain += [
+                ('date_entry', '>=', date_from),
+                ('date_entry', '<=', date_to)
+            ]
+        inflow = request.env['cash.inflows'].search(domain)
+        inflow_amount = sum(inflow.mapped('amount'))
+        outflow = request.env['cash.outflows'].search(domain)
+        outflow_amount = sum(outflow.mapped('amount'))
+        dif = inflow_amount - outflow_amount
+        return {"amount": dif}

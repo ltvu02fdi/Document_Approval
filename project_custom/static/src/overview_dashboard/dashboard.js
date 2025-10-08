@@ -10,7 +10,6 @@ import { CompanySelector  } from "@web/webclient/switch_company_menu/switch_comp
 export class Dashboard extends Component {
     static props = ["filter", "resetFilter"];
     setup() {
-        debugger
         this.companyService = useService("company");
         this.state = useState({
             inflow: 0,
@@ -159,8 +158,8 @@ export class Dashboard extends Component {
                             type: "line",
                             smooth: true,
                             showSymbol: true,
-                            symbol: 'circle',        // biểu tượng điểm là tròn
-                            symbolSize: 8,           // kích thước điểm
+                            symbol: 'circle',
+                            symbolSize: 8,
                             data: in_out_year_by_m.outflow,
                             lineStyle: { color: "#E83E3C", width: 2 },
                             itemStyle: {
@@ -208,7 +207,6 @@ export class Dashboard extends Component {
         });
     }
     async loadData(filter) {
-        debugger
         const rawInflow = await rpc("/overview/get_cash_inflow", {
             filter,
             active_company: this.companyService.activeCompanyIds,
@@ -225,7 +223,6 @@ export class Dashboard extends Component {
 
         this.state.inflow = rawInflow.amount.toLocaleString("vi-VN");
         this.state.outflow = rawOutflow.amount.toLocaleString("vi-VN");
-        this.state.dif = (rawInflow.amount - rawOutflow.amount).toLocaleString("vi-VN");
         if (this.lineBarChart) {
             this.lineBarChart.setOption({
                 xAxis: { data: rawInOutYearByM.labels },
@@ -238,4 +235,4 @@ export class Dashboard extends Component {
     }
 }
 
-Dashboard.template = "my_module.DashboardTemplate";
+Dashboard.template = "cash.DashboardTemplate";

@@ -18,6 +18,7 @@ class PlannedExpenditure(models.Model):
     description_receipt = fields.Char(string="Description Receipt")
     department_id = fields.Many2one("hr.department", string="Department")
     company_id = fields.Many2one("res.company", string="Company", default=lambda self: self._default_company_id())
+    partner_name = fields.Char(string="Partner", related="category_id.partner_id.name")
 
     @api.constrains('amount')
     def _check_amount(self):

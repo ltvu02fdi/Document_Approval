@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="my_module.SidePanelTemplate">
+    <t t-name="cash.SidePanelTemplate">
         <div class="side_panel_operdo">
             <div class="header_title">
-                <h3 class="title_filter">Ngày chứng từ</h3>
+                <t t-if ="props.type_dboard != 'planned_expenditure'">
+                    <h3 class="title_filter">Ngày chứng từ</h3>
+                </t>
+                <t t-else="">
+                    <h3 class="title_filter">Ngày dự chi</h3>
+                </t>
                 <div class="operdo_line"/>
             </div>
             <div class="body_filter">

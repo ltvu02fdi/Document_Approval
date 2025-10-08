@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="cash.DashboardTemplate">
+    <t t-name="cash.DashboardPlannedExpenditureTemplate">
         <div class="p-6 o_dashboard_container">
-            <div class="charts">
+            <div class="charts_inflow">
                 <div class="title">
-                    <h3>Tổng quan tài chính</h3>
+                    <h3>Báo cáo dự chi</h3>
                 </div>
                 <div class="body_charts">
                     <div class="card_container">
@@ -12,30 +12,10 @@
                             <div class="content_big_card">
                                 <div class="content_card">
                                     <div class="content">
-                                        <p>Tiền thu</p>
+                                        <p>Tiền dự chi tuần này</p>
                                     </div>
                                     <div class="text_des inflow">
                                         <p t-esc="state.inflow"></p>
-                                    </div>
-                                </div>
-                                <div class="logo">
-                                    <img src="/project_custom/static/img/logo_inflow.svg"/>
-                                </div>
-                            </div>
-                            <div class="wave">
-                                <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="card_2 card_overview">
-                            <div class="content_big_card">
-                                <div class="content_card">
-                                    <div class="content">
-                                        <p>Tiền chi</p>
-                                    </div>
-                                    <div class="text_des outflow">
-                                        <p t-esc="state.outflow"></p>
                                     </div>
                                 </div>
                                 <div class="logo">
@@ -48,18 +28,38 @@
                                 </svg>
                             </div>
                         </div>
+                        <div class="card_2 card_overview">
+                            <div class="content_big_card">
+                                <div class="content_card">
+                                    <div class="content">
+                                        <p>Tiền chi tuần tới</p>
+                                    </div>
+                                    <div class="text_des outflow">
+                                        <p t-esc="state.inflow_from_first_m"></p>
+                                    </div>
+                                </div>
+                                <div class="logo">
+                                    <img src="/project_custom/static/img/logo_inflow.svg"/>
+                                </div>
+                            </div>
+                            <div class="wave">
+                                <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
+                                </svg>
+                            </div>
+                        </div>
                         <div class="card_3 card_overview">
                            <div class="content_big_card">
                                 <div class="content_card">
                                     <div class="content">
-                                        <p>Số dư hiện tại</p>
+                                        <p>Chênh lệch Chi - Dự Chi</p>
                                     </div>
                                     <div class="text_des dif">
                                         <p t-esc="state.dif"></p>
                                     </div>
                                 </div>
                                 <div class="logo">
-                                    <img src="/project_custom/static/img/logo_dif.svg"/>
+                                    <img src="/project_custom/static/img/money_in_out.svg"/>
                                 </div>
                             </div>
                             <div class="wave">
@@ -69,13 +69,14 @@
                             </div>
                         </div>
                     </div>
-                    <div class="list_dashboard">
-                        <div class="dashboard_1">
-                            <div id="lineBarChart" style="width:100%; height:400px;"></div>
+                    <div class="dashboard_bar_expense">
+                        <div id="lineChartInflow" style="width:100%; height:450px;"></div>
+                    </div>
+                    <div class="table">
+                        <div class="title">
+                            <p>Bảng dự chi</p>
                         </div>
-                        <div class="dashboard_2">
-                            <div id="lineChart" style="width:100%; height:400px;"></div>
-                        </div>
+                        <div t-ref="myGrid" style="width:100%; height:auto;"></div>
                     </div>
                 </div>
             </div>
