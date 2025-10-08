@@ -4,7 +4,7 @@
         <div class="layout-overview flex h-full d-flex">
             <!-- Side Panel -->
             <div class="side_panel">
-                <SidePanel t-props='{"filter": state.filter, "onApply": updateFilter}'/>
+                <SidePanel t-props='{"filter": state.filter,"type_dboard": state.type_dboard, "onApply": updateFilter}'/>
             </div>
             <div class="dashboard">
                 <t t-if="state.type_dboard === 'financial'">
@@ -15,6 +15,9 @@
                 </t>
                 <t t-if="state.type_dboard === 'outflow'">
                     <DashboardOutflow t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
+                </t>
+                <t t-if="state.type_dboard === 'planned_expenditure'">
+                    <DashboardPlannedExpenditure t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
                 </t>
             </div>
         </div>

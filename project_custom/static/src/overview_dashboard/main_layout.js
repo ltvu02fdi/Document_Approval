@@ -4,9 +4,11 @@ import { registry } from "@web/core/registry";
 import { SidePanel } from "./side_panel";
 import { Dashboard } from "./dashboard";
 import { DashboardInflow } from "./dashboard_inflow";
+import { DashboardOutflow } from "./dashboard_outflow";
+import { DashboardPlannedExpenditure } from "./dashboard_planned_expenditure";
 
 export class MainLayout extends Component {
-    static components = { SidePanel, Dashboard, DashboardInflow };
+    static components = { SidePanel, Dashboard, DashboardInflow, DashboardOutflow, DashboardPlannedExpenditure };
     static template = "my_module.MainLayoutTemplate";
     setup() {
         this.state = useState({

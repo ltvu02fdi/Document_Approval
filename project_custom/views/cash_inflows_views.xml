@@ -84,4 +84,10 @@
         <field name="context">{'type_dashboard': 'outflow'}</field>
     </record>
 
+    <record id="action_overview_planned_expenditure" model="ir.actions.client">
+        <field name="name">Overview Planned Expenditure</field>
+        <field name="tag">cash.main_layout_action</field>
+        <field name="context">{'type_dashboard': 'planned_expenditure'}</field>
+    </record>
+
 </odoo>

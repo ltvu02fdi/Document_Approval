@@ -10,7 +10,6 @@ import { CompanySelector  } from "@web/webclient/switch_company_menu/switch_comp
 export class Dashboard extends Component {
     static props = ["filter", "resetFilter"];
     setup() {
-        debugger
         this.companyService = useService("company");
         this.state = useState({
             inflow: 0,
@@ -208,7 +207,6 @@ export class Dashboard extends Component {
         });
     }
     async loadData(filter) {
-        debugger
         const rawInflow = await rpc("/overview/get_cash_inflow", {
             filter,
             active_company: this.companyService.activeCompanyIds,

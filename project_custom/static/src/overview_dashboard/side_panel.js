@@ -8,7 +8,7 @@ import { CompanySelector  } from "@web/webclient/switch_company_menu/switch_comp
 
 export class SidePanel extends Component {
     static template = "cash.SidePanelTemplate";
-    static props = ["filter", "onApply"];
+    static props = ["filter", "onApply", "type_dboard"];
     convertDateFormat(dateStr) {
         if (!dateStr) return null;
         const parts = dateStr.split("/");

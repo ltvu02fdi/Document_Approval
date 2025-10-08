@@ -88,5 +88,23 @@
                 box-shadow: 0px 1.85px 8.34px 0px #00000026;
             }
         }
+        .table{
+            .title{
+                p{
+                    font-weight: 600;
+                    font-size: 20px;
+                }
+            }
+            .gridjs-container{
+                .gridjs-wrapper{
+                    padding: 0 0 !important;
+                    .gridjs-table{
+                        .gridjs-th{
+                            background-color: #EEF4FF;
+                            }
+                        }
+                    }
+                }
+        }
     }
 }

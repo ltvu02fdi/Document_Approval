@@ -29,7 +29,7 @@ export class DashboardInflow extends Component {
                 active_company: this.companyService.activeCompanyIds,
             });
             this.state.inflow_from_first_m = inflow_from_first_m.amount.toLocaleString("vi-VN");
-            const dif = await rpc("/overview/get_dif_filter", {
+            const dif = await rpc("/overview/get_dif_filter_expense", {
                 active_company: this.companyService.activeCompanyIds,
             });
             this.state.dif = dif.amount.toLocaleString("vi-VN");
@@ -162,7 +162,6 @@ export class DashboardInflow extends Component {
                     ]
                 });
             }
-            debugger
             const data = await rpc("/overview/get_inflow_table",{
                 active_company: this.companyService.activeCompanyIds,
             });
@@ -189,8 +188,160 @@ export class DashboardInflow extends Component {
             if (this.myGridRef.el) {
                 this.grid.render(this.myGridRef.el);
             }
+            this._resizeHandler = () => {
+                this.lineChartInflow?.resize();
+                this.donutChart?.resize();
+            };
+            window.addEventListener("resize", this._resizeHandler);
         })
+        onWillUpdateProps((newProps) => {
+            try {
+                document.body.style.cursor = "wait";
+                if (newProps.filter.date_from != null && newProps.filter.date_to != null) {
+                    this.loadData(newProps.filter).then(() => {
+                        if (this.props.resetFilter) {
+                            this.props.resetFilter();
+                        }
+                    });
+                }
+            } finally {
+                document.body.style.cursor = "default";
+            }
+        });
+        onWillUnmount(() => {
+            if (this.lineChart) {
+                this.lineChart.dispose();
+                this.lineChart = null;
+            }
+            if (this.lineBarChart) {
+                this.lineBarChart.dispose();
+                this.lineBarChart = null;
+            }
+            if (this._resizeHandler) {
+                window.removeEventListener("resize", this._resizeHandler);
+            }
+        });
    }
+    async loadData(filter) {
+        const dif_new = await rpc("/overview/get_dif_filter", {
+            filter,
+            active_company: this.companyService.activeCompanyIds,
+        });
+        this.state.dif = dif_new.amount.toLocaleString("vi-VN");
+        const in_out_year_by_m_new = await rpc("/overview/get_in_out_year_by_m", {
+            filter,
+            active_company: this.companyService.activeCompanyIds,
+        });
+        const top_5_inflow_new = await rpc("/overview/get_top5_inflow", {
+            filter,
+            active_company: this.companyService.activeCompanyIds,
+        });
+        const labels_new = top_5_inflow_new.map(item => item.partner_name);
+        const amounts_new = top_5_inflow_new.map(item => item.amount);
+        const data_new = await rpc("/overview/get_inflow_table",{
+            filter,
+            active_company: this.companyService.activeCompanyIds,
+        });
+        if (this.lineChartInflow) {
+            this.lineChartInflow.setOption({
+                xAxis: { type: "category", data: in_out_year_by_m_new.labels },
+                series: [
+                        {
+                            name: "Tiền Thu",
+                            type: "bar",
+                            data: in_out_year_by_m_new.inflow,
+                            itemStyle: { color: "#3941AB" },
+                        },
+                    ],
+            })
+        }
+        if(this.donutChart){
+            this.donutChart.setOption({
+                tooltip: {
+                    trigger: "item",
+                    formatter: params => {
+                        return `${params.name}: ${params.value.toLocaleString("vi-VN")}`;
+                    },
+                    backgroundColor: "rgba(255,255,255,0.95)",
+                    borderColor: "#ccc",
+                    borderWidth: 1,
+                    padding: 10,
+                    textStyle: {
+                        color: "#333",
+                        fontSize: 14,
+                        fontFamily: "Lexend Deca, sans-serif",
+                        fontWeight: 500,
+                    },
+                },
+                legend: [
+                    {
+                        orient: "vertical",
+                        left: "30%",
+                        bottom: -4,
+                        data: labels_new.slice(0, 3),
+                        icon: "circle",
+                        itemWidth: 10,
+                        itemHeight: 10,
+                        textStyle: {
+                            fontFamily: "Lexend Deca, sans-serif",
+                            fontWeight: 600,
+                            fontSize: 12,
+                            color: "#333",
+                        }
+                    },
+                    {
+                        orient: "vertical",
+                        left: "60%",
+                        bottom: -4,
+                        data: labels_new.slice(3),
+                        icon: "circle",
+                        itemWidth: 10,
+                        itemHeight: 10,
+                        textStyle: {
+                            fontFamily: "Lexend Deca, sans-serif",
+                            fontWeight: 600,
+                            fontSize: 12,
+                            color: "#333",
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name: "Top 5 Inflow",
+                        type: "pie",
+                        radius: ["40%", "70%"],
+                        avoidLabelOverlap: false,
+                        label: {
+                            show: false,
+                            position: "center"
+                        },
+                        emphasis: {
+                        label: {
+                                show: false,
+                              }
+                        },
+                        labelLine: { show: false },
+                        data: labels_new.map((label, i) => ({
+                            name: label,
+                            value: amounts_new[i],
+                        })),
+                    }
+                ]
+            });
+        }
+        if (this.grid) {
+            // Cập nhật lại dữ liệu và render lại bảng
+            this.grid.updateConfig({
+                data: data_new.map(r => [
+                    r.date_entry,
+                    r.company_name,
+                    r.partner_name,
+                    r.category_name,
+                    r.amount.toLocaleString("vi-VN"),
+                ]),
+            }).forceRender();
+        }
+    }
 }
 
 DashboardInflow.template = "cash.DashboardInflowTemplate";

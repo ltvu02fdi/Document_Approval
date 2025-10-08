@@ -33,6 +33,16 @@
               parent="overview_menu"
               action="action_overview_inflow"/>
 
+    <menuitem id="overview_outflow_menu" name="Overview Outflow"
+              sequence="3"
+              parent="overview_menu"
+              action="action_overview_outflow"/>
+
+    <menuitem id="overview_planned_expenditure_menu" name="Overview Planned Expenditure"
+          sequence="4"
+          parent="overview_menu"
+          action="action_overview_planned_expenditure"/>
+
     <menuitem id="expense_categories_menu" name="Expense Categories"
               sequence="16"
               parent="cash_configuration_menu"
