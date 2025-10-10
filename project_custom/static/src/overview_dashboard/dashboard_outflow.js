@@ -1,5 +1,6 @@
 /** @odoo-module **/
 import { Component, onMounted, onWillUnmount, useState, onWillUpdateProps, useRef } from "@odoo/owl";
+import { isMobileOS } from "@web/core/browser/feature_detection";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { loadJS, loadCSS } from "@web/core/assets";
@@ -10,6 +11,7 @@ import { CompanySelector  } from "@web/webclient/switch_company_menu/switch_comp
 export class DashboardOutflow extends Component {
     static props = ["filter", "resetFilter"];
     setup() {
+        this.isMobileOS = isMobileOS();
         this.myGridRef = useRef("myGrid");
         this.companyService = useService("company");
         this.state = useState({
@@ -48,7 +50,7 @@ export class DashboardOutflow extends Component {
                         textStyle: {
                             fontFamily: "Lexend Deca, sans-serif",
                             fontWeight: 600,
-                            fontSize: 20,
+                            fontSize: !this.isMobileOS ? 20 : 16,
                             color: "#323232"
                         }
                     },
@@ -85,14 +87,14 @@ export class DashboardOutflow extends Component {
                         textStyle: {
                             fontFamily: "Lexend Deca, sans-serif",
                             fontWeight: 600,
-                            fontSize: 20,
+                            fontSize: !this.isMobileOS ? 20 : 16,
                             color: "#323232",
                         },
                     },
                     tooltip: {
                         trigger: "item",
                         formatter: params => {
-                            return `${params.name}: ${params.value.toLocaleString("vi-VN")}`;
+                            return `${params.value.toLocaleString("vi-VN")}`;
                         },
                         backgroundColor: "rgba(255,255,255,0.95)",
                         borderColor: "#ccc",
@@ -105,12 +107,11 @@ export class DashboardOutflow extends Component {
                             fontWeight: 500,
                         },
                     },
-                    legend: [
-                        {
-                            orient: "vertical",
-                            left: "30%",
-                            bottom: -4,
-                            data: labels.slice(0, 3),
+                    legend: this.isMobileOS
+                        ? {
+                            orient: "horizontal",
+                            bottom: 0,
+                            data: labels,
                             icon: "circle",
                             itemWidth: 10,
                             itemHeight: 10,
@@ -119,24 +120,40 @@ export class DashboardOutflow extends Component {
                                 fontWeight: 600,
                                 fontSize: 12,
                                 color: "#333",
-                            }
-                        },
-                        {
-                            orient: "vertical",
-                            left: "60%",
-                            bottom: -4,
-                            data: labels.slice(3),
-                            icon: "circle",
-                            itemWidth: 10,
-                            itemHeight: 10,
-                            textStyle: {
-                                fontFamily: "Lexend Deca, sans-serif",
-                                fontWeight: 600,
-                                fontSize: 12,
-                                color: "#333",
-                            }
+                            },
                         }
-                    ],
+                        : [
+                            {
+                                orient: "vertical",
+                                left: "30%",
+                                bottom: -4,
+                                data: labels.slice(0, 3),
+                                icon: "circle",
+                                itemWidth: 10,
+                                itemHeight: 10,
+                                textStyle: {
+                                    fontFamily: "Lexend Deca, sans-serif",
+                                    fontWeight: 600,
+                                    fontSize: 12,
+                                    color: "#333",
+                                },
+                            },
+                            {
+                                orient: "vertical",
+                                left: "60%",
+                                bottom: -4,
+                                data: labels.slice(3),
+                                icon: "circle",
+                                itemWidth: 10,
+                                itemHeight: 10,
+                                textStyle: {
+                                    fontFamily: "Lexend Deca, sans-serif",
+                                    fontWeight: 600,
+                                    fontSize: 12,
+                                    color: "#333",
+                                },
+                            },
+                        ],
                     color: ["#9B51E0", "#56CA00", "#16B1FF", "#FF4C51", "#FFB400"],
                     series: [
                         {
