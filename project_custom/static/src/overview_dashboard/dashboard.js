@@ -1,5 +1,6 @@
 /** @odoo-module **/
 import { Component, onMounted, onWillUnmount, useState, onWillUpdateProps } from "@odoo/owl";
+import { isMobileOS } from "@web/core/browser/feature_detection";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { loadJS } from "@web/core/assets";
@@ -10,6 +11,7 @@ import { CompanySelector  } from "@web/webclient/switch_company_menu/switch_comp
 export class Dashboard extends Component {
     static props = ["filter", "resetFilter"];
     setup() {
+        this.isMobileOS = isMobileOS();
         this.companyService = useService("company");
         this.state = useState({
             inflow: 0,
@@ -40,12 +42,12 @@ export class Dashboard extends Component {
                 this.lineChart.setOption({
                     title: {
                         text: "Thu - Chi lũy kế năm",
-                        left: 10,
-                        top: 10,
+                        left: !this.isMobileOS ? 10 : 6,
+                        top: !this.isMobileOS ? 10 : 6,
                         textStyle: {
                             fontFamily: "Lexend Deca, sans-serif",
                             fontWeight: 600,
-                            fontSize: 20,
+                            fontSize: !this.isMobileOS ? 20 : 16,
                         }
                     },
                     tooltip: { trigger: "axis" },
@@ -58,7 +60,7 @@ export class Dashboard extends Component {
                         itemHeight: 12,
                         itemGap: 20,
                         textStyle: {
-                            fontSize: 16,
+                            fontSize: !this.isMobileOS ? 16 : 14,
                             color: "#323232",
                             fontWeight: 500,
                             fontFamily: "Lexend Deca, sans-serif",
@@ -113,12 +115,12 @@ export class Dashboard extends Component {
                 this.lineBarChart.setOption({
                     title: {
                         text: "Tiền thu và tiền chi theo tháng",
-                        left: 10,
-                        top: 10,
+                        left: !this.isMobileOS ? 10 : 6,
+                        top: !this.isMobileOS ? 10 : 6,
                         textStyle: {
                             fontFamily: "Lexend Deca, sans-serif",
                             fontWeight: 600,
-                            fontSize: 20,
+                            fontSize: !this.isMobileOS ? 20 : 16,
                             color: "#323232"
                         }
                     },
@@ -138,7 +140,7 @@ export class Dashboard extends Component {
                         itemHeight: 12,
                         itemGap: 20,
                         textStyle: {
-                            fontSize: 16,
+                            fontSize: !this.isMobileOS ? 16 : 14,
                             color: "#323232",
                             fontWeight: 500,
                             fontFamily: "Lexend Deca, sans-serif",

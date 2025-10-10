@@ -90,3 +90,104 @@
             }
         }
     }
+.charts_mobile{
+    .body_charts{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        .card_container{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            .card_1, .card_2, .card_3{
+                height:100%;
+            }
+            .card_4{
+                background: #EEF4FF !important;
+                .content_big_card{
+                    align-items: center;
+                    .content_card{
+                        .content{
+                            text-align: center;
+                            p{
+                                font-weight: 500 !important;
+                                font-size: 14px !important;
+                                color: #3941AB !important;
+                            }
+                        }
+                    }
+                }
+            }
+            .card_overview{
+                width: 100%;
+                overflow: hidden;
+                border-radius: 6px;
+                padding: 8px;
+                box-sizing: border-box;
+                min-width: calc(50% - 4px);
+                flex: 0 0 calc(50% - 4px);
+                position: relative;
+                background: #4752E1;
+                display: flex;
+                flex-direction: column;
+                .content_big_card{
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    .content_card{
+                        .content{
+                            p{
+                                font-weight: 400;
+                                font-size: 12px;
+                                color: #FFFFFF;
+                                margin-bottom: 0 !important;
+                            }
+                        }
+                        .text_des{
+                            p{
+                                font-weight: 600;
+                                font-size: 14px;
+                                color: #FFFFFF;
+                                margin-bottom: 0 !important;
+                            }
+                        }
+                    }
+                    .logo{
+                        z-index: 1;
+                    }
+                    .wave{
+                        width: calc(100% + 16px);
+                        position: absolute;
+                        bottom: -8px;
+                        right: -8px;
+                        svg{
+                            width: 100%;
+                        }
+                    }
+                }
+
+            }
+        }
+        .list_dashboard{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            .dashboard_1{
+                #lineBarChart{
+                    box-shadow: 0px 2px 9px 0px #00000026;
+                    border-radius: 6px;
+                }
+            }
+            .dashboard_2{
+                #lineChart{
+                    box-shadow: 0px 2px 9px 0px #00000026;
+                    border-radius: 6px;
+                }
+            }
+        }
+    }
+}

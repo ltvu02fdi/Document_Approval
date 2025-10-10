@@ -1,25 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
     <t t-name="my_module.MainLayoutTemplate">
-        <div class="layout-overview flex h-full d-flex">
-            <!-- Side Panel -->
-            <div class="side_panel">
-                <SidePanel t-props='{"filter": state.filter,"type_dboard": state.type_dboard, "onApply": updateFilter}'/>
+        <t t-if="!this.isMobileOS">
+            <div class="layout-overview flex h-full d-flex">
+                <div class="side_panel">
+                    <SidePanel t-props='{"filter": state.filter,"type_dboard": state.type_dboard, "onApply": updateFilter}'/>
+                </div>
+                <div class="dashboard">
+                    <t t-if="state.type_dboard === 'financial'">
+                        <Dashboard t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
+                    </t>
+                    <t t-if="state.type_dboard === 'inflow'">
+                        <DashboardInflow t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
+                    </t>
+                    <t t-if="state.type_dboard === 'outflow'">
+                        <DashboardOutflow t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
+                    </t>
+                    <t t-if="state.type_dboard === 'planned_expenditure'">
+                        <DashboardPlannedExpenditure t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
+                    </t>
+                </div>
             </div>
-            <div class="dashboard">
-                <t t-if="state.type_dboard === 'financial'">
-                    <Dashboard t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
-                </t>
-                <t t-if="state.type_dboard === 'inflow'">
-                    <DashboardInflow t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
-                </t>
-                <t t-if="state.type_dboard === 'outflow'">
-                    <DashboardOutflow t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
-                </t>
-                <t t-if="state.type_dboard === 'planned_expenditure'">
-                    <DashboardPlannedExpenditure t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
-                </t>
+        </t>
+        <t t-else="">
+            <div class="layout-overview-mobile h-full">
+                <div class="title_mobile" style="font-size: 16px; font-weight: 600; color: #3941ab;">
+                    <t t-if="state.type_dboard === 'financial'">
+                        <p>Tổng quan tài chính</p>
+                    </t>
+                    <t t-if="state.type_dboard === 'inflow'">
+                        <p>Báo cáo thu</p>
+                    </t>
+                    <t t-if="state.type_dboard === 'outflow'">
+                        <p>Báo cáo chi</p>
+                    </t>
+                    <t t-if="state.type_dboard === 'planned_expenditure'">
+                        <p>Báo cáo dự chi</p>
+                    </t>
+                </div>
+                <div class="side_panel_mobile">
+                    <SidePanel t-props='{"filter": state.filter,"type_dboard": state.type_dboard, "onApply": updateFilter}'/>
+                </div>
+                <div class="dashboard_mobile">
+                    <t t-if="state.type_dboard === 'financial'">
+                        <Dashboard t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
+                    </t>
+                    <t t-if="state.type_dboard === 'inflow'">
+                        <DashboardInflow t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
+                    </t>
+                    <t t-if="state.type_dboard === 'outflow'">
+                        <DashboardOutflow t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
+                    </t>
+                    <t t-if="state.type_dboard === 'planned_expenditure'">
+                        <DashboardPlannedExpenditure t-props='{"filter": state.filter, "resetFilter": resetFilter}'/>
+                    </t>
+                </div>
             </div>
-        </div>
+        </t>
     </t>
 </templates>

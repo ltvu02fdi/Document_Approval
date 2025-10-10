@@ -1,85 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
     <t t-name="cash.DashboardPlannedExpenditureTemplate">
-        <div class="p-6 o_dashboard_container">
-            <div class="charts_inflow">
-                <div class="title">
-                    <h3>Báo cáo dự chi</h3>
-                </div>
-                <div class="body_charts">
-                    <div class="card_container">
-                        <div class="card_1 card_overview">
-                            <div class="content_big_card">
-                                <div class="content_card">
-                                    <div class="content">
-                                        <p>Tiền dự chi tuần này</p>
-                                    </div>
-                                    <div class="text_des inflow">
-                                        <p t-esc="state.inflow"></p>
-                                    </div>
-                                </div>
-                                <div class="logo">
-                                    <img src="/project_custom/static/img/logo_outflow.svg"/>
-                                </div>
-                            </div>
-                            <div class="wave">
-                                <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="card_2 card_overview">
-                            <div class="content_big_card">
-                                <div class="content_card">
-                                    <div class="content">
-                                        <p>Tiền chi tuần tới</p>
-                                    </div>
-                                    <div class="text_des outflow">
-                                        <p t-esc="state.inflow_from_first_m"></p>
-                                    </div>
-                                </div>
-                                <div class="logo">
-                                    <img src="/project_custom/static/img/logo_inflow.svg"/>
-                                </div>
-                            </div>
-                            <div class="wave">
-                                <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="card_3 card_overview">
-                           <div class="content_big_card">
-                                <div class="content_card">
-                                    <div class="content">
-                                        <p>Chênh lệch Chi - Dự Chi</p>
-                                    </div>
-                                    <div class="text_des dif">
-                                        <p t-esc="state.dif"></p>
-                                    </div>
-                                </div>
-                                <div class="logo">
-                                    <img src="/project_custom/static/img/money_in_out.svg"/>
-                                </div>
-                            </div>
-                            <div class="wave">
-                                <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
-                                </svg>
-                            </div>
-                        </div>
+        <t t-if="!this.isMobileOS">
+            <div class="p-6 o_dashboard_container">
+                <div class="charts_inflow">
+                    <div class="title">
+                        <h3>Báo cáo dự chi</h3>
                     </div>
-                    <div class="dashboard_bar_expense">
-                        <div id="lineChartInflow" style="width:100%; height:450px;"></div>
-                    </div>
-                    <div class="table">
-                        <div class="title">
-                            <p>Bảng dự chi</p>
+                    <div class="body_charts">
+                        <div class="card_container">
+                            <div class="card_1 card_overview">
+                                <div class="content_big_card">
+                                    <div class="content_card">
+                                        <div class="content">
+                                            <p>Tiền dự chi tuần này</p>
+                                        </div>
+                                        <div class="text_des inflow">
+                                            <p t-esc="state.inflow"></p>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <img src="/project_custom/static/img/logo_outflow.svg"/>
+                                    </div>
+                                </div>
+                                <div class="wave">
+                                    <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card_2 card_overview">
+                                <div class="content_big_card">
+                                    <div class="content_card">
+                                        <div class="content">
+                                            <p>Tiền chi tuần tới</p>
+                                        </div>
+                                        <div class="text_des outflow">
+                                            <p t-esc="state.inflow_from_first_m"></p>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <img src="/project_custom/static/img/logo_inflow.svg"/>
+                                    </div>
+                                </div>
+                                <div class="wave">
+                                    <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="card_3 card_overview">
+                               <div class="content_big_card">
+                                    <div class="content_card">
+                                        <div class="content">
+                                            <p>Chênh lệch Chi - Dự Chi</p>
+                                        </div>
+                                        <div class="text_des dif">
+                                            <p t-esc="state.dif"></p>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <img src="/project_custom/static/img/money_in_out.svg"/>
+                                    </div>
+                                </div>
+                                <div class="wave">
+                                    <svg width="540" height="77" viewBox="0 0 540 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path opacity="0.15" d="M332.848 36.8141C164.145 6.5595 -16.3491 2.14738 -85.5083 3.72314V7.2686L-66.8013 90.5868H706.988V0.7686C685.73 13.1777 543.727 74.6322 332.848 36.8141Z" fill="#A4BCFD"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
-                        <div t-ref="myGrid" style="width:100%; height:auto;"></div>
+                        <div class="dashboard_bar_expense">
+                            <div id="lineChartInflow" style="width:100%; height:450px;"></div>
+                        </div>
+                        <div class="table">
+                            <div class="title">
+                                <p>Bảng dự chi</p>
+                            </div>
+                            <div t-ref="myGrid" style="width:100%; height:auto;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </t>
+        <t t-else="">
+            <div class="p-6 o_dashboard_container_mobile">
+                <div class="charts_mobile">
+                    <div class="body_charts">
+                        <div class="card_container">
+                            <div class="card_1 card_overview">
+                                <div class="content_big_card">
+                                    <div class="content_card">
+                                        <div class="content">
+                                            <p>Tiền dự chi tuần này</p>
+                                        </div>
+                                        <div class="text_des inflow">
+                                            <p t-esc="state.inflow"></p>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <img src="/project_custom/static/img/inflow_mobile.svg"/>
+                                    </div>
+                                    <div class="wave">
+                                        <svg width="179" height="38" viewBox="0 0 179 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.15" d="M103.779 16.748C53.3102 3.2498 -0.686333 1.28132 -21.376 1.98435V3.56617L-15.7796 40.7389H215.707V0.666168C209.347 6.20253 166.866 33.6207 103.779 16.748Z" fill="#A4BCFD"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_2 card_overview">
+                                <div class="content_big_card">
+                                    <div class="content_card">
+                                        <div class="content">
+                                            <p>Tiền chi tuần tới</p>
+                                        </div>
+                                        <div class="text_des outflow">
+                                            <p t-esc="state.inflow_from_first_m"></p>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <img src="/project_custom/static/img/outflow_mobile.svg"/>
+                                    </div>
+                                    <div class="wave">
+                                        <svg width="179" height="38" viewBox="0 0 179 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.15" d="M103.779 16.748C53.3102 3.2498 -0.686333 1.28132 -21.376 1.98435V3.56617L-15.7796 40.7389H215.707V0.666168C209.347 6.20253 166.866 33.6207 103.779 16.748Z" fill="#A4BCFD"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_3 card_overview">
+                               <div class="content_big_card">
+                                    <div class="content_card">
+                                        <div class="content">
+                                            <p>Chênh lệch Chi - Dự Chi</p>
+                                        </div>
+                                        <div class="text_des dif">
+                                            <p t-esc="state.dif"></p>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <img src="/project_custom/static/img/wallet_mobile.svg"/>
+                                    </div>
+                                    <div class="wave">
+                                        <svg width="179" height="38" viewBox="0 0 179 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.15" d="M103.779 16.748C53.3102 3.2498 -0.686333 1.28132 -21.376 1.98435V3.56617L-15.7796 40.7389H215.707V0.666168C209.347 6.20253 166.866 33.6207 103.779 16.748Z" fill="#A4BCFD"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card_4 card_overview">
+                               <div class="content_big_card">
+                                    <div class="content_card">
+                                        <div class="content">
+                                            <p>Thêm mới</p>
+                                        </div>
+                                    </div>
+                                    <div class="logo">
+                                        <img src="/project_custom/static/img/add_new_mobile.svg"/>
+                                    </div>
+                                   <div class="wave">
+                                        <svg width="179" height="38" viewBox="0 0 179 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.15" d="M103.779 16.748C53.3102 3.2498 -0.686333 1.28132 -21.376 1.98435V3.56617L-15.7796 40.7389H215.707V0.666168C209.347 6.20253 166.866 33.6207 103.779 16.748Z" fill="#A4BCFD"/>
+                                        </svg>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list_dashboard" style="box-shadow: 0px 2px 9px 0px #00000026;border-radius: 6px;">
+                            <div id="lineChartInflow" style="width:100%; height:450px;"></div>
+                        </div>
+                        <div class="table">
+                            <div class="title">
+                                <p>Bảng dự chi</p>
+                            </div>
+                            <div t-ref="myGrid" style="width:100%; height:auto;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
     </t>
 </templates>

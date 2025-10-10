@@ -1,4 +1,5 @@
 /** @odoo-module **/
+import { isMobileOS } from "@web/core/browser/feature_detection";
 import { Component, onMounted, onWillUnmount, useState, onWillUpdateProps, useRef } from "@odoo/owl";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
@@ -10,6 +11,7 @@ import { CompanySelector  } from "@web/webclient/switch_company_menu/switch_comp
 export class DashboardPlannedExpenditure extends Component {
     static props = ["filter", "resetFilter"];
     setup() {
+        this.isMobileOS = isMobileOS();
         this.myGridRef = useRef("myGrid");
         this.companyService = useService("company");
         this.state = useState({
@@ -48,7 +50,7 @@ export class DashboardPlannedExpenditure extends Component {
                         textStyle: {
                             fontFamily: "Lexend Deca, sans-serif",
                             fontWeight: 600,
-                            fontSize: 20,
+                            fontSize: !this.isMobileOS ? 20 : 16,
                             color: "#323232"
                         }
                     },
@@ -63,7 +65,7 @@ export class DashboardPlannedExpenditure extends Component {
                         itemHeight: 10,
                         textStyle: {
                             fontFamily: "Lexend Deca, sans-serif",
-                            fontSize: 16,
+                            fontSize: !this.isMobileOS ? 16 : 14,
                             color: "#323232",
                             fontWeight: 500,
                         },
