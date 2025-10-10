@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 07:20+0000\n"
-"PO-Revision-Date: 2025-08-22 07:20+0000\n"
+"POT-Creation-Date: 2025-09-22 09:24+0000\n"
+"PO-Revision-Date: 2025-09-22 09:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,8 +16,196 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: operdo_hrm
+#. odoo-python
+#: code:addons/operdo_hrm/models/inherit_hr_attendance.py:0
+msgid "%(check_in)s - %(check_out)s"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model,name:operdo_hrm.model_hr_attendance
+msgid "Attendance"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__attendance_code
+msgid "Attendance Code"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:res.groups,name:operdo_hrm.group_hr_attendance_employee
+msgid "Attendance Employee"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__attendance_manager_id
+msgid "Attendance Manager"
+msgstr ""
+
+#. module: operdo_hrm
+#: model_terms:ir.ui.view,arch_db:operdo_hrm.view_attendance_calendar
+msgid "Attendances"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__block
+msgid "Block"
+msgstr ""
+
+#. module: operdo_hrm
+#: model_terms:ir.ui.view,arch_db:operdo_hrm.view_employee_birthday_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: operdo_hrm
+#. odoo-python
+#: code:addons/operdo_hrm/models/inherit_hr_attendance.py:0
+msgid ""
+"Cannot create new attendance record for %(empl_name)s, the employee was "
+"already checked in on %(datetime)s"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__committee
+msgid "Committee"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__contact_address
+msgid "Contact Address"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__contract_id
+msgid "Contract"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__contract_type_id
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__contract_type_id
+msgid "Contract Type"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.actions.act_window,name:operdo_hrm.action_operdo_warning_contract
+#: model:ir.ui.menu,name:operdo_hrm.contract_warning
+msgid "Contract Warning"
+msgstr ""
+
+#. module: operdo_hrm
+#: model_terms:ir.ui.view,arch_db:operdo_hrm.view_operdo_warning_contract_list
+msgid "Contract Warnings"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__contract_ids
+msgid "Contracts"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_employee_birthday_wizard__create_uid
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__create_uid
+#: model:ir.model.fields,field_description:operdo_hrm.field_zk_device__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_employee_birthday_wizard__create_date
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__create_date
+#: model:ir.model.fields,field_description:operdo_hrm.field_zk_device__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__date_of_ID_issuance
+msgid "Date of ID issuance"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__degree
+msgid "Degree"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__department_id
+msgid "Department"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__dependent_information
+msgid "Dependent Information"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__dependent_tax_identification_number
+msgid "Dependent Tax Identification Number"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_employee_birthday_wizard__display_name
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__display_name
+#: model:ir.model.fields,field_description:operdo_hrm.field_zk_device__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: operdo_hrm
 #: model:ir.model,name:operdo_hrm.model_hr_employee
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__employee_id
 msgid "Employee"
+msgstr ""
+
+#. module: operdo_hrm
+#: model_terms:ir.ui.view,arch_db:operdo_hrm.view_operdo_employee_list
+msgid "Employee Birthday"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.ui.menu,name:operdo_hrm.menu_employee_birthday_wizard
+msgid "Employee Birthday List"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.actions.act_window,name:operdo_hrm.action_employee_birthday_wizard
+msgid "Employee Birthday Search"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__date_end
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__date_end
+msgid "End Date"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,help:operdo_hrm.field_hr_employee__date_end
+#: model:ir.model.fields,help:operdo_hrm.field_operdo_warning_contract__date_end
+msgid "End date of the contract (if it's a fixed-term contract)."
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__date_expires
+msgid "Expiration Contract Date"
+msgstr ""
+
+#. module: operdo_hrm
+#. odoo-python
+#: code:addons/operdo_hrm/models/inherit_hr_attendance.py:0
+msgid "From %s"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_employee_birthday_wizard__date_start
+msgid "From Date"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_employee_birthday_wizard__id
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__id
+#: model:ir.model.fields,field_description:operdo_hrm.field_zk_device__id
+msgid "ID"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__id_employee
+msgid "ID Employee"
 msgstr ""
 
 #. module: operdo_hrm
@@ -27,7 +215,95 @@ msgid "Import Template for Employees"
 msgstr ""
 
 #. module: operdo_hrm
-#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__start_date
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__job_title
+msgid "Job Title"
+msgstr ""
+
+#. module: operdo_hrm
+#. odoo-python
+#: code:addons/operdo_hrm/models/operdo_sync_biometric_device.py:0
+msgid "Không thể đồng bộ từ %s:%s - %s"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_employee_birthday_wizard__write_uid
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__write_uid
+#: model:ir.model.fields,field_description:operdo_hrm.field_zk_device__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_employee_birthday_wizard__write_date
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__write_date
+#: model:ir.model.fields,field_description:operdo_hrm.field_zk_device__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: operdo_hrm
+#. odoo-javascript
+#: code:addons/operdo_hrm/static/src/webclient/inherit_menu/inherit_menu.xml:0
+msgid "Logo"
+msgstr ""
+
+#. module: operdo_hrm
+#: model_terms:ir.actions.act_window,help:operdo_hrm.action_operdo_warning_contract
+msgid "No contract warning found."
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__notes
+msgid "Notes"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields.selection,name:operdo_hrm.selection__hr_employee__work_format__onboard
+msgid "Onboard"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__tax_code
+msgid "Personal tax code"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__place_of_ID_issuance
+msgid "Place of ID card issuance"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__relationship
+msgid "Relationship"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields.selection,name:operdo_hrm.selection__hr_employee__work_format__remote
+msgid "Remote"
+msgstr ""
+
+#. module: operdo_hrm
+#: model_terms:ir.ui.view,arch_db:operdo_hrm.view_employee_birthday_wizard_form
+msgid "Search"
+msgstr ""
+
+#. module: operdo_hrm
+#: model_terms:ir.ui.view,arch_db:operdo_hrm.view_employee_birthday_wizard_form
+msgid "Search Employee by Birthday"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model,name:operdo_hrm.model_employee_birthday_wizard
+msgid "Search Employee by Birthday Range"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__social_insurance
+msgid "Social insurance book number"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__date_start
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__date_start
+#: model:ir.model.fields,field_description:operdo_hrm.field_operdo_warning_contract__start_date_company
 msgid "Start Date"
 msgstr ""
 
@@ -37,8 +313,8 @@ msgid "Start Date Company"
 msgstr ""
 
 #. module: operdo_hrm
-#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__attendance_code
-msgid "Attendance Code"
+#: model:ir.actions.server,name:operdo_hrm.ir_cron_sync_attendance_ir_actions_server
+msgid "Sync ZK Attendance"
 msgstr ""
 
 #. module: operdo_hrm
@@ -55,6 +331,13 @@ msgstr ""
 msgid ""
 "The mobile phone number '%s' already exists in another employee record (ID: "
 "%s - %s)."
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,help:operdo_hrm.field_hr_employee__attendance_manager_id
+msgid ""
+"The user set in Attendance will access the attendance of the employee "
+"through the dedicated app and will be able to edit them."
 msgstr ""
 
 #. module: operdo_hrm
@@ -81,32 +364,78 @@ msgid ""
 msgstr ""
 
 #. module: operdo_hrm
-#: model:ir.model.fields,field_description:hr.field_hr_employee__employee_type
-msgid "Employee Type"
+#: model:ir.model.fields,field_description:operdo_hrm.field_employee_birthday_wizard__date_end
+msgid "To Date"
 msgstr ""
 
 #. module: operdo_hrm
-#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__tax_code
-msgid "Personal tax code"
+#: model_terms:ir.ui.view,arch_db:operdo_hrm.view_operdo_employee_list
+msgid "Tìm kiếm"
 msgstr ""
 
 #. module: operdo_hrm
-#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__place_of_ID_issuance
-msgid "Place of ID card issuance"
+#: model:ir.actions.server,name:operdo_hrm.ir_cron_expires_contract_ir_actions_server
+msgid "Update expires contract"
 msgstr ""
 
 #. module: operdo_hrm
-#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__social_insurance
-msgid "Social insurance book number"
+#: model:ir.ui.menu,name:operdo_hrm.hr_warning
+#: model_terms:ir.ui.view,arch_db:operdo_hrm.view_operdo_warning_contract_form
+msgid "Warning"
 msgstr ""
 
 #. module: operdo_hrm
-#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__date_of_ID_issuance
-msgid "Date of ID issuance"
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_employee__work_format
+msgid "Work Format"
 msgstr ""
 
 #. module: operdo_hrm
-#: model:ir.model.fields,field_description:hr.field_hr_employee__private_phone
-#: model:ir.model.fields,field_description:hr.field_res_users__private_phone
-msgid "Private Phone"
+#: model:ir.model.fields,field_description:operdo_hrm.field_hr_attendance__work_day
+msgid "Work day"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model,name:operdo_hrm.model_zk_device
+msgid "ZKTeco Attendance Device"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model,name:operdo_hrm.model_operdo_warning_contract
+msgid "operdo.warning.contract"
+msgstr ""
+
+#. module: operdo_hrm
+#: model_terms:ir.ui.view,arch_db:hr.res_users_view_form_profile
+#: model_terms:ir.ui.view,arch_db:hr.view_employee_form
+msgid "Private Address"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:hr.field_hr_employee__address_id
+msgid "Work Address"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:hr.field_hr_employee__identification_id
+msgid "Identification No"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:hr.field_hr_employee__certificate
+msgid "Certificate Level"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:hr.field_hr_employee__work_location_id
+msgid "Work Location"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:hr.field_hr_employee__category_ids
+msgid "Tags"
+msgstr ""
+
+#. module: operdo_hrm
+#: model:ir.model.fields,field_description:hr_contract.field_hr_contract__contract_type_id
+msgid "Contract Type"
 msgstr ""

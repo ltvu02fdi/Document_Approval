@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_sync_device_all_user,access.sync.device.all.user,model_zk_device,"",1,1,1,1
+access_operdo_warning,access.operdo.warning,model_operdo_warning_contract,,1,0,0,0
+access_operdo_birthday_wizard,access.operdo.wizard,model_employee_birthday_wizard,,1,1,1,1

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_hr_attendance_employee" model="res.groups">
+        <field name="name">Attendance Employee</field>
+        <field name="category_id" ref="base.module_category_human_resources_attendances"/>
+    </record>
+    <record id="hr_attendance.group_hr_attendance_manager" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_hr_attendance_employee'))]"/>
+    </record>
+    <record id="hr_attendance.menu_hr_attendance_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('operdo_hrm.group_hr_attendance_employee'))]"/>
+    </record>
+    <record id="hr_attendance.menu_hr_attendance_view_attendances" model="ir.ui.menu">
+        <field name="groups_id" eval="[(4, ref('operdo_hrm.group_hr_attendance_employee'))]"/>
+    </record>
+</odoo>

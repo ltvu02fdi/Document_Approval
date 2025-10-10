@@ -8,13 +8,24 @@
                 <calendar string="Attendances"
                           date_start="check_in"
                           date_stop="check_out"
-                          color="employee_id"
                           event_open_popup="true"
+                          quick_create="0"
                           >
                     <field name="employee_id"/>
                     <field name="check_in"/>
                     <field name="check_out"/>
+                    <field name="work_day"/>
                 </calendar>
+            </field>
+        </record>
+        <record id="inherit_hr_attendance_list_view" model="ir.ui.view">
+            <field name="name">hr.attendance.list.view.inherit</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='color']" position="after">
+                    <field name="work_day" optional="hide"/>
+                </xpath>
             </field>
         </record>
         <record id="hr_attendance_action_calendar_view" model="ir.actions.act_window.view">
@@ -23,5 +34,6 @@
             <field name="view_id" ref="view_attendance_calendar"/>
             <field name="sequence">1</field>
         </record>
+
     </data>
 </odoo>

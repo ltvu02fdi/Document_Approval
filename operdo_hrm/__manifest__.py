@@ -11,8 +11,12 @@
         'views/operdo_hr_department_views.xml',
         'views/operdo_hr_employee_views.xml',
         'views/operdo_hr_contract_views.xml',
+        'views/operdo_hr_attendance_views.xml',
+        'views/operdo_warning_views.xml',
+        'views/operdo_wizard_birthday_employee_views.xml',
         # security
         'security/ir.model.access.csv',
+        'security/operdo_hrm_security.xml',
         # data
         'data/ir_cron_data.xml',
     ],

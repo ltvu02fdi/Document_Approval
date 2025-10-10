@@ -5,17 +5,32 @@ from odoo.exceptions import ValidationError
 class HrEmployeePrivateInherit(models.Model):
     _inherit = 'hr.employee'
 
-    start_date = fields.Datetime(string='Start Date')
     start_date_company = fields.Datetime(string='Start Date Company')
     attendance_code = fields.Char(string='Attendance Code')
     contract_ids = fields.Many2one('hr.contract', string='Contracts', compute='_compute_contract')
+    contract_type_id = fields.Many2one('hr.contract.type', related='contract_ids.contract_type_id', string='Contract Type')
+    date_start = fields.Date(string='Start Date', related='contract_ids.date_start')
+    date_end = fields.Date(string='End Date', related='contract_ids.date_end')
     degree = fields.Char(string='Degree')
     date_of_ID_issuance = fields.Datetime(string='Date of ID issuance')
     place_of_ID_issuance = fields.Char(string='Place of ID card issuance')
     social_insurance = fields.Char(string='Social insurance book number')
     tax_code = fields.Char(string='Personal tax code')
     notes = fields.Char(string='Notes')
-
+    attendance_manager_id = fields.Many2one(
+        'res.users', store=True, readonly=False,
+        domain="[('share', '=', False), ('company_ids', 'in', company_id)]",
+        groups="hr_attendance.group_hr_attendance_officer,operdo_hrm.group_hr_attendance_employee",
+        help="The user set in Attendance will access the attendance of the employee through the dedicated app and will be able to edit them.")
+    block = fields.Char(string='Block')
+    committee = fields.Char(string='Committee')
+    work_format = fields.Selection(selection=[
+        ('onboard', 'Onboard'),
+        ('remote', 'Remote')])
+    contact_address = fields.Char(string='Contact Address')
+    dependent_information = fields.Char(string='Dependent Information', groups="hr.group_hr_user", tracking=True)
+    dependent_tax_identification_number = fields.Char(string='Dependent Tax Identification Number')
+    relationship = fields.Char(string='Relationship')
     def _compute_contract(self):
         for rec in self:
             contracts = self.env['hr.contract'].search([
@@ -83,3 +98,15 @@ class HrEmployeePrivateInherit(models.Model):
                         _("The mobile phone number '%s' already exists in another employee record (ID: %s - %s).")
                         % (rec.mobile_phone, existing.id, existing.name)
                     )
+
+    def action_open_birthday_wizard(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Tìm kiếm nhân viên sinh nhật',
+            'res_model': 'employee.birthday.wizard',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'dialog_size': 'medium'
+            }
+        }

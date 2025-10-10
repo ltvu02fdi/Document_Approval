@@ -1,0 +1,14 @@
+.o_model_attendance{
+  display: block !important;
+  text-align: center;
+  .fc-event-main{
+    display: block !important;
+    max-height: 4em !important;
+    .work_day{
+      p{
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
