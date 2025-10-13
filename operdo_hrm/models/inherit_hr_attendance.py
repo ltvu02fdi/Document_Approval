@@ -7,6 +7,12 @@ from odoo.tools import convert, format_duration, format_time, format_datetime, f
 
 class InheritHrAttendance(models.Model):
     _inherit = 'hr.attendance'
+
+    def _default_employee(self):
+        return self.env.user.employee_id.parent_id
+
+    manager_emp_id = fields.Many2one('hr.employee', string="Quản lý", default=_default_employee, index=True)
+    reason = fields.Char(string='Lý do giải trình')
     work_day = fields.Float(string='Work day', default=0.0, compute='_compute_work_day', store=True)
 
     @api.depends('employee_id', 'check_in', 'check_out')
