@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="inherit_navbar_apps_menu"
+       t-inherit="web.CalendarCommonRenderer.event"
+       t-inherit-mode="extension">
+        <xpath expr="." position="replace">
+            <t>
+                <t t-if="res_model == 'hr.attendance'">
+                    <div class="o_event_title text-truncate" t-out="title"/>
+                    <div t-if="rawRecord and rawRecord.work_day" class="work_day">
+                        <p t-esc="rawRecord.work_day"/>
+                    </div>
+                </t>
+                <t t-else="">
+                    <t t-if="!isTimeHidden">
+                        <span class="d-none d-lg-inline fc-time" t-esc="startTime"></span>
+                        <t> </t>
+                    </t>
+                    <div class="o_event_title text-truncate" t-out="title"/>
+                </t>
+            </t>
+        </xpath>
+    </t>
+</templates>

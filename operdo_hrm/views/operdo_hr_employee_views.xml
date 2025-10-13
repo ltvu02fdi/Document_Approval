@@ -11,7 +11,6 @@
                     </xpath>
                     <xpath expr="//field[@name='country_id']" position="after">
                         <field name="attendance_code" optional="hide"/>
-                        <field name="start_date" optional="hide"/>
                         <field name="start_date_company" optional="hide"/>
                         <field name="private_street" optional="hide"/>
                     </xpath>
@@ -26,10 +25,14 @@
                         <field name="id" readonly="1"/>
                         <field name="attendance_code" optional="hide"/>
                     </xpath>
-                    <xpath expr="//field[@name='coach_id']" position="after">
-                        <field name="start_date"/>
+                    <xpath expr="//field[@name='coach_id']" position="replace">
                         <field name="start_date_company"/>
                         <field name="contract_ids"/>
+                    </xpath>
+                    <xpath expr="//field[@name='department_id']" position="after">
+                        <field name="block"/>
+                        <field name="committee"/>
+                        <field name="work_format"/>
                     </xpath>
                     <xpath expr="//group/field[@name='study_school']" position="replace">
                         <field name="degree"/>
@@ -37,13 +40,47 @@
                     <xpath expr="//group/group/field[@name='category_ids']" position="after">
                         <field name="notes"/>
                     </xpath>
+                    <xpath expr="//group/group/field[@name='private_email']" position="before">
+                        <field name="contact_address"/>
+                    </xpath>
+                    <xpath expr="//group/group/field[@name='emergency_phone']" position="after">
+                        <field name="relationship"/>
+                        <field name="dependent_tax_identification_number"/>
+                    </xpath>
+                    <xpath expr="//group/group/field[@name='children']" position="replace">
+                    </xpath>
                     <xpath expr="//group/field[@name='identification_id']" position="after">
                         <field name="date_of_ID_issuance"/>
                         <field name="place_of_ID_issuance"/>
                         <field name="social_insurance"/>
                         <field name="tax_code"/>
+                        <field name="dependent_information"/>
                     </xpath>
                 </field>
             </record>
+            <record id="view_operdo_employee_list" model="ir.ui.view">
+            <field name="name">operdo.hr.employee.list</field>
+            <field name="model">hr.employee</field>
+            <field name="arch" type="xml">
+                <list string="Employee Birthday">
+                    <header>
+                        <button name="action_open_birthday_wizard"
+                                string="Tìm kiếm"
+                                type="object"
+                                class="btn-primary"
+                                display="always"
+                        />
+                    </header>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="birthday"/>
+                    <field name="department_id"/>
+                    <field name="start_date_company"/>
+                    <field name="contract_type_id"/>
+                    <field name="date_start" optional="hide"/>
+                    <field name="date_end" optional="hide"/>
+                </list>
+            </field>
+        </record>
     </data>
 </odoo>

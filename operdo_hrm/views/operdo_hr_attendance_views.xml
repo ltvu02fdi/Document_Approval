@@ -8,13 +8,60 @@
                 <calendar string="Attendances"
                           date_start="check_in"
                           date_stop="check_out"
-                          color="employee_id"
                           event_open_popup="true"
+                          quick_create="0"
                           >
                     <field name="employee_id"/>
                     <field name="check_in"/>
                     <field name="check_out"/>
+                    <field name="work_day"/>
                 </calendar>
+            </field>
+        </record>
+        <record id="inherit_hr_attendance_list_view" model="ir.ui.view">
+            <field name="name">hr.attendance.list.view.inherit</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='color']" position="after">
+                    <field name="work_day" optional="hide"/>
+                </xpath>
+            </field>
+        </record>
+
+                <!-- Inherit form view của hr.attendance -->
+        <record id="view_hr_attendance_form_inherit_hide_groups" model="ir.ui.view">
+            <field name="name">hr.attendance.form.inherit.hide.groups</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/> <!-- đổi ref này nếu id khác -->
+            <field name="arch" type="xml">
+
+                <!-- Ẩn toàn bộ group check_in -->
+                <xpath expr="//group[@name='check_in_group']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <!-- Ẩn toàn bộ group check_out -->
+                <xpath expr="//group[@name='check_out_group']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                                <!-- Ẩn separator "Check In" -->
+                <xpath expr="//group[@name='check_in_group']/preceding-sibling::separator[1]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//group[@name='check_out_group']/preceding-sibling::separator[1]" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//group[@name='check_out_group']" position="after">
+                    <group name="manager_group" colspan="2">
+                        <field name="manager_emp_id"/>
+                        <field name="reason"/>
+                    </group>
+                </xpath>
+
             </field>
         </record>
         <record id="hr_attendance_action_calendar_view" model="ir.actions.act_window.view">
@@ -23,5 +70,6 @@
             <field name="view_id" ref="view_attendance_calendar"/>
             <field name="sequence">1</field>
         </record>
+
     </data>
 </odoo>
