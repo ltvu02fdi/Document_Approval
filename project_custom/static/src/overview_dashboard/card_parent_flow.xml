@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="my_module.AutoPagedSearchableCardListTemplate">
+        <!-- Search box -->
+        <div class="mb-3" style="display:flex; justify-content:flex-end;">
+            <input type="text"
+                   placeholder="🔍 Tìm kiếm theo tiêu đề..."
+                   t-model="state.searchQuery"
+                   t-on-input="onSearchInput"
+                   style="padding:8px; width:240px; border:1px solid #ccc; border-radius:8px;" />
+        </div>
+
+        <!-- Card container -->
+        <div class="card-container"
+             style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:16px;">
+            <t t-if="state.items.length">
+                <t t-foreach="state.items" t-as="item" t-key="item.id">
+                    <div class="card shadow-sm p-3 rounded border">
+                        <h4><t t-esc="item.title"/></h4>
+                        <p><t t-esc="item.description"/></p>
+                    </div>
+                </t>
+            </t>
+            <t t-else="">
+                <p style="grid-column:1/-1; text-align:center;">Không tìm thấy kết quả phù hợp</p>
+            </t>
+        </div>
+
+        <!-- Pagination footer -->
+        <t t-if="totalPages &amp; totalPages > 1">
+            <div class="pagination-footer mt-4"
+                 style="display:flex; justify-content:center; gap:8px;">
+                <button t-on-click="() => changePage(state.currentPage - 1)"
+                        t-att-disabled="state.currentPage === 1">
+                    Trước
+                </button>
+
+                <t t-foreach="Array.from({ length: totalPages }, (_, i) => i + 1)" t-as="p" t-key="p">
+                    <button
+                        t-on-click="() => changePage(p)"
+                        t-att-class="state.currentPage === p ? 'active-page' : ''"
+                        style="min-width:36px; height:36px; border-radius:6px;"
+                    >
+                        <t t-esc="p"/>
+                    </button>
+                </t>
+
+                <button t-on-click="() => changePage(state.currentPage + 1)"
+                        t-att-disabled="state.currentPage === totalPages">
+                    Sau
+                </button>
+            </div>
+        </t>
+    </t>
+</templates>

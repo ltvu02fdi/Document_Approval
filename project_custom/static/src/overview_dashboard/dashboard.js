@@ -7,9 +7,11 @@ import { loadJS } from "@web/core/assets";
 import { rpc } from "@web/core/network/rpc";
 import { session } from "@web/session";
 import { CompanySelector  } from "@web/webclient/switch_company_menu/switch_company_menu";
+import { AutoPagedSearchableCardList } from "./card_parent_flow";
 
 export class Dashboard extends Component {
     static props = ["filter", "resetFilter"];
+    static components = { AutoPagedSearchableCardList };
     setup() {
         this.isMobileOS = isMobileOS();
         this.companyService = useService("company");
