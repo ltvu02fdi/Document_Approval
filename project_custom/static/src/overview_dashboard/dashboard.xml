@@ -172,6 +172,7 @@
                             <div class="dashboard_2">
                                 <div id="lineChart" style="width:100%; height:400px;"></div>
                             </div>
+                            <AutoPagedSearchableCardList/>
                         </div>
                     </div>
                 </div>

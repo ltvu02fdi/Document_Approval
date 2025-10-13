@@ -569,3 +569,32 @@ msgstr ""
 #: model:ir.model.fields,help:project_custom.field_receipt_categories__website_message_ids
 msgid "Website communication history"
 msgstr ""
+
+#. module: project_custom
+#: model:ir.ui.menu,name:project_custom.overview_menu
+msgid "Overview"
+msgstr "Tổng quan"
+
+#. module: project_custom
+#: model:ir.actions.client,name:project_custom.action_overview_finance
+#: model:ir.ui.menu,name:project_custom.overview_financial_menu
+msgid "Overview Finance"
+msgstr "Tổng quan tài chính"
+
+#. module: project_custom
+#: model:ir.actions.client,name:project_custom.action_overview_inflow
+#: model:ir.ui.menu,name:project_custom.overview_inflow_menu
+msgid "Overview Inflow"
+msgstr "Tổng quan tiền thu"
+
+#. module: project_custom
+#: model:ir.actions.client,name:project_custom.action_overview_outflow
+#: model:ir.ui.menu,name:project_custom.overview_outflow_menu
+msgid "Overview Outflow"
+msgstr "Tổng quan tiền chi"
+
+#. module: project_custom
+#: model:ir.actions.client,name:project_custom.action_overview_planned_expenditure
+#: model:ir.ui.menu,name:project_custom.overview_planned_expenditure_menu
+msgid "Overview Planned Expenditure"
+msgstr "Tổng quan dự chi"
